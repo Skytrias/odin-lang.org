@@ -34,14 +34,32 @@
                 <!-- Right: code examples -->
                 <div class="flex-1 w-full max-w-2xl">
                     <div class="hero-code-card">
-                        <!-- Tab bar -->
-                        <div class="code-tab-bar rounded-none border-b" style="border-color:rgba(59,130,246,0.15); background:rgba(3,8,20,0.6); border-radius:0;">
-                            <button class="code-tab-btn active" data-target="example-1-code" type="button">Hellope</button>
-                            <button class="code-tab-btn" data-target="example-2-code" type="button">Arrays</button>
-                            <button class="code-tab-btn" data-target="example-3-code" type="button">SOA</button>
-                            <button class="code-tab-btn" data-target="example-4-code" type="button">Context</button>
-                            <button class="code-tab-btn" data-target="example-5-code" type="button">Reflection</button>
+
+                        <!-- Chrome bar: traffic lights + tabs + filename -->
+                        <div class="hero-code-chrome">
+                            <!-- Traffic light dots -->
+                            <span class="hero-chrome-dot" style="background:#ff5f57;"></span>
+                            <span class="hero-chrome-dot" style="background:#febc2e;"></span>
+                            <span class="hero-chrome-dot" style="background:#28c840;"></span>
+
+                            <!-- Tabs -->
+                            <div class="code-tab-bar flex-1" style="background:none;padding:0;margin:0;">
+                                <button class="code-tab-btn active" data-target="example-1-code" data-desc="The classic hello world — your first Odin program" type="button">Hellope</button>
+                                <button class="code-tab-btn" data-target="example-2-code" data-desc="Element-wise array arithmetic built into the type system" type="button">Arrays</button>
+                                <button class="code-tab-btn" data-target="example-3-code" data-desc="Automatic struct-of-arrays layout for cache-friendly data" type="button">SOA</button>
+                                <button class="code-tab-btn" data-target="example-4-code" data-desc="Thread-local implicit context for custom allocators and logging" type="button">Context</button>
+                                <button class="code-tab-btn" data-target="example-5-code" data-desc="Runtime type information with full type introspection" type="button">Reflection</button>
+                            </div>
+
+                            <!-- Filename pill -->
+                            <span class="text-xs font-mono shrink-0" style="color:rgba(255,255,255,0.18);">main.odin</span>
                         </div>
+
+                        <!-- Description strip -->
+                        <div class="hero-code-desc" id="hero-code-desc">
+                            The classic hello world — your first Odin program
+                        </div>
+
                         <!-- Code panes -->
                         <div class="example-code show" id="example-1-code">
                             <pre class="home-code-example m-0 rounded-none border-0"><code class="language-odin">{{ partial "odin-examples/hellope" }}</code></pre>
@@ -58,6 +76,7 @@
                         <div class="example-code" id="example-5-code">
                             <pre class="home-code-example m-0 rounded-none border-0"><code class="language-odin">{{ partial "odin-examples/reflection" }}</code></pre>
                         </div>
+
                     </div>
                 </div>
 
@@ -319,11 +338,13 @@
 </main>
 
 <script>
+    var desc = document.getElementById("hero-code-desc");
     document.querySelectorAll(".code-tab-btn").forEach(function(btn) {
         btn.addEventListener("click", function() {
             document.querySelectorAll(".code-tab-btn").forEach(function(b) { b.classList.remove("active"); });
             document.querySelectorAll(".example-code").forEach(function(p) { p.classList.remove("show"); });
             btn.classList.add("active");
+            if (desc) desc.textContent = btn.getAttribute("data-desc") || "";
             var target = document.getElementById(btn.getAttribute("data-target"));
             if (target) {
                 target.classList.add("show");

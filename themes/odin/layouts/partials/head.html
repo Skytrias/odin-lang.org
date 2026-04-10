@@ -47,9 +47,8 @@
 {{- end }}
 {{ end }}{{ end }}
 
-<!-- Main CSS (Tailwind + custom components) -->
-{{ $css := resources.Get "css/main.css" | css.PostCSS | resources.Minify }}
-<link rel="stylesheet" href="{{ $css.Permalink }}">
+<!-- Main CSS (Tailwind + custom components, pre-compiled by Tailwind CLI) -->
+<link rel="stylesheet" href="/css/main.min.css">
 
 <!-- Highlight.JS -->
 <link rel="stylesheet" href="/lib/highlight/styles/github-dark.min.css" />

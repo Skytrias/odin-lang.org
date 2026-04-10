@@ -115,11 +115,14 @@
     min-height: 100vh;
     background-color: var(--hero-bg);
     background-image:
-      radial-gradient(circle at 1px 1px, var(--hero-dot) 1px, transparent 0),
+      /* subtle grid lines */
+      linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+      /* glows */
       radial-gradient(ellipse 90% 70% at 50% -10%, var(--hero-glow-top) 0%, transparent 65%),
       radial-gradient(ellipse 55% 45% at 88% 95%,  var(--hero-glow-bottom) 0%, transparent 65%),
       radial-gradient(ellipse 35% 30% at 8% 85%,   rgba(96, 165, 250, 0.05) 0%, transparent 55%);
-    background-size: 28px 28px, 100% 100%, 100% 100%, 100% 100%;
+    background-size: 52px 52px, 52px 52px, 100% 100%, 100% 100%, 100% 100%;
     color: var(--hero-text);
   }
 
@@ -338,6 +341,35 @@
       0 0 0 1px rgba(255, 255, 255, 0.02),
       0 40px 100px rgba(0, 0, 0, 0.65),
       0 0 80px rgba(37, 99, 235, 0.07);
+  }
+
+  /* Code card chrome (traffic lights + tabs row) */
+  .hero-code-chrome {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    background: rgba(3, 7, 18, 0.7);
+    border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+  }
+  .hero-chrome-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Description strip below chrome */
+  .hero-code-desc {
+    padding: 0.45rem 1rem;
+    font-size: 0.72rem;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.08);
+    background: rgba(37, 99, 235, 0.05);
+    color: rgba(150, 185, 255, 0.55);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* ── Footer ───────────────────────────────────────────────────── */

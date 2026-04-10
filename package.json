@@ -1,6 +1,9 @@
 {
   "name": "odin-lang-org",
   "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./themes/odin/assets/css/main.css -o ./themes/odin/static/css/main.min.css --minify"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.17",
     "postcss": "^8.5.3",
