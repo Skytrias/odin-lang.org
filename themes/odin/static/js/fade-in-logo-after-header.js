@@ -6,7 +6,7 @@ document.addEventListener("scroll", () => {
     }
     // Fade in the nav logo when the user scrolls past the home header.
     // We add a little offset, so it feels more natural.
-    if(home_hero_header.getBoundingClientRect().bottom <= 60) {
+    if(home_hero_header.getBoundingClientRect().bottom <= 62) {
         navbar_logo.classList.add("fade-in-navbar-logo");
         navbar_logo.classList.remove("d-none");
     } else {

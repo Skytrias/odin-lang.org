@@ -1,30 +1,28 @@
 {{ define "main" }}
 <main>
-    <div class="container-xxl">
-        <div class="row odin-main">
-            <!-- Left menu -->
+    <div class="container mx-auto px-4 max-w-screen-2xl">
+        <div class="flex odin-main">
             {{ partial "sidebar" . }}
 
-            <!-- Content -->
-            <article class="col-lg-8 p-4">
-                <article>
-                    <header>
-                        <h1>{{.Title}}</h1>
-                    </header>
+            <article class="flex-1 min-w-0 p-6 lg:p-10">
+                <header class="mb-6">
+                    <h1 class="text-3xl font-bold" style="letter-spacing:-0.02em;">{{.Title}}</h1>
+                </header>
 
+                <div class="odin-article">
                     {{.Content}}
-                </article>
+                </div>
 
-                <div>
+                <div class="mt-8 flex flex-col gap-8">
                     {{ range .Pages }}
-                    <div class="mt-5">
-                        <a
-                            href="{{.Permalink}}"
-                            class="link-primary text-decoration-none"
-                            ><h3>{{.Title}}</h3></a
-                        >
-                        <p>{{.Summary}}</p>
-                        {{- if not .PublishDate.IsZero }}<div class="publish-date">{{ .PublishDate.Format "2006-01-02" | safeHTMLAttr }}</div>{{- end}}
+                    <div>
+                        <a href="{{.Permalink}}" class="no-underline hover:underline" style="color: var(--accent);">
+                            <h3 class="text-xl font-semibold" style="letter-spacing:-0.015em;">{{.Title}}</h3>
+                        </a>
+                        <p class="mt-1 text-sm leading-relaxed" style="color: var(--text-muted);">{{.Summary}}</p>
+                        {{- if not .PublishDate.IsZero }}
+                        <div class="publish-date mt-1">{{ .PublishDate.Format "2006-01-02" | safeHTMLAttr }}</div>
+                        {{- end}}
                     </div>
                     {{ end }}
                 </div>

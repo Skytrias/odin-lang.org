@@ -1,39 +1,40 @@
 {{ define "main" }}
 <main>
-    <div class="container-xxl">
-        <div class="row odin-main">
+    <div class="container mx-auto px-4 max-w-screen-2xl">
+        <div class="flex odin-main">
             {{ partial "sidebar" . }}
 
             <!-- Content -->
-            <article class="col-lg-8 p-4" {{- if .Param "autonumbering" }} autonumbering {{- end }}>
-                <header>
-                    <nav aria-label="breadcrumb">
+            <article class="flex-1 min-w-0 p-6 lg:p-10">
+                <header class="mb-6">
+                    <nav aria-label="breadcrumb" class="mb-3">
                         {{ $rellink := "" }}
-                        <ol class="breadcrumb">
+                        <ol class="flex flex-wrap gap-1 text-sm" style="color: var(--text-muted);">
                             {{ range (split .RelPermalink "/") }}
                                 {{ if gt (len . ) 0 -}}
                                     {{ $rellink = printf "%s/%s" $rellink . }}
-                                    <li class="breadcrumb-item"><a href="{{ $rellink }}">{{ humanize . }}</a></li>
+                                    <li><a href="{{ $rellink }}" style="color: var(--accent);">{{ humanize . }}</a></li>
                                 {{ end }}
                             {{ end }}
                         </ol>
-                    <h1>{{ .Title }}</h1>
-
+                    </nav>
+                    <h1 class="text-3xl font-bold" style="letter-spacing:-0.02em;">{{ .Title }}</h1>
                     {{- if .IsPage }}
-                    {{- if not .PublishDate.IsZero }}<p class="publish-date">{{ .PublishDate.Format "2006-01-02" | safeHTMLAttr }}</p>
+                    {{- if not .PublishDate.IsZero }}
+                    <p class="publish-date mt-1">{{ .PublishDate.Format "2006-01-02" | safeHTMLAttr }}</p>
                     {{ end }}
-                    {{- end }}{{/* .IsPage */}}
+                    {{- end }}
                 </header>
                 <div class="odin-article">
-                    <!-- Add anchors to links -->
-                    {{ .Content | replaceRE "(<h[2-9] id=\"([^\"]+)\".+)(</h[2-9]+>)" "${1} <a class=\"text-decoration-none\" href=\"#${2}\">#</a>${3}" | safeHTML }}
+                    {{ .Content | replaceRE "(<h[2-9] id=\"([^\"]+)\".+)(</h[2-9]+>)" "${1} <a class=\"text-[var(--text-muted)] hover:text-[var(--accent)] no-underline ml-1\" href=\"#${2}\">#</a>${3}" | safeHTML }}
                 </div>
             </article>
 
-            <!-- Right menu -->
+            <!-- Table of contents -->
             {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
-            <div id="TOC" class="col-lg-2 odin-toc-border">
-                <div class="sticky-top odin-below-navbar py-3">
+            <div id="TOC" class="odin-toc">
+                <div class="sticky odin-below-navbar px-3">
+                    <p class="text-xs font-semibold uppercase tracking-widest mb-3" style="color: var(--text-muted);">On this page</p>
                     {{ .TableOfContents }}
                 </div>
             </div>

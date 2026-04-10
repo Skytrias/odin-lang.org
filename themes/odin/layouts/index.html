@@ -1,437 +1,340 @@
 {{ define "main" }}
 <main>
-    <section class="section-style-1" id="home-hero-header">
-        <div class=" container d-flex flex-column justify-content-center align-items-center text-center p-5 ">
-            <img class="img-fluid mb-5 hero-logo" src="/logo.svg" height="120" alt="Odin" />
-            <h1 class="fw-normal"><b>Odin</b> Programming Language</h1>
-            <h2 class="fw-normal">{{ .Site.Params.Slogan }}</h2>
-            <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                <a href="/docs/overview" class="btn btn-secondary text-light">
-                    Overview
-                </a>
-                <a href="/docs/install" class="btn btn-outline-light">
-                    Download
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <section class="section-style-2" id="example">
-        <div class="container py-5">
-            <div class="row g-4">
-                <div class="col-lg col-lg-6">
-                    <h2 class="mb-4">Programming Done Right</h2>
-                    <p>
-                        Odin is a general-purpose programming language with distinct typing built for high performance, modern systems and data-oriented programming.
-                    </p>
-                    <p>
-                        Odin is the C alternative for the Joy of Programming.
-                    </p>
+    <!-- ══════════════════════════════════════════════════════════
+         HERO  (pitch left · code right · full viewport · dot grid)
+         ══════════════════════════════════════════════════════════ -->
+    <section id="home-hero-header">
+        <div class="container mx-auto px-6 lg:px-10 w-full">
+            <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 min-h-screen py-28 lg:py-20">
 
-                    <div class="d-flex gap-2 flex-wrap">
-                        <a href="/docs" class="btn btn-outline-primary">
-                            Read the Docs
-                        </a>
-                        <a href="https://github.com/odin-lang/Odin/blob/master/examples/demo/demo.odin" class="btn btn-outline-primary">
-                            See the Full Demo
-                        </a>
-                        <a href="https://github.com/odin-lang/examples" class="btn btn-outline-primary">
-                            See More Examples
-                        </a>
+                <!-- Left: pitch -->
+                <div class="flex-1 text-center lg:text-left">
+                    <img class="hero-logo h-16 w-auto mb-6 mx-auto lg:mx-0" src="/logo.svg" alt="Odin" id="navbar-logo-source" />
+                    <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-3" style="letter-spacing:-0.03em; color:var(--hero-text);">
+                        <span class="hero-name">Odin</span><br>
+                        Programming Language
+                    </h1>
+                    <p class="text-base lg:text-lg mb-8 leading-relaxed" style="color:var(--hero-sub); max-width:38ch;">
+                        {{ .Site.Params.Slogan }}
+                    </p>
+                    <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+                        <a href="/docs/overview" class="hero-btn-primary">Get Started &rarr;</a>
+                        <a href="/docs/install"  class="hero-btn-outline">Download</a>
+                    </div>
+                    <!-- Quick links -->
+                    <div class="flex flex-wrap gap-4 mt-6 justify-center lg:justify-start">
+                        <a href="/docs" class="text-sm no-underline hover:underline" style="color:rgba(150,185,255,0.6);">Docs</a>
+                        <a href="https://github.com/odin-lang/Odin/blob/master/examples/demo/demo.odin" target="_blank" class="text-sm no-underline hover:underline" style="color:rgba(150,185,255,0.6);">Full demo</a>
+                        <a href="https://pkg.odin-lang.org/" target="_blank" class="text-sm no-underline hover:underline" style="color:rgba(150,185,255,0.6);">Packages</a>
+                        <a href="https://github.com/odin-lang/Odin" target="_blank" class="text-sm no-underline hover:underline" style="color:rgba(150,185,255,0.6);">GitHub</a>
                     </div>
                 </div>
-                <div class="col-lg col-lg-6">
-                    <div class="tab-content">
-                        <select class="form-select mb-2" id="example-code-select">
-                            <option id="example-1-select" value="example-1-code">Hellope</option>
-                            <option id="example-2-select" value="example-2-code">Array Programming</option>
-                            <option id="example-3-select" value="example-3-code">SOA Types</option>
-                            <option id="example-4-select" value="example-4-code">Context System</option>
-                            <option id="example-5-select" value="example-5-code">Reflection</option>
-                        </select>
-                        <div
-                            class="tab-pane show active example-code"
-                            id="example-1-code"
-                            role="option"
-                            aria-labelledby="example-1-code"
-                        >
-                            <pre><code class="language-odin border-start border-end border-bottom home-code-example"
-                                >{{ partial "odin-examples/hellope" }}</code
-                            ></pre>
+
+                <!-- Right: code examples -->
+                <div class="flex-1 w-full max-w-2xl">
+                    <div class="hero-code-card">
+                        <!-- Tab bar -->
+                        <div class="code-tab-bar rounded-none border-b" style="border-color:rgba(59,130,246,0.15); background:rgba(3,8,20,0.6); border-radius:0;">
+                            <button class="code-tab-btn active" data-target="example-1-code" type="button">Hellope</button>
+                            <button class="code-tab-btn" data-target="example-2-code" type="button">Arrays</button>
+                            <button class="code-tab-btn" data-target="example-3-code" type="button">SOA</button>
+                            <button class="code-tab-btn" data-target="example-4-code" type="button">Context</button>
+                            <button class="code-tab-btn" data-target="example-5-code" type="button">Reflection</button>
                         </div>
-                        <div
-                            class="tab-pane example-code"
-                            id="example-2-code"
-                            role="option"
-                            aria-labelledby="example-2-code"
-                        >
-                            <pre><code class="language-odin border-start border-end border-bottom home-code-example"
-                                >{{ partial "odin-examples/array-programming" }}</code
-                            ></pre>
+                        <!-- Code panes -->
+                        <div class="example-code show" id="example-1-code">
+                            <pre class="home-code-example m-0 rounded-none border-0"><code class="language-odin">{{ partial "odin-examples/hellope" }}</code></pre>
                         </div>
-                        <div
-                            class="tab-pane example-code"
-                            id="example-3-code"
-                            role="option"
-                            aria-labelledby="example-3-code"
-                        >
-                            <pre><code class="language-odin border-start border-end border-bottom home-code-example"
-                                >{{ partial "odin-examples/soa-structs" }}</code
-                            ></pre>
+                        <div class="example-code" id="example-2-code">
+                            <pre class="home-code-example m-0 rounded-none border-0"><code class="language-odin">{{ partial "odin-examples/array-programming" }}</code></pre>
                         </div>
-                        <div
-                            class="tab-pane example-code"
-                            id="example-4-code"
-                            role="option"
-                            aria-labelledby="example-4-code"
-                        >
-                            <pre><code class="language-odin border-start border-end border-bottom home-code-example"
-                                >{{ partial "odin-examples/context-system" }}</code
-                            ></pre>
+                        <div class="example-code" id="example-3-code">
+                            <pre class="home-code-example m-0 rounded-none border-0"><code class="language-odin">{{ partial "odin-examples/soa-structs" }}</code></pre>
                         </div>
-                        <div
-                            class="tab-pane example-code"
-                            id="example-5-code"
-                            role="option"
-                            aria-labelledby="example-5-code"
-                        >
-                            <pre class="home-code-example"><code class="language-odin border-start border-end border-bottom"
-                                >{{ partial "odin-examples/reflection" }}</code
-                            ></pre>
+                        <div class="example-code" id="example-4-code">
+                            <pre class="home-code-example m-0 rounded-none border-0"><code class="language-odin">{{ partial "odin-examples/context-system" }}</code></pre>
+                        </div>
+                        <div class="example-code" id="example-5-code">
+                            <pre class="home-code-example m-0 rounded-none border-0"><code class="language-odin">{{ partial "odin-examples/reflection" }}</code></pre>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section class="bg-secondary text-light">
-        <div class="container py-5">
-            <div
-                class="
-                    row
-                    justify-content-center
-                    align-items-center
-                    text-center
-                    gy-2
-                "
-            >
-                <div class="col-auto mx-2">
-                    <h2>Join the Odin community on Discord.</h2>
+    <!-- ══════════════════ DISCORD BANNER ══════════════════════ -->
+    <section class="discord-banner">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex flex-wrap items-center justify-center gap-4 text-center">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" style="height:22px;width:auto;fill:white;opacity:0.9;flex-shrink:0;">
+                        <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+                    </svg>
+                    <span class="font-semibold">Join the Odin community on Discord</span>
                 </div>
-                <div class="col-auto mx-2">
-                    <a href="https://discord.gg/vafXTdubwr" class="btn btn-outline-light">Join Discord</a>
-                </div>
+                <a href="https://discord.gg/vafXTdubwr" class="px-4 py-1.5 rounded-lg text-sm font-semibold no-underline transition-colors" style="background:white;color:#404eed;">Join Discord</a>
             </div>
         </div>
     </section>
 
-    <section class="section-style-3" id="principles">
-        <div class="container py-5">
-            <h2 class="mb-4">The Odin Principles</h2>
-            <div class="row g-4">
-                <div class="col-lg">
-                    <h3 class="fw-normal">Simplicity</h3>
-                    <p>
-                        Odin has been designed for readability, scalability, and <a href="https://en.wikipedia.org/wiki/Orthogonality_(programming)">orthogonality</a> of concepts. Simplicity is complicated to get right, clear is better than clever.
-                    </p>
+    <!-- ══════════════════ PRINCIPLES ══════════════════════════ -->
+    <section class="section-light" id="principles">
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center mb-10">
+                <p class="section-eyebrow">Philosophy</p>
+                <h2 class="text-3xl font-bold" style="letter-spacing:-0.02em;">The Odin Principles</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Simplicity -->
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3>Simplicity</h3>
+                    <p>Designed for readability, scalability, and <a href="https://en.wikipedia.org/wiki/Orthogonality_(programming)">orthogonality</a> of concepts. Clear is better than clever.</p>
                 </div>
-                <div class="col-lg">
-                    <h3 class="fw-normal">High Performance</h3>
-                    <p>
-                        Odin allows for the highest performance through low-level control over the memory layout, <a href="/docs/overview/#implicit-context-system">memory management</a> and custom <a href="/docs/overview/#allocators">allocators</a> and so much more.
-                    </p>
+                <!-- High Performance -->
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <h3>High Performance</h3>
+                    <p>Full control over memory layout, <a href="/docs/overview/#implicit-context-system">memory management</a>, and custom <a href="/docs/overview/#allocators">allocators</a> for maximum throughput.</p>
                 </div>
-                <div class="col-lg">
-                    <h3 class="fw-normal">For Modern Systems</h3>
-                    <p>
-                        Odin is designed from the bottom up for the modern computer, with built-in support for <a href="/docs/overview/#soa-data-types">SOA data types</a>, <a href="/docs/overview/#fixed-arrays">array programming</a>, and other features.
-                    </p>
-                    <!--<p>
-                        No need to pretend you are programming for a PDP-11 anymore. -kek
-                    </p>-->
+                <!-- Modern Systems -->
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>For Modern Systems</h3>
+                    <p>Built-in support for <a href="/docs/overview/#soa-data-types">SOA data types</a>, <a href="/docs/overview/#fixed-arrays">array programming</a>, and features designed for today's hardware.</p>
                 </div>
-                <div class="col-lg">
-                    <h3 class="fw-normal">Joy of Programming</h3>
-                    <p>
-                        We go into programming because we love to solve problems. Why shouldn't our tools bring us joy whilst doing it? Enjoy programming again, with Odin!
-                    </p>
+                <!-- Joy -->
+                <div class="principle-card">
+                    <div class="principle-icon" style="background:rgba(234,88,12,0.12);color:var(--accent-2);">
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Joy of Programming</h3>
+                    <p>We go into programming because we love to solve problems. Why shouldn't our tools bring us joy? Enjoy programming again, with Odin!</p>
                 </div>
             </div>
-            <div class="d-flex justify-content-center mt-2">
-                <a href="/docs/overview" class="btn btn-outline-primary">
-                    See Overview
-                </a>
+            <div class="flex justify-center mt-10">
+                <a href="/docs/overview" class="btn-odin">See Full Overview</a>
             </div>
         </div>
     </section>
 
-    <section class="section-style-1" id="users">
-        <div class="container py-5">
-            <h2 class="mb-4">Odin in Production</h2>
-            <div class="row g-4">
-                <div class="col-lg">
+    <!-- ══════════════════ IN PRODUCTION ═══════════════════════ -->
+    <section class="section-dark" id="users">
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center mb-10">
+                <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="opacity:0.5;">Real World</p>
+                <h2 class="text-3xl font-bold" style="letter-spacing:-0.02em;">Odin in Production</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div>
                     <p>
-                        <a href="https://jangafx.com/" target="_blank" class="link-light">JangaFX</a> are the creators of the 3D animation software <a href="https://jangafx.com/software/embergen/" target="_blank" class="link-light">EmberGen</a>, <a href="https://jangafx.com/software/geogen/" target="_blank" class="link-light">GeoGen</a>, and LiquiGen, which are <i>all</i> written <i>fully</i> in Odin.
+                        <a href="https://jangafx.com/" target="_blank" class="font-semibold" style="color:var(--dark-text);">JangaFX</a> are the creators of
+                        <a href="https://jangafx.com/software/embergen/" target="_blank" style="color:var(--dark-accent);">EmberGen</a>,
+                        <a href="https://jangafx.com/software/geogen/" target="_blank" style="color:var(--dark-accent);">GeoGen</a>, and LiquiGen —
+                        all written fully in Odin.
                     </p>
-                    <p>
-                        <a href="https://jangafx.com/software/embergen/" target="_blank" class="link-light">EmberGen</a> is a real-time volumetric fluid simulator that can instantly simulate, render, and export flipbooks, image sequences, and VDB volumes. With EmberGen, you can create anything from fire and smoke, to explosions and magic wisps. EmberGen gives you the creative freedom to iterate on your simulations in a few milliseconds instead of hours.
-                    </p>
-                    <p>
-                        <a href="https://jangafx.com/software/liquigen/" target="_blank" class="link-light">LiquiGen</a> is a real-time volumetric liquid simulator that can instantly simulate, render, and export flipbooks, image sequences, and VDB volumes.
-                    </p>
-                    <p>
-                        <a href="https://jangafx.com/software/geogen/" target="_blank" class="link-light">GeoGen</a> is a real-time terrain generation tool.
-                    </p>
-                    <p>
+                    <p class="mt-3" style="color:var(--dark-muted);">
                         Through EmberGen, Odin runs in production among the giants of the games and film industries: Bethesda, CAPCOM, Codemasters, THQNordic, Warner Bros, Weta Digital, and many others.
                     </p>
-                    <div class="pt-4">
-                        <a href="https://jangafx.com/" target="_blank" class="link-light text-decoration-none">
-                            <img src="/jangafx/logo.png" alt="JangaFX" height="48px" />
-                            <h3 class="d-inline"> &nbsp;Janga<span class="jangafx-color">FX</span></h3>
+                    <!-- Product logos -->
+                    <div class="flex flex-wrap items-center gap-5 mt-6">
+                        <a href="https://jangafx.com/" target="_blank" class="flex items-center gap-2 no-underline" style="color:var(--dark-text);">
+                            <img src="/jangafx/logo.png" alt="JangaFX" class="vendor-logo" />
+                            <span class="font-semibold text-sm">Janga<span class="jangafx-color">FX</span></span>
                         </a>
-                        <span class="px-2"></span>
-                        <a href="https://jangafx.com/software/embergen/" target="_blank" class="link-light text-decoration-none">
-                            <img src="/jangafx/em_logo.png" alt="EmberGen" height="48px" />
-                            <h3 class="d-inline"> &nbsp;Ember<span style="color: #ed5c03">Gen</span></h3>
+                        <a href="https://jangafx.com/software/embergen/" target="_blank" class="flex items-center gap-2 no-underline" style="color:var(--dark-text);">
+                            <img src="/jangafx/em_logo.png" alt="EmberGen" class="vendor-logo" />
+                            <span class="font-semibold text-sm">Ember<span style="color:#ed5c03">Gen</span></span>
                         </a>
-                        <span class="px-2"><br></span>
-                        <a href="https://jangafx.com/software/geogen/" target="_blank" class="link-light text-decoration-none">
-                            <img src="/jangafx/geo_logo.png" alt="GeoGen" height="48px"/ >
-                            <h3 class="d-inline"> &nbsp;Geo<span style="color: #7cc746">Gen</span></h3>
+                        <a href="https://jangafx.com/software/geogen/" target="_blank" class="flex items-center gap-2 no-underline" style="color:var(--dark-text);">
+                            <img src="/jangafx/geo_logo.png" alt="GeoGen" class="vendor-logo" />
+                            <span class="font-semibold text-sm">Geo<span style="color:#7cc746">Gen</span></span>
                         </a>
-                        <span class="px-2"></span>
-                        <a href="https://jangafx.com/software/liquigen/" target="_blank" class="link-light text-decoration-none">
-                            <img src="/jangafx/liquigen.svg" alt="LiquiGen" height="48px"/ >
-                            <h3 class="d-inline"> &nbsp;Liqui<span style="color: #2cd4fa">Gen</span></h3>
+                        <a href="https://jangafx.com/software/liquigen/" target="_blank" class="flex items-center gap-2 no-underline" style="color:var(--dark-text);">
+                            <img src="/jangafx/liquigen.svg" alt="LiquiGen" class="vendor-logo" />
+                            <span class="font-semibold text-sm">Liqui<span style="color:#2cd4fa">Gen</span></span>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg">
-                    <div
-                        class="d-flex flex-wrap justify-content-center"
-                        style="background-color: black"
-                    >
-                        <div class="youtube-container">
-                            <iframe class="youtube-video" src="https://www.youtube-nocookie.com/embed/a0yjBywwNb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                        <!-- <div class="youtube-container">
-                            <iframe class="youtube-video" src="https://www.youtube-nocookie.com/embed/EJgA0LLq5TM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                        <div class="youtube-container">
-                            <iframe class="youtube-video" src="https://www.youtube-nocookie.com/embed/JjXgo82Mwfo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div> -->
-                        <!-- <video width="33%" autoplay="" loop="" muted="" data-vscid="auqox1ke2"><source src="https://jangafx.com/videos/gallery/explosion.mp4?v=2" /></video>
-                        <video width="33%" autoplay="" loop="" muted="" data-vscid="5vx9sz37u"><source src="https://jangafx.com/videos/gallery/engulf.mp4?v=1" /></video>
-                        <video width="33%" autoplay="" loop="" muted="" data-vscid="ev0y2nc6k"><source src="https://jangafx.com/videos/gallery/flares.mp4?v=1" /></video>
-                        <video width="33%" autoplay="" loop="" muted="" data-vscid="jrh7qxfz3"><source src="https://jangafx.com/videos/gallery/fireball.mp4?v=1" /></video>
-                        <video width="33%" autoplay="" loop="" muted="" data-vscid="ex1zqo98m"><source src="https://jangafx.com/videos/gallery/heavy_smoke.mp4?v=1" /></video>
-                        <video width="33%" autoplay="" loop="" muted="" data-vscid="qeumrb7hb"><source src="https://jangafx.com/videos/gallery/spell.mp4?v=1" /></video> -->
-                    </div>
+                <div class="youtube-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/a0yjBywwNb8" title="EmberGen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="pt-5 text-center" id="jangafx-companies">
-                <p class="pt-4 text-light opacity-50 text-center">
-                    Companies who use products by JangaFX
-                </p>
-                <img src="/jangafx/companies/jangafx_logos_cluster.png" alt="JangaFX Customers" />
 
-                <p class="pt-4 text-light opacity-50 text-center">
-                    All product names, logos, and brands are property of their respective owners.
+            <!-- Company logos -->
+            <div class="text-center mt-14" id="jangafx-companies">
+                <p class="text-xs mb-4" style="opacity:0.35;">Companies who use products by JangaFX</p>
+                <img src="/jangafx/companies/jangafx_logos_cluster.png" alt="JangaFX Customers" class="mx-auto" />
+                <p class="text-xs mt-3" style="opacity:0.25;">All product names, logos, and brands are property of their respective owners.</p>
+            </div>
+            <div class="text-center mt-6">
+                <a href="/showcase/embergen" class="btn-odin-light">Learn More</a>
+            </div>
+
+            <!-- ChiAha -->
+            <hr class="my-12" style="border-color:rgba(255,255,255,0.07);" />
+            <div>
+                <p>
+                    <a href="https://chiaha.ai" target="_blank" class="font-semibold" style="color:var(--dark-text);">ChiAha™</a>
+                    Digital Twin Toolkit is written in Odin and can help answer your factory flow questions.
                 </p>
-            </div>
-            <div class="pt-4 text-center">
-                <a href="/showcase/embergen" class="btn btn-secondary text-light">Learn More</a>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg">
-                    <p></p>
-                    <p>
-                        <a href="https://chiaha.ai" target="_blank" class="link-light">ChiAha™</a> Digital Twin Toolkit is written in Odin, and can help answer your factory flow questions.
-                    </p>
-                    <p>
-                        <a href="https://chiaha.ai" target="_blank">
-							<img src="/chiaha/logo.png" alt="ChiAha" style="height: 96px;" />
-							<img src="/chiaha/flow.png" alt="ChiAha" class="mw-100" style="max-height: 96px;" />
-						</a>
-                    </p>
-                    <p>
-                        <a href="https://chiaha.ai" target="_blank" class="link-light">ChiAha™</a> can predict production line performance and OEE within 1% accuracy. High-fidelity modeling constructs with statistically modeled data-driven behavior. Provide answers to many of the questions related to the design, operation and improvement of lines for optimum OEE:
-                    </p>
-                    <p>
-                        <ul>
-                            <li>What is the effect on OEE of close-coupling?</li>
-                            <li>What speeds should each machine run?</li>
-                            <li>How can production be increased?</li>
-                            <li>How much will OEE improve with changes to the system?</li>
-                        </ul>
-                    </p>
+                <a href="https://chiaha.ai" target="_blank" class="inline-flex items-center gap-3 mt-3 no-underline">
+                    <img src="/chiaha/logo.png" alt="ChiAha" style="height:56px;width:auto;" />
+                </a>
+                <img src="/chiaha/flow.png" alt="ChiAha Flow" class="w-full mt-6 rounded-lg" style="object-fit:contain;" />
+                <div class="text-center mt-6">
+                    <a href="https://chiaha.ai" target="_blank" class="btn-odin-light">Learn More</a>
                 </div>
-            </div>
-            <div class="pt-4 text-center">
-                <a href="https://chiaha.ai" target="_blank" class="btn btn-secondary text-light">Learn More</a>
-            </div>
             </div>
         </div>
     </section>
 
-    <section class="section-style-3" id="batteries-included">
-        <div class="container py-5">
-            <div class="row g-4">
-                <div class="col-lg">
-                    <h2 class="mb-4">Batteries Included</h2>
-                    <div>
-                        <p>
-                            Odin comes with high quality packages out of the box in its <a href="https://github.com/odin-lang/Odin/tree/master/core" target="_blank"><code>core</code></a> library.
-                        </p>
-                        <p>
-                            Odin provides official libraries for all major graphics APIs: <a href="https://pkg.odin-lang.org/vendor/OpenGL" target="_blank">OpenGL</a>, <a href="https://pkg.odin-lang.org/vendor/vulkan" target="_blank">Vulkan</a>, <a href="https://pkg.odin-lang.org/vendor/directx/d3d11" target="_blank">Direct3D11</a>, <a href="https://pkg.odin-lang.org/vendor/directx/d3d12" target="_blank">Direct3D12</a>, <a href="https://pkg.odin-lang.org/vendor/darwin/Metal" target="_blank">Metal</a>, <a href="https://pkg.odin-lang.org/vendor/wgpu" target="_blank">wgpu</a>, and <a href="https://github.com/odin-lang/Odin/tree/master/vendor/wasm/WebGL" target="_blank">WebGL 1 &amp; 2</a>.
-                        </p>
-                        <p>
-                            Odin additionally brings you officially maintained bindings for popular libraries such as <a href="https://pkg.odin-lang.org/vendor/sdl2" target="_blank">SDL2</a>, <a href="https://pkg.odin-lang.org/vendor/glfw" target="_blank">GLFW</a>, <a href="https://pkg.odin-lang.org/vendor/raylib" target="_blank">raylib</a>, <a href="https://pkg.odin-lang.org/vendor/microui" target="_blank">microui</a>, <a href="https://pkg.odin-lang.org/vendor/miniaudio" target="_blank">miniaudio</a> and much more, in its <a href="https://pkg.odin-lang.org/vendor" target="_blank"><code>vendor</code></a> library!
-                        </p>
-                    </div>
-                    <div class="d-flex flex-wrap gap-2 mt-3">
-                        <a
-                            href="https://github.com/odin-lang/Odin/tree/master/core"
-                            target="_blank"
-                            class="btn btn-outline-primary"
-                        >
-                            See Core Library
-                        </a>
-                        <a
-                            href="https://github.com/odin-lang/Odin/tree/master/vendor"
-                            target="_blank"
-                            class="btn btn-outline-primary"
-                        >
-                            See Vendor Library
-                        </a>
+    <!-- ══════════════════ BATTERIES INCLUDED ══════════════════ -->
+    <section class="section-white" id="batteries-included">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <p class="section-eyebrow">Standard Library</p>
+                    <h2 class="text-3xl font-bold mb-4" style="letter-spacing:-0.02em;">Batteries Included</h2>
+                    <p class="text-sm leading-relaxed mb-3" style="color:var(--text-muted);">
+                        Odin ships with high quality packages in its
+                        <a href="https://github.com/odin-lang/Odin/tree/master/core" target="_blank"><code>core</code></a> library.
+                    </p>
+                    <p class="text-sm leading-relaxed mb-3" style="color:var(--text-muted);">
+                        Official libraries for all major graphics APIs:
+                        <a href="https://pkg.odin-lang.org/vendor/OpenGL" target="_blank">OpenGL</a>,
+                        <a href="https://pkg.odin-lang.org/vendor/vulkan" target="_blank">Vulkan</a>,
+                        <a href="https://pkg.odin-lang.org/vendor/directx/d3d11" target="_blank">Direct3D11</a>,
+                        <a href="https://pkg.odin-lang.org/vendor/directx/d3d12" target="_blank">Direct3D12</a>,
+                        <a href="https://pkg.odin-lang.org/vendor/darwin/Metal" target="_blank">Metal</a>,
+                        <a href="https://pkg.odin-lang.org/vendor/wgpu" target="_blank">wgpu</a>, and
+                        <a href="https://github.com/odin-lang/Odin/tree/master/vendor/wasm/WebGL" target="_blank">WebGL</a>.
+                    </p>
+                    <p class="text-sm leading-relaxed mb-5" style="color:var(--text-muted);">
+                        Officially maintained bindings for
+                        <a href="https://pkg.odin-lang.org/vendor/sdl2" target="_blank">SDL2</a>,
+                        <a href="https://pkg.odin-lang.org/vendor/glfw" target="_blank">GLFW</a>,
+                        <a href="https://pkg.odin-lang.org/vendor/raylib" target="_blank">raylib</a>,
+                        <a href="https://pkg.odin-lang.org/vendor/miniaudio" target="_blank">miniaudio</a> and more in the
+                        <a href="https://pkg.odin-lang.org/vendor" target="_blank"><code>vendor</code></a> library.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://github.com/odin-lang/Odin/tree/master/core" target="_blank" class="btn-odin">Core Library</a>
+                        <a href="https://github.com/odin-lang/Odin/tree/master/vendor" target="_blank" class="btn-odin">Vendor Library</a>
                     </div>
                 </div>
-                <div class="col-lg text-center pt-4" id="vendor-packages">
-                    <a href="https://pkg.odin-lang.org/vendor/sdl2"                           target="_blank"><img class="mx-4 mb-4" height="64px" src="/vendor/companies/Simple_DirectMedia_Layer_Logo.svg"     alt="Simple DirectMedia Layer" /></a>
-                    <a href="https://pkg.odin-lang.org/vendor/raylib"                         target="_blank"><img class="mx-4 mb-4" height="64px" src="/vendor/companies/raylib_64x64.png"                      alt="raylib" /></a>
-                    <a href="https://pkg.odin-lang.org/vendor/OpenGL"                         target="_blank"><img class="mx-4 mb-4" height="64px" src="/vendor/companies/OpenGL_logo.svg"                       alt="OpenGL" /></a>
-                    <a href="https://github.com/odin-lang/Odin/tree/master/vendor/wasm/WebGL" target="_blank"><img class="mx-4 mb-4" height="64px" src="/vendor/companies/WebGL_Logo.svg"                        alt="WebGL" /></a>
-                    <a href="https://pkg.odin-lang.org/vendor/vulkan"                         target="_blank"><img class="mx-4 mb-4" width="200px" src="/vendor/companies/Vulkan_logo.svg"                       alt="Vulkan" /></a>
-                    <a href="https://pkg.odin-lang.org/vendor/darwin/Metal"                   target="_blank"><img class="mx-4 mb-4" height="64px" src="/vendor/companies/Metal_2_Logo.png"                      alt="Metal" /></a>
-                    <a href="https://github.com/odin-lang/Odin/tree/master/vendor/directx"    target="_blank"><img class="mx-4 mb-4 img-dark-mode-invert" height="64px" src="/vendor/companies/DirectX_logo.svg" alt="DirectX" /></a>
-                    <a href="https://pkg.odin-lang.org/vendor/wgpu"                           target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 61.657897 79.084803" class="mx-4 mb-4" height="64px" aria-label="wgpu">
-                            <linearGradient id="wgpu-logo-gradient-a" gradientUnits="userSpaceOnUse" x1="67.733323" x2="67.733323" y1="31.883125" y2="50.933122">
-                                <stop offset="0" stop-color="#91e12a"/>
-                                <stop offset="1" stop-color="#7b8a49"/>
-                            </linearGradient>
-                            <linearGradient id="wgpu-logo-gradient-b" gradientUnits="userSpaceOnUse" x1="84.666658" x2="84.666658" y1="23.416458" y2="65.749786">
-                                <stop offset="0" stop-color="#2263ea"/>
-                                <stop offset="1" stop-color="#33c0f4"/>
-                            </linearGradient>
-                            <linearGradient id="wgpu-logo-gradient-c" gradientUnits="userSpaceOnUse" x1="50.799992" x2="50.799992" y1="23.416458" y2="65.749786">
-                                <stop offset="0" stop-color="#e12400"/>
-                                <stop offset="1" stop-color="#febe00"/>
-                            </linearGradient>
-                            <linearGradient id="wgpu-logo-gradient-d" gradientUnits="userSpaceOnUse" x1="52.91666" x2="52.91666" y1="40.349789" y2="65.749786">
-                                <stop offset="0" stop-color="#f6d339"/>
-                                <stop offset="1" stop-color="#ffd55f"/>
-                            </linearGradient>
-                            <linearGradient id="wgpu-logo-gradient-e" gradientUnits="userSpaceOnUse" x1="82.549988" x2="82.549988" y1="40.349789" y2="65.749786">
-                                <stop offset="0" stop-color="#99def2"/>
-                                <stop offset="1" stop-color="#84d2f8"/>
-                            </linearGradient>
+
+                <!-- Logo grid — every logo constrained by .vendor-logo -->
+                <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6" id="vendor-packages">
+                    <a href="https://pkg.odin-lang.org/vendor/sdl2"                           target="_blank"><img class="vendor-logo" src="/vendor/companies/Simple_DirectMedia_Layer_Logo.svg" alt="SDL2" /></a>
+                    <a href="https://pkg.odin-lang.org/vendor/raylib"                         target="_blank"><img class="vendor-logo" src="/vendor/companies/raylib_64x64.png"                  alt="raylib" /></a>
+                    <a href="https://pkg.odin-lang.org/vendor/OpenGL"                         target="_blank"><img class="vendor-logo" src="/vendor/companies/OpenGL_logo.svg"                   alt="OpenGL" /></a>
+                    <a href="https://github.com/odin-lang/Odin/tree/master/vendor/wasm/WebGL" target="_blank"><img class="vendor-logo" src="/vendor/companies/WebGL_Logo.svg"                    alt="WebGL" /></a>
+                    <a href="https://pkg.odin-lang.org/vendor/vulkan"                         target="_blank"><img class="vendor-logo" src="/vendor/companies/Vulkan_logo.svg"                   alt="Vulkan" /></a>
+                    <a href="https://pkg.odin-lang.org/vendor/darwin/Metal"                   target="_blank"><img class="vendor-logo" src="/vendor/companies/Metal_2_Logo.png"                  alt="Metal" /></a>
+                    <a href="https://github.com/odin-lang/Odin/tree/master/vendor/directx"    target="_blank"><img class="vendor-logo img-dark-mode-invert" src="/vendor/companies/DirectX_logo.svg" alt="DirectX" /></a>
+                    <!-- wgpu inline SVG — explicit width+height to prevent blowout -->
+                    <a href="https://pkg.odin-lang.org/vendor/wgpu" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                             viewBox="0 0 61.657897 79.084803"
+                             style="height:40px;width:auto;max-width:140px;display:block;"
+                             aria-label="wgpu">
+                            <linearGradient id="wgpu-a" gradientUnits="userSpaceOnUse" x1="67.733323" x2="67.733323" y1="31.883125" y2="50.933122"><stop offset="0" stop-color="#91e12a"/><stop offset="1" stop-color="#7b8a49"/></linearGradient>
+                            <linearGradient id="wgpu-b" gradientUnits="userSpaceOnUse" x1="84.666658" x2="84.666658" y1="23.416458" y2="65.749786"><stop offset="0" stop-color="#2263ea"/><stop offset="1" stop-color="#33c0f4"/></linearGradient>
+                            <linearGradient id="wgpu-c" gradientUnits="userSpaceOnUse" x1="50.799992" x2="50.799992" y1="23.416458" y2="65.749786"><stop offset="0" stop-color="#e12400"/><stop offset="1" stop-color="#febe00"/></linearGradient>
+                            <linearGradient id="wgpu-d" gradientUnits="userSpaceOnUse" x1="52.91666"  x2="52.91666"  y1="40.349789" y2="65.749786"><stop offset="0" stop-color="#f6d339"/><stop offset="1" stop-color="#ffd55f"/></linearGradient>
+                            <linearGradient id="wgpu-e" gradientUnits="userSpaceOnUse" x1="82.549988" x2="82.549988" y1="40.349789" y2="65.749786"><stop offset="0" stop-color="#99def2"/><stop offset="1" stop-color="#84d2f8"/></linearGradient>
                             <g transform="translate(-36.904387 -20.770627)">
-                                <text font-family="Aria" font-size="33.8667" letter-spacing="-1.03188" stroke-width=".264583" x="38.161156" y="90.082375" class="dark-mode-fill-white">
-                                    <tspan font-family="Arial" font-weight="bold" letter-spacing="-.978958" stroke-width=".264583" x="38.161156" y="90.082375">gpu</tspan>
-                                </text>
-                                <path d="m61.383325 40.34979 6.35-8.466666 6.34999 8.466666-6.34999 10.583331z" fill="url(#wgpu-logo-gradient-a)"/>
-                                <path d="m50.799994 23.41646-8.466667 42.333327 19.049997-25.399997z" fill="url(#wgpu-logo-gradient-c)"/>
-                                <path d="m93.133323 65.749787-19.049999-25.399997 10.583329-16.93333z" fill="url(#wgpu-logo-gradient-b)"/>
-                                <path d="m42.333327 65.749787 19.049997-25.399997 6.35 10.583331-8.466666 14.816666z" fill="url(#wgpu-logo-gradient-d)"/>
-                                <path d="m67.733324 50.933121 6.349998-10.583331 19.049999 25.399997h-16.933333z" fill="url(#wgpu-logo-gradient-e)"/>
+                                <text font-family="Arial" font-weight="bold" font-size="33.8667" letter-spacing="-1.03188" x="38.161156" y="90.082375" class="dark-mode-fill-white">gpu</text>
+                                <path d="m61.383325 40.34979 6.35-8.466666 6.34999 8.466666-6.34999 10.583331z" fill="url(#wgpu-a)"/>
+                                <path d="m50.799994 23.41646-8.466667 42.333327 19.049997-25.399997z"           fill="url(#wgpu-c)"/>
+                                <path d="m93.133323 65.749787-19.049999-25.399997 10.583329-16.93333z"          fill="url(#wgpu-b)"/>
+                                <path d="m42.333327 65.749787 19.049997-25.399997 6.35 10.583331-8.466666 14.816666z" fill="url(#wgpu-d)"/>
+                                <path d="m67.733324 50.933121 6.349998-10.583331 19.049999 25.399997h-16.933333z" fill="url(#wgpu-e)"/>
                             </g>
                         </svg>
                     </a>
-                    <a href="https://pkg.odin-lang.org/vendor/microui"                        target="_blank"><img class="mx-4 mb-4" height="64px" src="/vendor/companies/microui_logo.png"                      alt="microui" /></a>
-                    <a href="https://pkg.odin-lang.org/vendor/miniaudio"                      target="_blank"><img class="mx-4 mb-4" width="200px" src="/vendor/companies/miniaudio_logo.png"                    alt="miniaudio" /></a>
-
-                    <p class="pt-4 text-muted opacity-50 text-center">All product names, logos, and brands are property of their respective owners.</p>
+                    <a href="https://pkg.odin-lang.org/vendor/microui"   target="_blank"><img class="vendor-logo" src="/vendor/companies/microui_logo.png"   alt="microui" /></a>
+                    <a href="https://pkg.odin-lang.org/vendor/miniaudio" target="_blank"><img class="vendor-logo" src="/vendor/companies/miniaudio_logo.png" alt="miniaudio" /></a>
+                    <p class="w-full text-center text-xs mt-2" style="opacity:0.35;">All product names, logos, and brands are property of their respective owners.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-style-2" id="community">
-        <div class="container py-5">
-            <h2 class="mb-4">The Odin Community</h2>
-            <div class="row g-4">
-                <div class="col-lg">
-                    <h3 class="mb-4">Odin is Open Source</h3>
-                    <p>
-                        Odin is an open source programming language and contributions from the community are welcome!
-                        If you want to help out, check the <a href="https://github.com/odin-lang/odin/issues" target="_blank">issue tracker</a> for open issues that may interest you. Those labelled <a href="https://github.com/odin-lang/Odin/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22" target="_blank">help wanted</a> are in particular need of community assistance right now.
+    <!-- ════════════════════ COMMUNITY ════════════════════════ -->
+    <section class="section-light" id="community">
+        <div class="container mx-auto px-6 py-16">
+            <div class="text-center mb-10">
+                <p class="section-eyebrow">Get Involved</p>
+                <h2 class="text-3xl font-bold" style="letter-spacing:-0.02em;">The Odin Community</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Odin is Open Source</h3>
+                    <p class="text-sm leading-relaxed mb-3" style="color:var(--text-muted);">
+                        Contributions from the community are welcome!
+                        Check the <a href="https://github.com/odin-lang/odin/issues" target="_blank">issue tracker</a> for open issues —
+                        those labelled <a href="https://github.com/odin-lang/Odin/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22" target="_blank">help wanted</a>
+                        are in particular need of assistance.
                     </p>
-                    <p>
-                        Join the Odin Discord and help us bring the joy of programming in Odin to all. 🥳
+                    <p class="text-sm leading-relaxed mb-4" style="color:var(--text-muted);">
+                        Join the Odin Discord and help bring the joy of programming to all.
                     </p>
-                    <div class="d-flex flex-wrap gap-2 mt-3">
-                        <a
-                            href="https://github.com/odin-lang/Odin"
-                            target="_blank"
-                            class="btn btn-outline-primary"
-                        >
-                            Browse Source
-                        </a>
-                        <a
-                            href="https://discord.gg/vafXTdubwr"
-                            target="_blank"
-                            class="btn btn-outline-primary"
-                        >
-                            Join Discord
-                        </a>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://github.com/odin-lang/Odin" target="_blank" class="btn-odin">Browse Source</a>
+                        <a href="https://discord.gg/vafXTdubwr"     target="_blank" class="btn-odin">Join Discord</a>
                     </div>
                 </div>
-                <div class="col-lg">
-                    <div class="row">
-                        <h3 class="mb-4">Thank You!</h3>
-                        <div class="col-sm">
-                            <a href="https://github.com/sponsors/odin-lang/" class="display: inline-block">
-                                <div style=" background-color: #f2f8fe; height: 100px !important; width: 250px; ">
-                                    <img src="/images/github-sponsors-logo.png" alt="Odin GitHub Sponsors" style="margin: 25px auto; width: 100%"/>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm">
-                            <a href="https://www.patreon.com/gingerbill">
-                                <div style=" background-color: #ff424d; height: 100px !important; width: 250px; ">
-                                    <img src="/Digital-Patreon-Wordmark_White.png" alt="Odin Patreon" style="margin: 25px auto; width: 100%"/>
-                                </div>
-                            </a>
-                            <div class="mt-3">
-                                <a
-                                    href="https://github.com/sponsors/odin-lang/"
-                                    target="_blank"
-                                    class="btn btn-outline-primary"
-                                >
-                                    Sponsor Odin
-                                </a>
-                            </div>
-                        </div>
-                        <br>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Sponsor Odin</h3>
+                    <p class="text-sm leading-relaxed mb-4" style="color:var(--text-muted);">
+                        Thank you to everyone who sponsors <a href="https://github.com/sponsors/odin-lang/" target="_blank">Odin</a>.
+                        Your support keeps the language moving forward.
+                    </p>
+                    <div class="flex flex-wrap gap-3 items-center mb-4">
+                        <a href="https://github.com/sponsors/odin-lang/" style="background:#f2f8fe;display:inline-flex;align-items:center;justify-content:center;height:60px;width:190px;border-radius:0.5rem;overflow:hidden;flex-shrink:0;">
+                            <img src="/images/github-sponsors-logo.png" alt="GitHub Sponsors" style="width:85%;height:auto;" />
+                        </a>
+                        <a href="https://www.patreon.com/gingerbill" style="background:#ff424d;display:inline-flex;align-items:center;justify-content:center;height:60px;width:190px;border-radius:0.5rem;overflow:hidden;flex-shrink:0;">
+                            <img src="/Digital-Patreon-Wordmark_White.png" alt="Patreon" style="width:75%;height:auto;" />
+                        </a>
                     </div>
+                    <a href="https://github.com/sponsors/odin-lang/" target="_blank" class="btn-odin">Sponsor Odin</a>
                 </div>
             </div>
-            <br>
-            <h4 class="mb-4">GitHub Sponsors</h4>
-            <p>Thank you to everyone who sponsor <a href="https://github.com/sponsors/odin-lang/" target="_blank">Odin</a>.</p>
         </div>
     </section>
+
 </main>
+
 <script>
-    document.getElementById("example-code-select").addEventListener("change", function (event) {
-        document.querySelectorAll(".example-code").forEach((o) => o.classList.remove("active", "show"));
-        document.getElementById(event.target.value).classList.add("active", "show");
+    document.querySelectorAll(".code-tab-btn").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            document.querySelectorAll(".code-tab-btn").forEach(function(b) { b.classList.remove("active"); });
+            document.querySelectorAll(".example-code").forEach(function(p) { p.classList.remove("show"); });
+            btn.classList.add("active");
+            var target = document.getElementById(btn.getAttribute("data-target"));
+            if (target) {
+                target.classList.add("show");
+                target.querySelectorAll("code").forEach(function(block) {
+                    if (!block.dataset.highlighted) hljs.highlightElement(block);
+                });
+            }
+        });
     });
 </script>
+
 {{ if .IsHome }}
 <script src="/js/fade-in-logo-after-header.js"></script>
 {{ end }}
