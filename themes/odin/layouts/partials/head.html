@@ -99,6 +99,9 @@ hljs.registerLanguage("odin", function(e) {
 
 <!-- Custom CSS -->
 <link href="/css/style.css" rel="stylesheet" />
+{{ if .IsHome }}
+<link href="/css/frontpage.css" rel="stylesheet" />
+{{ end }}
 
 <title>{{ .Title }}{{ if not .IsHome }} | Odin Programming Language {{ end }}</title>
 

@@ -2,7 +2,7 @@
 <html>
     {{- partial "head.html" . -}}
 
-    <body data-bs-spy="scroll" data-bs-target="#TOC" data-bs-offset="0" tabindex="0">
+    <body class="{{ if .IsHome }}frontpage-body{{ end }}" data-bs-spy="scroll" data-bs-target="#TOC" data-bs-offset="0" tabindex="0">
         <!-- Dark mode -->
         <script>
           if (!window.localStorage.getItem("theme")) {
