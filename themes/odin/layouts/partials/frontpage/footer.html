@@ -1,0 +1,39 @@
+<footer class="front-site-footer">
+    <div class="front-shell front-footer-grid">
+        <div class="front-footer-brand">
+            <a href="/" aria-label="Odin home">
+                <img src="/logo.svg" height="34" alt="Odin" />
+            </a>
+            <p>{{ .Site.Params.Slogan }}</p>
+        </div>
+
+        <nav aria-label="Footer resources">
+            <h2>Resources</h2>
+            <a href="/docs">Docs</a>
+            <a href="/docs/install">Download</a>
+            <a href="https://pkg.odin-lang.org/" target="_blank" rel="noopener noreferrer">Packages</a>
+            <a href="/docs/examples">Examples</a>
+        </nav>
+
+        <nav aria-label="Footer community">
+            <h2>Community</h2>
+            <a href="/community">Community</a>
+            <a href="https://forum.odin-lang.org" target="_blank" rel="noopener noreferrer">Forum</a>
+            <a href="https://discord.gg/vafXTdubwr" target="_blank" rel="noopener noreferrer">Discord</a>
+            <a href="/showcase">Showcase</a>
+        </nav>
+
+        <nav aria-label="Footer project">
+            <h2>Project</h2>
+            <a href="/news">News</a>
+            <a href="https://github.com/odin-lang/Odin" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://github.com/odin-lang/Odin/issues" target="_blank" rel="noopener noreferrer">Issues</a>
+            <a href="https://www.patreon.com/gingerbill" target="_blank" rel="noopener noreferrer">Donate</a>
+        </nav>
+    </div>
+
+    <div class="front-shell front-footer-bottom">
+        <span>&copy; 2016-{{ now.Format "2006" }} Ginger Bill</span>
+        <span>Built with Hugo.</span>
+    </div>
+</footer>
