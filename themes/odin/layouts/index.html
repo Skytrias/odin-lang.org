@@ -6,103 +6,71 @@
 
         <div class="front-shell front-hero-grid">
             <div class="front-hero-copy">
-                <p class="front-kicker">Odin Programming Language</p>
-                <h1 id="front-hero-title">A modern systems language for data-oriented software.</h1>
+                <h1 id="front-hero-title">The data-oriented language for sane software development.</h1>
                 <p class="front-hero-line">Simple. Explicit. Fast.</p>
-                <p class="front-hero-text">
-                    Odin gives you direct control over memory, layout, and performance while keeping the language small enough to keep in your head.
-                </p>
                 <div class="front-actions" aria-label="Primary actions">
-                    <a class="front-button front-button-primary" href="/docs/install">Download Odin</a>
-                    <a class="front-button front-button-secondary" href="/docs/overview">Read the Overview</a>
+                    <a class="front-button front-button-primary" href="/docs/install">Download</a>
                 </div>
-                <div class="front-meta-row" aria-label="Project highlights">
-                    <span>Open source</span>
-                    <span>Native code</span>
-                    <span>Cross platform</span>
-                </div>
-            </div>
-
-            <div class="front-code-stage" aria-label="Odin code example">
-                <div class="front-code-window">
-                    <div class="front-code-bar" aria-hidden="true">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <pre><code class="language-odin">package main
-
-import "core:fmt"
-
-main :: proc() {
-    points := [?]Vec3{
-        {0, 0, 0},
-        {1, 4, 9},
-        {2, 8, 16},
-    }
-
-    for p, i in points {
-        fmt.printf("%d: %.1f\n", i, length(p))
-    }
-}</code></pre>
-                </div>
+                <p class="front-hero-text">Tools for Windows, Linux, macOS, and BSD.</p>
             </div>
         </div>
     </section>
 
-    <section class="front-section front-section-warm" aria-labelledby="front-why-title">
-        <div class="front-shell">
-            <div class="front-section-heading">
-                <p class="front-kicker">Why Odin</p>
-                <h2 id="front-why-title">Built for the software that cares about data.</h2>
-                <p>
-                    Odin is designed for practical systems work: clear code, predictable performance, and the ability to shape data around the problem.
-                </p>
-            </div>
-
-            <div class="front-triad">
-                <article class="front-tile">
-                    <span class="front-tile-index">01</span>
-                    <h3>Simple by design</h3>
-                    <p>Readable syntax, distinct types, and fewer hidden mechanisms make programs easier to reason about.</p>
-                </article>
-                <article class="front-tile">
-                    <span class="front-tile-index">02</span>
-                    <h3>Performance first</h3>
-                    <p>Compile to native code and stay close to memory, allocators, calling conventions, and data layout.</p>
-                </article>
-                <article class="front-tile">
-                    <span class="front-tile-index">03</span>
-                    <h3>Data oriented</h3>
-                    <p>Features like SOA types, array programming, and explicit layout support modern CPU-friendly design.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="front-section front-section-light" aria-labelledby="front-build-title">
+    <section class="front-section front-section-warm" aria-labelledby="front-build-title">
         <div class="front-shell">
             <div class="front-section-heading front-section-heading-centered">
-                <p class="front-kicker">Create with Odin</p>
-                <h2 id="front-build-title">From tools to graphics-heavy applications.</h2>
+                <p class="front-kicker">Create</p>
+                <h2 id="front-build-title">Build software around the data.</h2>
+                <p>
+                    Designed for practical systems work: clear code, predictable performance, and data layouts that fit the problem.
+                </p>
             </div>
 
             <div class="front-use-grid">
                 <a class="front-use-card" href="/docs/overview">
-                    <span class="front-use-icon" aria-hidden="true">#</span>
-                    <h3>Systems</h3>
-                    <p>Write native programs with direct control and a small, explicit language surface.</p>
+                    <span class="front-use-icon" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" focusable="false">
+                            <path d="M8 20.5 3.5 16 8 11.5" />
+                            <path d="m24 11.5 4.5 4.5-4.5 4.5" />
+                            <path d="m19 7-6 18" />
+                        </svg>
+                    </span>
+                    <span>
+                        <h3>Systems</h3>
+                        <p>Write native programs with direct control and a small, explicit language surface.</p>
+                    </span>
                 </a>
                 <a class="front-use-card" href="/docs/examples">
-                    <span class="front-use-icon" aria-hidden="true">&gt;_</span>
-                    <h3>Tools</h3>
-                    <p>Build command-line tools, editors, debuggers, build systems, and internal utilities.</p>
+                    <span class="front-use-icon" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" focusable="false">
+                            <path d="M4 8h24v16H4z" />
+                            <path d="m9 13 4 3-4 3" />
+                            <path d="M16 20h7" />
+                        </svg>
+                    </span>
+                    <span>
+                        <h3>Tools</h3>
+                        <p>Build command-line tools, editors, debuggers, build systems, and internal utilities.</p>
+                    </span>
                 </a>
                 <a class="front-use-card" href="/showcase">
-                    <span class="front-use-icon" aria-hidden="true">*</span>
-                    <h3>Games and simulation</h3>
-                    <p>Use official bindings for graphics, audio, windows, input, and real-time software.</p>
+                    <span class="front-use-icon" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" focusable="false">
+                            <path d="M7 22 16 6l9 16H7z" />
+                            <path d="M11 22h10" />
+                            <path d="M16 13v4" />
+                        </svg>
+                    </span>
+                    <span>
+                        <h3>Graphics and simulation</h3>
+                        <p>Use official bindings for graphics, audio, windows, input, and real-time software.</p>
+                    </span>
                 </a>
+            </div>
+            <div class="front-use-links" aria-label="More ways to create">
+                <a href="https://pkg.odin-lang.org/" target="_blank" rel="noopener noreferrer">Packages</a>
+                <a href="/docs">Documentation</a>
+                <a href="/showcase">Showcase</a>
             </div>
         </div>
     </section>
@@ -112,26 +80,30 @@ main :: proc() {
             <div class="front-section-heading">
                 <p class="front-kicker">Language proof</p>
                 <h2 id="front-language-title">Real features, shown in code.</h2>
-                <p>Odin keeps important systems concepts visible in the source instead of hiding them behind ceremony.</p>
+                <p>Important systems concepts stay visible in the source instead of hiding behind ceremony.</p>
             </div>
 
             <div class="front-feature-list">
                 <article class="front-feature">
                     <div class="front-feature-copy">
-                        <p class="front-kicker">Data layout</p>
-                        <h3>Struct-of-arrays without losing normal syntax.</h3>
-                        <p>Use SOA data when memory layout matters, while still indexing and accessing fields naturally.</p>
+                        <p class="front-kicker">Graphics</p>
+                        <h3>Draw pixels quickly with official bindings.</h3>
+                        <p>Use packages like raylib to get from source code to a running native window with very little ceremony.</p>
                     </div>
                     <div class="front-code-window front-code-window-small">
-                        <div class="front-code-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-                        <pre><code class="language-odin">Vector3 :: struct {x, y, z: f32}
+                        <pre><code class="language-odin">import rl "vendor:raylib"
 
-positions: #soa[1024]Vector3
+main :: proc() {
+    rl.InitWindow(900, 600, "raylib triangle")
+    defer rl.CloseWindow()
 
-positions[0] = {1, 4, 9}
-positions.x[1] = 2
-
-assert(&positions[0].x == &positions.x[0])</code></pre>
+    for !rl.WindowShouldClose() {
+        rl.BeginDrawing()
+        rl.ClearBackground({18, 22, 29, 255})
+        rl.DrawTriangle({450, 120}, {220, 480}, {680, 480}, rl.ORANGE)
+        rl.EndDrawing()
+    }
+}</code></pre>
                     </div>
                 </article>
 
@@ -139,10 +111,9 @@ assert(&positions[0].x == &positions.x[0])</code></pre>
                     <div class="front-feature-copy">
                         <p class="front-kicker">Array programming</p>
                         <h3>Work with vectors and fixed arrays directly.</h3>
-                        <p>Odin makes common numeric and SIMD-shaped code concise without giving up explicit types.</p>
+                        <p>Common numeric and SIMD-shaped code stays concise without giving up explicit types.</p>
                     </div>
                     <div class="front-code-window front-code-window-small">
-                        <div class="front-code-bar" aria-hidden="true"><span></span><span></span><span></span></div>
                         <pre><code class="language-odin">a := [3]f32{1, 2, 3}
 b := [3]f32{5, 6, 7}
 
@@ -160,7 +131,6 @@ fmt.println(d)</code></pre>
                         <p>The context system gives libraries a shared convention for allocation, logging, and runtime behavior.</p>
                     </div>
                     <div class="front-code-window front-code-window-small">
-                        <div class="front-code-bar" aria-hidden="true"><span></span><span></span><span></span></div>
                         <pre><code class="language-odin">context.allocator = arena_allocator()
 
 data := make([]Vertex, vertex_count)
@@ -179,7 +149,7 @@ build_mesh(data)</code></pre>
                 <p class="front-kicker">Batteries included</p>
                 <h2 id="front-libraries-title">A standard library and vendor bindings ready for real work.</h2>
                 <p>
-                    Odin ships with a practical `core` library and official `vendor` bindings for graphics APIs, windowing, audio, UI, and more.
+                    Ships with a practical `core` library and official `vendor` bindings for graphics APIs, windowing, audio, UI, and more.
                 </p>
                 <div class="front-actions">
                     <a class="front-button front-button-primary" href="https://pkg.odin-lang.org/core" target="_blank" rel="noopener noreferrer">Explore core</a>
@@ -209,10 +179,10 @@ build_mesh(data)</code></pre>
                 </div>
                 <div class="front-proof-copy">
                     <p>
-                        JangaFX builds EmberGen, GeoGen, and LiquiGen fully in Odin. These real-time simulation tools are used across games, film, and visual effects.
+                        JangaFX builds EmberGen, GeoGen, and LiquiGen fully with the language. These real-time simulation tools are used across games, film, and visual effects.
                     </p>
                     <p>
-                        Odin is also used for digital-twin tooling, developer tools, games, libraries, and experiments from a growing community.
+                        It is also used for digital-twin tooling, developer tools, games, libraries, and experiments from a growing community.
                     </p>
                     <div class="front-actions">
                         <a class="front-button front-button-secondary" href="/showcase">View showcase</a>
@@ -221,7 +191,7 @@ build_mesh(data)</code></pre>
                 </div>
             </div>
 
-            <div class="front-showcase-strip" aria-label="Selected Odin production examples">
+            <div class="front-showcase-strip" aria-label="Selected production examples">
                 <img src="/jangafx/logo.png" alt="JangaFX">
                 <img src="/jangafx/em_logo.png" alt="EmberGen">
                 <img src="/jangafx/geo_logo.png" alt="GeoGen">
@@ -234,11 +204,11 @@ build_mesh(data)</code></pre>
     <section class="front-section front-section-final" aria-labelledby="front-next-title">
         <div class="front-shell front-final-panel">
             <p class="front-kicker">Start here</p>
-            <h2 id="front-next-title">Try Odin, read the docs, or meet the community.</h2>
+            <h2 id="front-next-title">Try it, read the docs, or meet the community.</h2>
             <div class="front-next-grid">
                 <a href="/docs/install">
                     <strong>Download</strong>
-                    <span>Install Odin and build your first package.</span>
+                    <span>Install the compiler and build your first package.</span>
                 </a>
                 <a href="/docs">
                     <strong>Documentation</strong>
@@ -246,7 +216,7 @@ build_mesh(data)</code></pre>
                 </a>
                 <a href="https://discord.gg/vafXTdubwr" target="_blank" rel="noopener noreferrer">
                     <strong>Community</strong>
-                    <span>Join Discord and talk with other Odin programmers.</span>
+                    <span>Join Discord and talk with other programmers.</span>
                 </a>
             </div>
         </div>
