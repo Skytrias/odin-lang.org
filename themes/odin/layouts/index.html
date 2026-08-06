@@ -190,34 +190,62 @@ build_mesh(data)</code></pre>
         </div>
     </section>
 
-    <section class="front-section front-section-light" aria-labelledby="front-production-title">
-        <div class="front-shell">
-            <div class="front-proof">
-                <div>
-                    <p class="front-kicker">In production</p>
-                    <h2 id="front-production-title">Used to ship demanding software.</h2>
-                </div>
-                <div class="front-proof-copy">
-                    <p>
-                        JangaFX builds EmberGen, GeoGen, and LiquiGen fully with the language. These real-time simulation tools are used across games, film, and visual effects.
-                    </p>
-                    <p>
-                        It is also used for digital-twin tooling, developer tools, games, libraries, and experiments from a growing community.
-                    </p>
-                    <div class="front-actions">
-                        <a class="front-button front-button-secondary" href="/showcase">View showcase</a>
-                        <a class="front-button front-button-secondary" href="/showcase/embergen">Read EmberGen story</a>
-                    </div>
+    <section class="front-production" aria-labelledby="front-production-title">
+        <div class="front-shell front-production-intro">
+            <div>
+                <p class="front-kicker">In production</p>
+                <h2 id="front-production-title">Real-time tools, made with Odin.</h2>
+            </div>
+            <div class="front-production-copy">
+                <p>JangaFX builds production tools for fire, terrain, liquids, and procedural imagery entirely with Odin. The language also powers games, utilities, libraries, and experiments from the community.</p>
+                <div class="front-actions front-production-actions">
+                    <a class="front-button front-button-secondary" href="/showcase">Explore showcase</a>
+                    <a class="front-button front-button-secondary" href="/games">See games</a>
                 </div>
             </div>
+        </div>
 
-            <div class="front-showcase-strip" aria-label="Selected production examples">
-                <img src="/jangafx/logo.png" alt="JangaFX">
-                <img src="/jangafx/em_logo.png" alt="EmberGen">
-                <img src="/jangafx/geo_logo.png" alt="GeoGen">
-                <img src="/jangafx/liquigen.svg" alt="LiquiGen">
-                <img src="/chiaha/logo.png" alt="ChiAha">
-            </div>
+        <div class="front-production-reel" aria-label="Selected JangaFX production tools">
+            <a class="front-production-strip" href="/showcase">
+                <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                    <source src="/images/showcase/embergen-preview.mp4" type="video/mp4">
+                </video>
+                <span class="front-production-strip-copy">
+                    <span>JangaFX</span>
+                    <strong>EmberGen</strong>
+                    <em>Volumetric fire and smoke</em>
+                </span>
+            </a>
+            <a class="front-production-strip front-production-strip-reverse" href="/showcase">
+                <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                    <source src="/images/showcase/geogen-preview.mp4" type="video/mp4">
+                </video>
+                <span class="front-production-strip-copy">
+                    <span>JangaFX</span>
+                    <strong>GeoGen</strong>
+                    <em>Procedural worlds and terrain</em>
+                </span>
+            </a>
+            <a class="front-production-strip front-production-strip-light" href="/showcase">
+                <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                    <source src="/images/showcase/liquigen-preview.mp4" type="video/mp4">
+                </video>
+                <span class="front-production-strip-copy">
+                    <span>JangaFX</span>
+                    <strong>LiquiGen</strong>
+                    <em>Liquid simulation and surfaces</em>
+                </span>
+            </a>
+            <a class="front-production-strip front-production-strip-reverse" href="/showcase">
+                <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                    <source src="/images/showcase/illugen-preview.mp4" type="video/mp4">
+                </video>
+                <span class="front-production-strip-copy">
+                    <span>JangaFX</span>
+                    <strong>IlluGen</strong>
+                    <em>Node-based image creation</em>
+                </span>
+            </a>
         </div>
     </section>
 
@@ -245,7 +273,7 @@ build_mesh(data)</code></pre>
 <script>
     (() => {
         const root = document.documentElement;
-        const cinematicVideo = document.querySelector(".front-cinematic-video");
+        const motionVideos = document.querySelectorAll(".front-cinematic-video, .front-production-strip video");
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
         const updateCinematic = () => {
             const heroHeight = Math.max(window.innerHeight, 1);
@@ -263,12 +291,13 @@ build_mesh(data)</code></pre>
         };
 
         const updateMotionPreference = () => {
-            if (!cinematicVideo) return;
-            if (reducedMotion.matches) {
-                cinematicVideo.pause();
-            } else {
-                cinematicVideo.play().catch(() => {});
-            }
+            motionVideos.forEach(video => {
+                if (reducedMotion.matches) {
+                    video.pause();
+                } else {
+                    video.play().catch(() => {});
+                }
+            });
         };
 
         updateCinematic();
