@@ -1,0 +1,64 @@
+{{ define "main" }}
+<main class="content-main nightly-main">
+    <div class="content-shell">
+        <div class="content-layout">
+            {{ partial "sidebar" . }}
+
+            <article class="content-article nightly-article">
+                <header class="article-header nightly-header">
+                    <nav class="crumbs" aria-label="Breadcrumb">
+                        <ol><li><a href="/docs/">Docs</a></li><li><a href="{{ .RelPermalink }}">Nightly</a></li></ol>
+                    </nav>
+                    <p class="nightly-eyebrow">Rolling development builds</p>
+                    <h1>{{ .Title }}</h1>
+                    <p class="nightly-lede">Try the newest Odin compiler changes before the next tagged release. New builds are published each night for supported platforms.</p>
+                    <div class="nightly-caution" role="note">
+                        <span class="nightly-caution-mark" aria-hidden="true">!</span>
+                        <p>Nightlies are for testing the latest work and may contain breaking changes. For dependable projects, use a tagged release.</p>
+                    </div>
+                </header>
+
+                <div class="article-body nightly-body">
+                    <section class="nightly-start" aria-labelledby="nightly-start-title">
+                        <div>
+                            <p class="nightly-kicker">Choose the right build</p>
+                            <h2 id="nightly-start-title">Latest changes, clearly labelled</h2>
+                            <p>Every download below is grouped by its build date. Check the SHA-1 beside a file if you need to verify your download.</p>
+                        </div>
+                        <div class="nightly-actions">
+                            <a class="action-link" href="https://github.com/odin-lang/Odin/releases">Browse tagged releases <span aria-hidden="true">↗</span></a>
+                            <a class="action-link secondary-action" href="/docs/install/">Installation guide <span aria-hidden="true">→</span></a>
+                        </div>
+                    </section>
+
+                    <section class="nightly-downloads" aria-labelledby="nightly-downloads-title">
+                        <div class="nightly-section-heading">
+                            <div>
+                                <p class="nightly-kicker">Fresh from development</p>
+                                <h2 id="nightly-downloads-title">Nightly downloads</h2>
+                            </div>
+                            <p id="nightly-build-status" class="nightly-status" aria-live="polite">Checking for the latest builds…</p>
+                        </div>
+
+                        <div id="nightly-build-list" class="nightly-build-list" aria-live="polite">
+                            <div class="nightly-loading" aria-hidden="true"><span></span><span></span><span></span></div>
+                        </div>
+                        <noscript><p class="nightly-noscript">JavaScript is needed to load the current nightly builds. You can still browse <a href="https://github.com/odin-lang/Odin/releases">tagged releases on GitHub</a>.</p></noscript>
+                    </section>
+
+                    <section class="nightly-notes" aria-labelledby="nightly-notes-title">
+                        <div class="nightly-note-icon" aria-hidden="true">✓</div>
+                        <div>
+                            <p class="nightly-kicker">A quick check before you download</p>
+                            <h2 id="nightly-notes-title">Know what you are getting</h2>
+                            <p>Nightly archives include the compiler and its standard folders. Keep those folders next to the executable, then follow the <a href="/docs/install/">installation guide</a> for platform requirements and setup.</p>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="article-toc" aria-label="Table of contents"><div class="article-toc-inner"><nav id="TableOfContents"><ul><li><a href="#nightly-start-title">Choose the right build</a></li><li><a href="#nightly-downloads-title">Nightly downloads</a></li><li><a href="#nightly-notes-title">Before you download</a></li></ul></nav></div></aside>
+        </div>
+    </div>
+</main>
+{{ end }}
