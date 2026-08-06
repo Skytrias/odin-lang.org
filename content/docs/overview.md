@@ -2038,7 +2038,7 @@ Within Odin's core library, the standard convention is to store a `key` that den
 If multiple information is to be passed in the `"value"`, usually it is specified by separating it with a common (`,`), e.g.
 
 ```odin
-name: string `json:"username,omitempty",
+name: string `json:"username,omitempty"`,
 ```
 
 n.b. Field tags also exist for [`bit_field` record types](#bit-fields).
@@ -3772,6 +3772,7 @@ Attributes modify the compilation details or behaviour of declarations.
 * [`@(link_name=<string>)`](#link_namestring)
 * [`@(link_prefix=<string>)`](#link_prefixstring)
 * [`@(link_suffix=<string>)`](#link_suffixstring)
+* [`@(link_section=<string>)`](#link_sectionstring)
 * [`@(linkage=<string>)`](#linkagestring)
 * [`@(no_instrumentation=<boolean?>)`](#no_instrumentationboolean)
 * [`@(no_sanitize_address)`](#no_sanitize_address)
@@ -3983,6 +3984,15 @@ Specify the link section for a global variable.
 ```odin
 @(link_section=".foo")
 my_global: i32
+```
+
+Specify the link section for a procedure.
+
+```odin
+@(link_section=".bar")
+my_procedure :: proc "c" () -> i32 {
+	return 1337
+}
 ```
 
 #### `@(link_suffix=<string>)`
@@ -4444,7 +4454,7 @@ Key_Descriptions :: #sparse[Key]string {
 
 Specify whether a procedure literal or call will be forced to inline (`#force_inline`) or forced to never inline `#force_no_inline`. This is **not** a suggestion to the compiler. If the compiler cannot inline the procedure, it will (currently) silently ignore the directive.
 
-This is enabled all optization levels except `-o:none` which has all inlining disabled.
+This is enabled for all optimization levels except `-o:none` which has all inlining disabled.
 
 #### `#must_tail`
 

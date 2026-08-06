@@ -85,8 +85,9 @@ It should look something like:
 3. Clone the repository somewhere: `git clone https://github.com/odin-lang/Odin`
 4. Navigate to the Odin folder: `cd Odin`
 5. Optionally use `git checkout dev-YYYY-MM` to checkout one of the official releases
-6. Run `build.bat release`
-7. Optionally [add the Odin compiler directory to the PATH environment variable](https://duckduckgo.com/?q=add+to+path+windows) so `odin.exe` is accessible everywhere on your computer
+6. Run `git lfs install` (once, to install git hooks) and optionally `git lfs pull` to set up Git LFS and fetch the files stored there.
+7. Run `build.bat release`
+8. Optionally [add the Odin compiler directory to the PATH environment variable](https://duckduckgo.com/?q=add+to+path+windows) so `odin.exe` is accessible everywhere on your computer
 
 #### Updating
 
@@ -94,19 +95,21 @@ It should look something like:
 2. Navigate to the Odin folder
 3. Optionally use `git checkout dev-YYYY-MM` to checkout an official release
 4. `git pull`
-5. `build.bat release`
+5. If the git hooks didn't update files stored in Git LFS, use `git lfs pull`
+6. `build.bat release`
 
 ### MacOS
 
 1. Install XCode command-line tools `xcode-select --install`
     * If that command is not found you may need to install XCode from the App Store
-2. Install [Homebrew](https://brew.sh/) and then LLVM: `brew install llvm`, the versions we support are 14, 17, 18, 19, 20, and 21
+2. Install [Homebrew](https://brew.sh/) and then LLVM: `brew install llvm`, the versions we support are 17, 18, 19, 20, 21, and 22
 3. Clone the repository somewhere: `git clone https://github.com/odin-lang/Odin`
 4. Navigate to the Odin folder: `cd Odin`
 5. Optionally use `git checkout dev-YYYY-MM` to checkout an official release
-6. Run `make release-native`
+6. Run `git lfs install` (once, to install git hooks) and optionally `git lfs pull` to set up Git LFS and fetch the files stored there.
+7. Run `make release-native`
     * If you want to specify an explicit LLVM version or path, you can set the `LLVM_CONFIG` environment variable: `LLVM_CONFIG=/path/to/llvm-config make release-native`
-7. Optionally add the Odin folder to your shell's path or symlink the `odin` binary to a folder that is in your shell's path
+8. Optionally add the Odin folder to your shell's path or symlink the `odin` binary to a folder that is in your shell's path
     * Example for ZSH (from the Odin folder): `echo 'export PATH="/path/to/Odin/folder:$PATH"' >> ~/.zshrc`
     * Note that the compiler executable expects to be next to/in the same folder as the `base`, `core`, and `vendor` folders, you can however set the `ODIN_ROOT` environment variable to override this
 
@@ -120,20 +123,25 @@ This linker is included in the `lld` formula, install it through `brew install l
 1. Navigate to the Odin folder
 2. Optionally use `git checkout dev-YYYY-MM` to checkout an official release
 3. `git pull`
-4. `make release-native`
+4. If the git hooks didn't update files stored in Git LFS, use `git lfs pull`
+5. `make release-native`
 
 ### Others (Unix)
 
-1. Install clang and LLVM (the versions we support are 14, 17, 18, 19, 20, and 21) using your package manager
+1. Install clang and LLVM (the versions we support are 17, 18, 19, 20, 21, and 22) using your package manager
     * It could be that LLVM is split into multiple packages and you also need to install something like `llvm-devel`
-2. Make sure `llvm-config`, `llvm-config-(14|17|18|19|20|21)`, or `llvm-config(14|17|18|19|20|21)` and `clang` are able to be found through your `$PATH`
+    * If you are using an older OS release, the distro may not offer a sufficiently current version of LLVM.
+         * On a Debian-based distro, we recommend using https://apt.llvm.org to install LLVM 22
+         * On a RedHat-based distro, we suggest COPR, e.g. `dnf copr enable fedora-llvm-team/llvm-snapshots`
+2. Make sure `llvm-config`, `llvm-config-(17|18|19|20|21|22)`, or `llvm-config(17|18|19|20|21|22)` and `clang` are able to be found through your `$PATH`
     * If you want to specify an explicit LLVM version or path, you can set the `LLVM_CONFIG` environment variable: `LLVM_CONFIG=/path/to/llvm-config make release-native`
 3. Clone the repository somewhere: `git clone https://github.com/odin-lang/Odin`
 4. Navigate to the Odin folder: `cd Odin`
 5. Optionally use `git checkout dev-YYYY-MM` to checkout an official release
-6. Run `make release-native`
+6. Run `git lfs install` (once, to install git hooks) and optionally `git lfs pull` to set up Git LFS and fetch the files stored there.
+7. Run `make release-native`
     * If an atomic.h error occurs, see the following section about it
-7. Optionally add the Odin folder to your shell's path or symlink the `odin` binary to a folder that is in your shell's path
+8. Optionally add the Odin folder to your shell's path or symlink the `odin` binary to a folder that is in your shell's path
     * Example for bash (from the Odin folder): `echo 'export PATH="/path/to/Odin/folder:$PATH"' >> ~/.bashrc`
     * Note that the compiler executable expects to be next to/in the same folder as the `base`, `core`, and `vendor` folders, you can however set the `ODIN_ROOT` environment variable to override this
 
@@ -149,7 +157,9 @@ for help and more information see [this GitHub issue](https://github.com/odin-la
 1. Navigate to the Odin folder
 2. Optionally use `git checkout dev-YYYY-MM` to checkout an official release
 3. `git pull`
-4. `make release-native`
+4. Run `git lfs install` and optionally `git lfs pull` to set up Git LFS and fetch the files stored there.
+5. If the git hooks didn't update files stored in Git LFS, use `git lfs pull`
+6. `make release-native`
 
 ## Got stuck?
 
