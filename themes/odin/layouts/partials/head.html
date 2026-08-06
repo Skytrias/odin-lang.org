@@ -46,11 +46,25 @@
 {{- end }}
 {{ end }}{{ end }}
 
-<!-- Highlight.JS -->
-<link rel="stylesheet" href="/lib/highlight/styles/github-dark.min.css" />
-<script src="/lib/highlight/highlight.min.js"></script>
-<script src="/lib/highlight/languages/x86asm.min.js"></script>
+<!-- Site styles are loaded before the deferred homepage highlighter so code
+     blocks have their final chrome from the first paint. -->
+<link href="/css/common.css" rel="stylesheet" />
+{{ if .IsHome }}
+<link href="/css/frontpage.css" rel="stylesheet" />
+{{ else }}
+<link href="/css/docs.css" rel="stylesheet" />
+{{ end }}
+{{ if or (eq .Section "showcase") (eq .Section "games") }}
+<link href="/css/gallery.css" rel="stylesheet" />
+{{ end }}
+<link href="/css/highlight.css" rel="stylesheet" />
+
+{{ if .IsHome }}
+<!-- Highlight.js is only needed for hand-authored homepage samples. Markdown
+     blocks are highlighted at build time by Hugo's Chroma renderer. -->
+<script defer src="/lib/highlight/highlight.min.js"></script>
 <script>
+window.addEventListener("DOMContentLoaded", function() {
 hljs.registerLanguage("odin", function(e) {
     return {
         aliases: ["odin", "odinlang", "odin-lang"],
@@ -78,8 +92,12 @@ hljs.registerLanguage("odin", function(e) {
         }]
     }
 });
+    document.querySelectorAll(".front-code-window code").forEach(function(block) {
+        hljs.highlightElement(block);
+    });
+});
 </script>
-<script>hljs.highlightAll();</script>
+{{ end }}
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67516878-2"></script>
@@ -91,16 +109,6 @@ hljs.registerLanguage("odin", function(e) {
   gtag('config', 'UA-67516878-2');
 </script>
 
-<!-- Custom CSS -->
-<link href="/css/common.css" rel="stylesheet" />
-{{ if .IsHome }}
-<link href="/css/frontpage.css" rel="stylesheet" />
-{{ else }}
-<link href="/css/docs.css" rel="stylesheet" />
-{{ end }}
-{{ if or (eq .Section "showcase") (eq .Section "games") }}
-<link href="/css/gallery.css" rel="stylesheet" />
-{{ end }}
 {{ if eq .Layout "install" }}
 <script defer src="/js/install.js"></script>
 {{ end }}

@@ -1,0 +1,224 @@
+/*
+ * Syntax theme for Hugo's Chroma output and the small Highlight.js-powered
+ * examples on the homepage. Keep code-block structure and token colours here
+ * so one theme owns the complete surface.
+ */
+
+:root {
+    --syntax-background: #111820;
+    --syntax-border: #26313d;
+    --syntax-text: #d8e6eb;
+    --syntax-comment: #93a3af;
+    --syntax-keyword: #ff9188;
+    --syntax-name: #ffd08a;
+    --syntax-literal: #8fd1ff;
+    --syntax-string: #acd7ff;
+    --syntax-type: #d4b4ff;
+    --syntax-emphasis: #f4f8fb;
+}
+
+.dark-mode {
+    --syntax-background: #0b1118;
+    --syntax-border: #273342;
+    --syntax-text: #d8e6eb;
+    --syntax-comment: #8b9aa6;
+    --syntax-keyword: #ff8d85;
+    --syntax-name: #ffd08a;
+    --syntax-literal: #86caff;
+    --syntax-string: #acd7ff;
+    --syntax-type: #d6b6ff;
+    --syntax-emphasis: #f4f8fb;
+}
+
+/* Build-time Chroma blocks. Their wrapper owns the background and clipping,
+ * so the complete code surface follows the site's radius rules. */
+.content-body .highlight {
+    margin: 1.35rem 0;
+    overflow: hidden;
+    border: 1px solid var(--syntax-border);
+    border-radius: var(--radius-md);
+    color: var(--syntax-text);
+    background: var(--syntax-background);
+}
+
+.content-body .highlight pre {
+    max-width: none;
+    margin: 0;
+    overflow-x: auto;
+    color: inherit;
+    background: transparent;
+}
+
+.content-body .highlight pre code {
+    display: block;
+    min-width: max-content;
+    padding: 1rem 1.2rem;
+    color: inherit;
+    background: transparent;
+}
+
+/* Highlight.js is retained only for the three hand-authored homepage samples.
+ * The page chrome remains visible before the deferred highlighter runs. */
+.front-code-window pre {
+    color: var(--syntax-text);
+}
+
+.front-code-window code.hljs,
+.front-code-window code {
+    color: var(--syntax-text);
+}
+
+/* Highlight.js tokens. */
+.hljs-comment,
+.hljs-quote,
+.hljs-code,
+.hljs-formula {
+    color: var(--syntax-comment);
+}
+
+.hljs-keyword,
+.hljs-doctag,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-variable.language_ {
+    color: var(--syntax-keyword);
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_,
+.hljs-type {
+    color: var(--syntax-type);
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-variable {
+    color: var(--syntax-literal);
+}
+
+.hljs-meta .hljs-string,
+.hljs-regexp,
+.hljs-string {
+    color: var(--syntax-string);
+}
+
+.hljs-built_in,
+.hljs-symbol,
+.hljs-name,
+.hljs-quote,
+.hljs-selector-pseudo,
+.hljs-selector-tag {
+    color: var(--syntax-name);
+}
+
+.hljs-subst,
+.hljs-emphasis,
+.hljs-strong {
+    color: var(--syntax-emphasis);
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: 700;
+}
+
+/* Chroma tokens. The short names are Chroma's documented class vocabulary. */
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf {
+    color: var(--syntax-comment);
+}
+
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt,
+.chroma .nt,
+.chroma .ow {
+    color: var(--syntax-keyword);
+}
+
+.chroma .n,
+.chroma .na,
+.chroma .nb,
+.chroma .nc,
+.chroma .nd,
+.chroma .ne,
+.chroma .nf,
+.chroma .fm,
+.chroma .nl,
+.chroma .nn,
+.chroma .nx,
+.chroma .py,
+.chroma .nv,
+.chroma .vc,
+.chroma .vg,
+.chroma .vi,
+.chroma .vm {
+    color: var(--syntax-name);
+}
+
+.chroma .l,
+.chroma .ld,
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo,
+.chroma .o {
+    color: var(--syntax-literal);
+}
+
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss {
+    color: var(--syntax-string);
+}
+
+.chroma .err,
+.chroma .gr {
+    color: #ffaaa2;
+}
+
+.chroma .ge {
+    color: var(--syntax-emphasis);
+    font-style: italic;
+}
+
+.chroma .gs {
+    color: var(--syntax-emphasis);
+    font-weight: 700;
+}

@@ -599,3 +599,18 @@ body.dark-mode .games-card:hover {
     border-color: color-mix(in srgb, var(--accent), transparent 18%);
     box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent), transparent 18%), 0 1.3rem 2.7rem rgba(0, 0, 0, 0.3);
 }
+
+body.dark-mode .showcase-submit,
+body.dark-mode .games-submit {
+    background: #1f5f9e;
+}
+
+body.dark-mode .showcase-submit .showcase-eyebrow,
+body.dark-mode .games-submit .games-eyebrow {
+    color: #b5d8fb;
+}
+
+body.dark-mode .showcase-submit a:hover,
+body.dark-mode .games-submit a:hover {
+    color: #1f5f9e;
+}

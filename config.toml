@@ -8,6 +8,12 @@ slogan = "The Data-Oriented Language for Sane Software Development."
 [markup.goldmark.renderer]
 unsafe = true
 
+[markup.highlight]
+# Emit semantic Chroma classes instead of a fixed, inline color scheme. The
+# site-owned syntax theme can then react to the selected appearance before the
+# page is painted.
+noClasses = false
+
 [markup.tableOfContents]
 endLevel = 4
 

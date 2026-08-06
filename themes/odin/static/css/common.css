@@ -496,11 +496,6 @@ pre {
     overflow-x: auto;
 }
 
-code.hljs {
-    border-radius: var(--radius-md);
-    background: var(--code) !important;
-}
-
 .content-table {
     display: block;
     width: 100%;
