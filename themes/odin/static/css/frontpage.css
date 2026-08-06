@@ -1922,3 +1922,166 @@ body.dark-mode {
         transition: none;
     }
 }
+
+/* Background study: a cool, dithered atmosphere with accents kept at the edges. */
+.front-cinematic-video {
+    filter: saturate(0.62) contrast(1.1) brightness(0.76) hue-rotate(12deg);
+}
+
+.front-cinematic-grade {
+    background:
+        radial-gradient(circle at 76% 22%, rgba(74, 154, 224, 0.28), transparent 32%),
+        linear-gradient(116deg, rgba(245, 250, 255, 0.34), rgba(41, 111, 179, 0.1) 48%, rgba(11, 42, 73, 0.34));
+    mix-blend-mode: color;
+    opacity: 0.3;
+}
+
+.front-hero {
+    background:
+        radial-gradient(circle at 85% 18%, rgba(93, 170, 235, 0.16), transparent 30%),
+        radial-gradient(circle at 8% 88%, rgba(199, 101, 15, 0.06), transparent 28%),
+        linear-gradient(115deg, rgba(252, 254, 255, 0.78), rgba(234, 245, 254, 0.58));
+}
+
+.front-section::after,
+.front-community-strip::after {
+    opacity: 0.07;
+    mix-blend-mode: multiply;
+}
+
+.front-section-warm,
+.front-section-light {
+    background:
+        radial-gradient(circle at 88% 8%, rgba(104, 174, 234, 0.12), transparent 32%),
+        radial-gradient(circle at 8% 92%, rgba(199, 101, 15, 0.055), transparent 28%),
+        linear-gradient(145deg, #fbfdff 0%, #f3f8fc 100%);
+}
+
+.front-section-warm::before {
+    background: radial-gradient(closest-side, rgba(104, 174, 234, 0.13), transparent 72%);
+}
+
+.front-section-cool,
+.front-production {
+    background:
+        radial-gradient(circle at 12% 22%, rgba(56, 130, 210, 0.12), transparent 30%),
+        radial-gradient(circle at 88% 84%, rgba(199, 101, 15, 0.06), transparent 28%),
+        linear-gradient(160deg, #eaf4fc 0%, #e1edf7 100%);
+}
+
+.front-section-cool::before {
+    background: radial-gradient(closest-side, rgba(56, 130, 210, 0.14), transparent 72%);
+}
+
+.front-community-strip {
+    background:
+        radial-gradient(circle at 14% 22%, rgba(130, 194, 246, 0.22), transparent 30%),
+        radial-gradient(circle at 90% 84%, rgba(199, 101, 15, 0.28), transparent 30%),
+        linear-gradient(110deg, #173e69 0%, #1e5085 56%, #2d679e 100%);
+}
+
+.front-section-dark,
+.front-site-footer {
+    background:
+        radial-gradient(circle at 84% 16%, rgba(56, 130, 210, 0.22), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(199, 101, 15, 0.1), transparent 28%),
+        linear-gradient(145deg, #10243b 0%, #102d4d 54%, #1b4268 100%);
+}
+
+.front-section-final {
+    background:
+        radial-gradient(circle at 86% 20%, rgba(104, 174, 234, 0.14), transparent 30%),
+        linear-gradient(150deg, #f7fbff 0%, #eaf3fa 100%);
+}
+
+.dark-mode .front-cinematic-video {
+    filter: saturate(0.56) contrast(1.12) brightness(0.52) hue-rotate(12deg);
+}
+
+.dark-mode .front-cinematic-grade {
+    background:
+        radial-gradient(circle at 76% 22%, rgba(66, 148, 220, 0.3), transparent 32%),
+        linear-gradient(116deg, rgba(5, 15, 25, 0.42), rgba(18, 68, 113, 0.18) 48%, rgba(3, 19, 36, 0.52));
+    opacity: 0.4;
+}
+
+.dark-mode .front-hero {
+    background:
+        radial-gradient(circle at 84% 18%, rgba(56, 130, 210, 0.2), transparent 30%),
+        linear-gradient(115deg, rgba(9, 17, 27, 0.76), rgba(12, 38, 62, 0.68));
+}
+
+.dark-mode .front-section-warm,
+.dark-mode .front-section-light,
+.dark-mode .front-section-cool,
+.dark-mode .front-production {
+    background:
+        radial-gradient(circle at 84% 18%, rgba(56, 130, 210, 0.12), transparent 30%),
+        linear-gradient(150deg, #101c2a 0%, #14273b 100%);
+}
+
+.dark-mode .front-community-strip {
+    background:
+        radial-gradient(circle at 14% 22%, rgba(104, 174, 234, 0.2), transparent 30%),
+        radial-gradient(circle at 90% 84%, rgba(240, 154, 76, 0.18), transparent 30%),
+        linear-gradient(110deg, #102d4d 0%, #1e5085 58%, #244f7c 100%);
+}
+
+.dark-mode .front-section-dark,
+.dark-mode .front-site-footer {
+    background:
+        radial-gradient(circle at 82% 16%, rgba(56, 130, 210, 0.17), transparent 30%),
+        linear-gradient(145deg, #091522 0%, #102d4d 100%);
+}
+
+.dark-mode .front-section-final {
+    background: linear-gradient(150deg, #111e2c 0%, #172b3f 100%);
+}
+
+/* Light-only chroma study: let Odin blue and orange visibly drive the atmosphere. */
+body:not(.dark-mode) .front-hero {
+    background:
+        radial-gradient(circle at 82% 18%, rgba(54, 157, 236, 0.38), transparent 29%),
+        radial-gradient(circle at 12% 86%, rgba(238, 125, 25, 0.2), transparent 26%),
+        linear-gradient(116deg, rgba(248, 253, 255, 0.9) 0%, rgba(211, 237, 255, 0.68) 58%, rgba(174, 216, 246, 0.6) 100%);
+}
+
+body:not(.dark-mode) .front-hero-copy::before {
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.76) 0%, rgba(244, 251, 255, 0.38) 56%, transparent 78%);
+}
+
+body:not(.dark-mode) .front-section::after,
+body:not(.dark-mode) .front-community-strip::after {
+    opacity: 0.11;
+}
+
+body:not(.dark-mode) .front-section-warm,
+body:not(.dark-mode) .front-section-light {
+    background:
+        radial-gradient(circle at 88% 10%, rgba(246, 146, 39, 0.36), transparent 29%),
+        radial-gradient(circle at 10% 88%, rgba(50, 145, 224, 0.2), transparent 32%),
+        linear-gradient(142deg, #f7fcff 0%, #d7efff 60%, #edf8ff 100%);
+}
+
+body:not(.dark-mode) .front-section-warm::before {
+    background: radial-gradient(closest-side, rgba(246, 146, 39, 0.3), transparent 72%);
+}
+
+body:not(.dark-mode) .front-section-cool,
+body:not(.dark-mode) .front-production {
+    background:
+        radial-gradient(circle at 12% 20%, rgba(50, 145, 224, 0.32), transparent 31%),
+        radial-gradient(circle at 90% 86%, rgba(246, 146, 39, 0.17), transparent 28%),
+        linear-gradient(155deg, #d6edff 0%, #eaf6ff 58%, #c6e5fb 100%);
+}
+
+body:not(.dark-mode) .front-section-cool::before {
+    background: radial-gradient(closest-side, rgba(50, 145, 224, 0.28), transparent 72%);
+}
+
+body:not(.dark-mode) .front-section-final {
+    background:
+        radial-gradient(circle at 84% 18%, rgba(246, 146, 39, 0.3), transparent 30%),
+        radial-gradient(circle at 10% 82%, rgba(50, 145, 224, 0.22), transparent 30%),
+        linear-gradient(150deg, #f8fcff 0%, #dfefff 100%);
+}
