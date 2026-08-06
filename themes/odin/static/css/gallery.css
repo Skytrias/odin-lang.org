@@ -395,7 +395,7 @@ body.dark-mode .games-catalog-itch { background: #141b2a; }
 
 .showcase-spotlights {
     background:
-        radial-gradient(circle at 86% 7%, rgba(231, 95, 56, 0.2), transparent 34rem),
+        radial-gradient(circle at 86% 7%, rgba(56, 130, 210, 0.2), transparent 34rem),
         linear-gradient(135deg, var(--soft-2), #fff 52%, var(--cool));
 }
 
@@ -420,7 +420,7 @@ body.dark-mode .games-catalog-itch { background: #141b2a; }
 }
 
 .showcase-spotlight-logo-gradient {
-    background: linear-gradient(135deg, var(--deep), var(--deep-2) 58%, #6f3a2e);
+    background: linear-gradient(135deg, var(--deep), var(--deep-2) 58%, var(--accent-2));
 }
 
 .showcase-spotlight-shade {
@@ -432,12 +432,12 @@ body.dark-mode .games-catalog-itch { background: #141b2a; }
 }
 
 .showcase-spotlight-tags span {
-    border-color: rgba(255, 222, 189, 0.72);
-    color: #fff2e0;
+    border-color: rgba(193, 222, 248, 0.72);
+    color: #e6f3ff;
 }
 
 .showcase-spotlight-byline {
-    color: #ffd3ae !important;
+    color: #a9d4fb !important;
 }
 
 .showcase-submit {
@@ -445,7 +445,7 @@ body.dark-mode .games-catalog-itch { background: #141b2a; }
 }
 
 .showcase-submit .showcase-eyebrow {
-    color: #ffd3ae;
+    color: #b9dcfb;
 }
 
 .showcase-submit a:hover {
@@ -465,7 +465,7 @@ body.dark-mode .games-catalog-itch { background: #141b2a; }
 
 .games-steam {
     background:
-        radial-gradient(circle at 85% 8%, rgba(216, 155, 57, 0.24), transparent 34rem),
+        radial-gradient(circle at 85% 8%, rgba(56, 130, 210, 0.22), transparent 34rem),
         linear-gradient(135deg, var(--soft-2), #fff 53%, var(--cool));
 }
 
@@ -494,12 +494,12 @@ body.dark-mode .games-catalog-itch { background: #141b2a; }
 }
 
 .games-steam-tags span {
-    border-color: rgba(255, 222, 189, 0.72);
-    color: #fff2e0;
+    border-color: rgba(193, 222, 248, 0.72);
+    color: #e6f3ff;
 }
 
 .games-steam-byline {
-    color: #ffd3ae !important;
+    color: #a9d4fb !important;
 }
 
 .games-catalog-itch {
@@ -521,7 +521,7 @@ body.dark-mode .games-catalog-itch { background: #141b2a; }
 }
 
 .games-card-fallback {
-    background: radial-gradient(circle at 25% 20%, rgba(231, 95, 56, 0.85), transparent 32%), linear-gradient(135deg, var(--deep), #6f3a2e);
+    background: radial-gradient(circle at 25% 20%, rgba(56, 130, 210, 0.85), transparent 32%), linear-gradient(135deg, var(--deep), var(--accent-2));
 }
 
 .games-card-tags span {
@@ -537,7 +537,7 @@ body.dark-mode .games-catalog-itch { background: #141b2a; }
 }
 
 .games-submit .games-eyebrow {
-    color: #ffd3ae;
+    color: #b9dcfb;
 }
 
 .games-submit a:hover {
@@ -547,7 +547,7 @@ body.dark-mode .games-catalog-itch { background: #141b2a; }
 body.dark-mode .showcase-page,
 body.dark-mode .games-page {
     background: var(--soft);
-    --gallery-card: #14202a;
+    --gallery-card: #172333;
 }
 
 body.dark-mode .showcase-page {
@@ -570,19 +570,19 @@ body.dark-mode .games-page {
 
 body.dark-mode .showcase-spotlights {
     background:
-        radial-gradient(circle at 86% 7%, rgba(255, 138, 92, 0.2), transparent 34rem),
-        linear-gradient(135deg, #101820, #111922 52%, #17242a);
+        radial-gradient(circle at 86% 7%, rgba(104, 174, 234, 0.22), transparent 34rem),
+        linear-gradient(135deg, #0d1117, #121a24 52%, #1a3550);
 }
 
 body.dark-mode .games-steam {
     background:
-        radial-gradient(circle at 85% 8%, rgba(240, 181, 82, 0.18), transparent 34rem),
-        linear-gradient(135deg, #101820, #111922 53%, #17242a);
+        radial-gradient(circle at 85% 8%, rgba(104, 174, 234, 0.2), transparent 34rem),
+        linear-gradient(135deg, #0d1117, #121a24 53%, #1a3550);
 }
 
 body.dark-mode .showcase-spotlights-heading .showcase-eyebrow,
 body.dark-mode .games-steam-heading .games-eyebrow {
-    color: #ffb583;
+    color: #92c8f7;
 }
 
 body.dark-mode .showcase-spotlights-heading > p:last-child,
@@ -591,7 +591,7 @@ body.dark-mode .games-steam-heading > p:last-child {
 }
 
 body.dark-mode .games-catalog-itch {
-    background: #151a1c;
+    background: #121a24;
 }
 
 body.dark-mode .games-card:hover {

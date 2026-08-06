@@ -5,7 +5,7 @@
 
 .dark-mode.content-body {
     background:
-        linear-gradient(180deg, #0d1117 0%, #111922 54%, #102028 100%);
+        linear-gradient(180deg, #0d1117 0%, #121a24 54%, #172333 100%);
 }
 
 .content-main {
@@ -888,7 +888,7 @@
 
 .install-tabs button[aria-selected="true"] {
     color: #fff;
-    background: #14202a;
+    background: #1e5085;
     box-shadow: 0 5px 12px rgba(20, 32, 42, 0.18);
 }
 
@@ -1124,11 +1124,11 @@
 }
 
 .install-help-card {
-    background: #14202a;
+    background: #1e5085;
 }
 
 .dark-mode .install-help-card {
-    background: #1c2d39;
+    background: #172333;
 }
 
 .install-help-card h2,

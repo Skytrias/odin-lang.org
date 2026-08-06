@@ -2,20 +2,21 @@
     color-scheme: light dark;
     --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    --ink: #171b22;
-    --muted: #5f6874;
-    --soft: #f8f3ea;
-    --soft-2: #fff8ed;
-    --cool: #eef6f7;
-    --panel: rgba(255, 255, 255, 0.78);
-    --panel-strong: rgba(255, 255, 255, 0.94);
-    --line: rgba(35, 40, 48, 0.13);
-    --accent: #e75f38;
-    --accent-2: #d89b39;
-    --deep: #14202a;
-    --deep-2: #1f3440;
-    --code: #111820;
-    --code-line: #26313d;
+    --ink: #102033;
+    --muted: #526273;
+    --soft: #f7f8fa;
+    --soft-2: #ffffff;
+    --cool: #eef2f6;
+    --panel: rgba(255, 255, 255, 0.82);
+    --panel-strong: rgba(255, 255, 255, 0.96);
+    --line: rgba(25, 55, 86, 0.16);
+    --accent: #1e5085;
+    --accent-bright: #3882d2;
+    --accent-2: #c7650f;
+    --deep: #102d4d;
+    --deep-2: #1e5085;
+    --code: #102033;
+    --code-line: #28445f;
     --radius-sm: 8px;
     --radius-md: 14px;
     --radius-lg: 22px;
@@ -44,18 +45,19 @@ body {
 }
 
 body.dark-mode {
-    --ink: #e8f0f5;
-    --muted: #a8b5c2;
+    --ink: #e0f0ff;
+    --muted: #a9bfd4;
     --soft: #0d1117;
-    --soft-2: #121821;
-    --cool: #132027;
-    --panel: rgba(23, 31, 40, 0.78);
-    --panel-strong: rgba(19, 27, 36, 0.96);
-    --line: rgba(202, 218, 230, 0.16);
-    --accent: #ff8a5c;
-    --accent-2: #f0b552;
-    --deep: #e8f0f5;
-    --deep-2: #cad9e5;
+    --soft-2: #121a24;
+    --cool: #172333;
+    --panel: rgba(22, 32, 45, 0.82);
+    --panel-strong: rgba(19, 29, 42, 0.96);
+    --line: rgba(181, 211, 240, 0.19);
+    --accent: #68aeea;
+    --accent-bright: #92c8f7;
+    --accent-2: #f09a4c;
+    --deep: #e0f0ff;
+    --deep-2: #b8d7f2;
     --code: #0b1118;
     --code-line: #273342;
     --surface-lift: 0 18px 60px rgba(0, 0, 0, 0.28);
@@ -107,7 +109,7 @@ textarea {
     z-index: 20;
     min-height: var(--header-height);
     color: var(--ink);
-    background: rgba(255, 249, 239, 0.8);
+    background: rgba(255, 255, 255, 0.86);
     border-bottom: 1px solid var(--line);
     backdrop-filter: blur(18px);
 }
@@ -304,7 +306,7 @@ textarea {
     position: relative;
     color: #edf6f5;
     background:
-        linear-gradient(135deg, #14202a 0%, #1f3440 100%);
+        linear-gradient(135deg, #102d4d 0%, #1e5085 100%);
     overflow: hidden;
 }
 
@@ -326,7 +328,7 @@ textarea {
 
 .footer-brand p {
     max-width: 320px;
-    color: rgba(237, 246, 245, 0.72);
+    color: rgba(235, 246, 255, 0.76);
 }
 
 .site-footer nav {
@@ -343,7 +345,7 @@ textarea {
 }
 
 .site-footer a {
-    color: rgba(237, 246, 245, 0.72);
+    color: rgba(235, 246, 255, 0.76);
 }
 
 .site-footer a:hover {
@@ -355,9 +357,9 @@ textarea {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 14px;
-    border-top: 1px solid rgba(237, 246, 245, 0.16);
+    border-top: 1px solid rgba(235, 246, 255, 0.18);
     padding: 22px 0 34px;
-    color: rgba(237, 246, 245, 0.58);
+    color: rgba(235, 246, 255, 0.62);
     font-size: 0.9rem;
 }
 
@@ -483,12 +485,12 @@ code {
 code:not(pre code) {
     border-radius: 0.35em;
     padding: 0.1em 0.28em;
-    color: #af4a20;
+    color: #17518a;
     background: color-mix(in srgb, var(--accent), transparent 91%);
 }
 
 .dark-mode code:not(pre code) {
-    color: #ffba79;
+    color: #92c8f7;
 }
 
 pre {

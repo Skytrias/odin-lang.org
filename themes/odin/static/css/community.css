@@ -483,8 +483,8 @@
     padding: clamp(30px, 5vw, 54px);
     color: #fff;
     background:
-        radial-gradient(circle at 91% 18%, rgba(240, 181, 82, 0.24), transparent 20rem),
-        linear-gradient(125deg, #14202a, #203846);
+        radial-gradient(circle at 91% 18%, rgba(104, 174, 234, 0.24), transparent 20rem),
+        linear-gradient(125deg, #0d1117, #1a3550);
     box-shadow: 0 22px 60px rgba(20, 32, 42, 0.22);
 }
 
@@ -534,8 +534,8 @@
 }
 
 .community-patreon-link {
-    border-color: rgba(255, 138, 92, 0.72) !important;
-    color: #ffba9f !important;
+    border-color: rgba(146, 200, 247, 0.72) !important;
+    color: #b9dcfb !important;
 }
 
 .community-showcase-note {

@@ -1,17 +1,18 @@
 :root {
-    --front-ink: #171b22;
-    --front-muted: #5c6470;
-    --front-soft: #f8f3ea;
-    --front-soft-2: #fff8ed;
-    --front-cool: #eef6f7;
-    --front-cool-2: #e7f0f3;
+    --front-ink: #102033;
+    --front-muted: #526273;
+    --front-soft: #f7f8fa;
+    --front-soft-2: #ffffff;
+    --front-cool: #eef2f6;
+    --front-cool-2: #e2e8ef;
     --front-panel: rgba(255, 255, 255, 0.72);
     --front-panel-strong: rgba(255, 255, 255, 0.9);
-    --front-line: rgba(35, 40, 48, 0.13);
-    --front-accent: #e75f38;
-    --front-accent-2: #d89b39;
-    --front-deep: #14202a;
-    --front-deep-2: #1f3440;
+    --front-line: rgba(25, 55, 86, 0.16);
+    --front-accent: #1e5085;
+    --front-accent-bright: #3882d2;
+    --front-accent-2: #c7650f;
+    --front-deep: #102d4d;
+    --front-deep-2: #1e5085;
     --front-radius: 28px;
     --front-shadow: 0 24px 80px rgba(34, 37, 42, 0.12);
     --front-header-height: 72px;
@@ -19,19 +20,20 @@
 }
 
 body.dark-mode {
-    --front-ink: #eef5f7;
-    --front-muted: #aab8c2;
-    --front-soft: #0b1015;
-    --front-soft-2: #121b22;
-    --front-cool: #13252d;
-    --front-cool-2: #19313a;
-    --front-panel: rgba(22, 31, 38, 0.76);
-    --front-panel-strong: rgba(28, 39, 48, 0.92);
-    --front-line: rgba(213, 229, 235, 0.15);
-    --front-accent: #ff865d;
-    --front-accent-2: #f2b85d;
-    --front-deep: #edf6f7;
-    --front-deep-2: #bfd3dc;
+    --front-ink: #e0f0ff;
+    --front-muted: #a9bfd4;
+    --front-soft: #0d1117;
+    --front-soft-2: #121a24;
+    --front-cool: #172333;
+    --front-cool-2: #1d2c3f;
+    --front-panel: rgba(22, 32, 45, 0.8);
+    --front-panel-strong: rgba(19, 29, 42, 0.94);
+    --front-line: rgba(181, 211, 240, 0.19);
+    --front-accent: #68aeea;
+    --front-accent-bright: #92c8f7;
+    --front-accent-2: #f09a4c;
+    --front-deep: #e0f0ff;
+    --front-deep-2: #b8d7f2;
     --front-shadow: 0 28px 90px rgba(0, 0, 0, 0.36);
 }
 
@@ -535,7 +537,7 @@ body.dark-mode {
 }
 
 .front-button-primary {
-    color: #fff;
+    color: #fff !important;
     background: linear-gradient(135deg, var(--front-accent), #ce4f38);
     box-shadow: 0 18px 44px rgba(216, 77, 50, 0.2);
 }
@@ -1586,6 +1588,269 @@ body.dark-mode {
     .front-cinematic-video {
         display: none;
     }
+}
+
+/* Match the existing dark-mode selector specificity for the primary controls. */
+.dark-mode .front-button-primary {
+    color: #fff;
+    background: linear-gradient(135deg, #1e5085, #3882d2);
+    box-shadow: 0 20px 50px rgba(56, 130, 210, 0.22);
+}
+
+.dark-mode .front-button-secondary,
+.dark-mode .front-production-actions .front-button-secondary {
+    color: #e0f0ff;
+    border-color: rgba(146, 200, 247, 0.34);
+    background: rgba(19, 29, 42, 0.88);
+}
+
+/* Odin blue / orange theme: keep the cinematic composition, but put the
+   language colours against deliberately clean, high-contrast surfaces. */
+.frontpage {
+    background: #f7f8fa;
+}
+
+.front-cinematic {
+    display: block;
+    background: #17334e;
+}
+
+.front-cinematic-video {
+    filter: saturate(0.82) contrast(1.08) brightness(0.78) hue-rotate(4deg);
+}
+
+.front-cinematic-grade {
+    background:
+        radial-gradient(circle at 76% 22%, rgba(56, 130, 210, 0.28), transparent 30%),
+        radial-gradient(circle at 18% 82%, rgba(199, 101, 15, 0.16), transparent 32%),
+        linear-gradient(118deg, rgba(248, 251, 255, 0.42), rgba(56, 130, 210, 0.1) 46%, rgba(10, 35, 59, 0.4));
+}
+
+.frontpage-body .site-header {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom-color: rgba(30, 80, 133, 0.18);
+    box-shadow: 0 12px 36px rgba(16, 45, 77, 0.08);
+}
+
+.frontpage-body .site-header::before {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.34), rgba(238, 244, 250, 0.12));
+}
+
+.front-hero {
+    background:
+        radial-gradient(circle at 82% 18%, rgba(56, 130, 210, 0.18), transparent 28%),
+        radial-gradient(circle at 16% 88%, rgba(199, 101, 15, 0.12), transparent 30%),
+        linear-gradient(135deg, rgba(251, 253, 255, 0.78), rgba(240, 246, 252, 0.68));
+}
+
+.front-hero-copy::before {
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.28) 52%, transparent 76%);
+}
+
+.front-hero::after {
+    background: radial-gradient(closest-side, rgba(56, 130, 210, 0.22), transparent 68%);
+}
+
+.front-flow {
+    border-color: rgba(30, 80, 133, 0.23);
+}
+
+.front-kicker {
+    color: var(--front-accent-2);
+}
+
+.front-hero h1 {
+    color: #102d4d;
+}
+
+.front-hero-line {
+    color: #1e5085;
+}
+
+.front-hero-text {
+    color: rgba(16, 45, 77, 0.7);
+}
+
+.front-button-primary {
+    color: #fff;
+    background: linear-gradient(135deg, #1e5085, #3882d2);
+    box-shadow: 0 18px 44px rgba(30, 80, 133, 0.24);
+}
+
+.front-button-secondary {
+    color: #1e5085;
+    border-color: rgba(30, 80, 133, 0.32);
+    background: #fff;
+}
+
+.front-section-warm,
+.front-section-light {
+    background:
+        radial-gradient(circle at 82% 12%, rgba(199, 101, 15, 0.09), transparent 30%),
+        linear-gradient(180deg, #f2f5f8 0%, #fff 54%, #f6f8fa 100%);
+}
+
+/* Sections read as a sequence of distinct panels. The texture remains, but
+   no panel now fades through or overlaps its neighbour. */
+.front-section,
+.front-community-strip,
+.front-production {
+    margin-block: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+.front-section,
+.front-community-strip {
+    padding: clamp(84px, 9vw, 126px) 0;
+}
+
+.front-production {
+    padding-top: 0;
+}
+
+.front-section + .front-section,
+.front-section + .front-community-strip,
+.front-community-strip + .front-section,
+.front-production + .front-section {
+    border-top: 1px solid rgba(30, 80, 133, 0.12);
+}
+
+.front-section-cool {
+    background:
+        radial-gradient(circle at 12% 30%, rgba(56, 130, 210, 0.12), transparent 32%),
+        linear-gradient(180deg, #e9eef3 0%, #f7f9fb 52%, #eef2f6 100%);
+}
+
+.front-section-warm::before {
+    background: radial-gradient(closest-side, rgba(199, 101, 15, 0.14), transparent 72%);
+}
+
+.front-section-cool::before {
+    background: radial-gradient(closest-side, rgba(56, 130, 210, 0.13), transparent 72%);
+}
+
+.front-community-strip {
+    background:
+        radial-gradient(circle at 16% 16%, rgba(255, 255, 255, 0.16), transparent 26%),
+        radial-gradient(circle at 86% 84%, rgba(199, 101, 15, 0.55), transparent 30%),
+        linear-gradient(105deg, #102d4d 0%, #1e5085 58%, #2867a7 100%);
+}
+
+.front-section-dark,
+.front-section-final,
+.front-site-footer {
+    background:
+        radial-gradient(circle at 88% 12%, rgba(56, 130, 210, 0.3), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(199, 101, 15, 0.18), transparent 30%),
+        linear-gradient(135deg, #102033 0%, #102d4d 56%, #1e5085 100%);
+}
+
+.front-use-tile,
+.front-use-links a,
+.front-next-grid a,
+.front-final-panel {
+    border-color: rgba(30, 80, 133, 0.17);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 16px 42px rgba(16, 45, 77, 0.08);
+}
+
+.front-use-tile:hover,
+.front-use-links a:hover,
+.front-next-grid a:hover {
+    border-color: rgba(56, 130, 210, 0.56);
+    background: #fff;
+    box-shadow: 0 20px 48px rgba(30, 80, 133, 0.16);
+}
+
+.front-use-icon,
+.front-use-links a {
+    color: #1e5085;
+}
+
+.front-production {
+    background:
+        radial-gradient(circle at 12% 16%, rgba(56, 130, 210, 0.12), transparent 30%),
+        linear-gradient(180deg, #fff 0%, #f1f4f7 100%);
+}
+
+.front-production-reel {
+    border-color: rgba(30, 80, 133, 0.18);
+    background: #102033;
+}
+
+.dark-mode.frontpage-body .site-header {
+    background: rgba(13, 17, 23, 0.92);
+    border-bottom-color: rgba(146, 200, 247, 0.2);
+}
+
+.dark-mode .front-hero {
+    background:
+        radial-gradient(circle at 82% 18%, rgba(56, 130, 210, 0.24), transparent 28%),
+        radial-gradient(circle at 16% 88%, rgba(240, 154, 76, 0.12), transparent 30%),
+        linear-gradient(135deg, rgba(13, 17, 23, 0.72), rgba(17, 34, 53, 0.7));
+}
+
+.dark-mode .front-cinematic {
+    background: #07111d;
+}
+
+.dark-mode .front-cinematic-video {
+    filter: saturate(0.7) contrast(1.1) brightness(0.56) hue-rotate(5deg);
+}
+
+.dark-mode .front-cinematic-grade {
+    background:
+        radial-gradient(circle at 76% 24%, rgba(56, 130, 210, 0.3), transparent 30%),
+        radial-gradient(circle at 20% 84%, rgba(240, 154, 76, 0.12), transparent 30%),
+        linear-gradient(118deg, rgba(5, 13, 23, 0.42), rgba(8, 29, 53, 0.16) 46%, rgba(5, 19, 36, 0.54));
+}
+
+.dark-mode .front-hero-copy::before {
+    background: radial-gradient(ellipse at center, rgba(19, 29, 42, 0.78) 0%, rgba(13, 17, 23, 0.42) 58%, transparent 76%);
+}
+
+.dark-mode .front-hero h1 {
+    color: #e0f0ff;
+}
+
+.dark-mode .front-hero-line,
+.dark-mode .front-use-icon,
+.dark-mode .front-use-tile h3,
+.dark-mode .front-use-links a {
+    color: #92c8f7;
+}
+
+.dark-mode .front-section-warm,
+.dark-mode .front-section-light,
+.dark-mode .front-section-cool {
+    background: linear-gradient(180deg, #121a24 0%, #172333 52%, #0d1117 100%);
+}
+
+.dark-mode .front-section-dark,
+.dark-mode .front-section-final,
+.dark-mode .front-site-footer {
+    background: linear-gradient(135deg, #0d1117 0%, #102d4d 64%, #1a4d7c 100%);
+}
+
+.dark-mode .front-community-strip {
+    background: linear-gradient(105deg, #102033 0%, #1e5085 62%, #8c480d 130%);
+}
+
+.dark-mode .front-use-tile,
+.dark-mode .front-use-links a,
+.dark-mode .front-next-grid a,
+.dark-mode .front-final-panel {
+    border-color: rgba(146, 200, 247, 0.18);
+    background: #172333;
+}
+
+.dark-mode .front-use-tile p {
+    color: #b9cce0;
+}
+
+.dark-mode .front-production {
+    background: linear-gradient(180deg, #0d1117 0%, #121a24 100%);
 }
 
 @media (max-width: 560px) {
