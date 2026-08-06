@@ -1,5 +1,13 @@
 {{ define "main" }}
 <main class="frontpage">
+    <div class="front-cinematic" aria-hidden="true">
+        <video class="front-cinematic-video" autoplay muted loop playsinline preload="metadata">
+            <source src="/videos/frontpage-atmosphere.webm" type="video/webm">
+        </video>
+        <div class="front-cinematic-grade"></div>
+        <div class="front-cinematic-grain"></div>
+    </div>
+
     <section class="front-hero" id="home-hero-header" aria-labelledby="front-hero-title">
         <div class="front-flow front-flow-one" aria-hidden="true"></div>
         <div class="front-flow front-flow-two" aria-hidden="true"></div>
@@ -234,4 +242,40 @@ build_mesh(data)</code></pre>
         </div>
     </section>
 </main>
+<script>
+    (() => {
+        const root = document.documentElement;
+        const cinematicVideo = document.querySelector(".front-cinematic-video");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const updateCinematic = () => {
+            const heroHeight = Math.max(window.innerHeight, 1);
+            const progress = Math.min(window.scrollY / (heroHeight * 1.15), 1);
+            root.style.setProperty("--front-scroll-progress", progress.toFixed(3));
+        };
+
+        let frame;
+        const requestUpdate = () => {
+            if (frame) return;
+            frame = window.requestAnimationFrame(() => {
+                frame = undefined;
+                updateCinematic();
+            });
+        };
+
+        const updateMotionPreference = () => {
+            if (!cinematicVideo) return;
+            if (reducedMotion.matches) {
+                cinematicVideo.pause();
+            } else {
+                cinematicVideo.play().catch(() => {});
+            }
+        };
+
+        updateCinematic();
+        updateMotionPreference();
+        window.addEventListener("scroll", requestUpdate, { passive: true });
+        window.addEventListener("resize", requestUpdate, { passive: true });
+        reducedMotion.addEventListener("change", updateMotionPreference);
+    })();
+</script>
 {{ end }}
