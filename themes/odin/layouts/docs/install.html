@@ -1,0 +1,88 @@
+{{ define "main" }}
+<main class="content-main install-main">
+    <div class="content-shell">
+        <div class="content-layout">
+            {{ partial "sidebar" . }}
+
+            <article class="content-article install-article">
+                <header class="article-header install-header">
+                    <nav class="crumbs" aria-label="Breadcrumb">
+                        <ol><li><a href="/docs/">Docs</a></li><li><a href="{{ .RelPermalink }}">Install</a></li></ol>
+                    </nav>
+                    <p class="install-eyebrow">Get up and running</p>
+                    <h1>{{ .Title }}</h1>
+                    <p class="install-lede">Download a release to start quickly, or build Odin from source when you need the latest changes.</p>
+                </header>
+
+                <div class="article-body install-body">
+                <section class="install-quickstart" aria-labelledby="quickstart-title">
+                    <div>
+                        <p class="install-kicker">The quick path</p>
+                        <h2 id="quickstart-title">Download a release</h2>
+                        <p>Official releases include everything needed to run the compiler. Pick a monthly release for a stable build, or a nightly when you need the newest features.</p>
+                    </div>
+                    <div class="install-actions">
+                        <a href="https://github.com/odin-lang/Odin/releases" class="action-link">Browse releases <span class="install-button-icon" aria-hidden="true">↗</span></a>
+                        <a href="/docs/nightly" class="action-link secondary-action">Nightly builds</a>
+                    </div>
+                </section>
+
+                <section class="install-platform" aria-labelledby="platform-title">
+                    <div class="install-section-heading">
+                        <div>
+                            <p class="install-kicker">Choose your platform</p>
+                            <h2 id="platform-title">A few things before you begin</h2>
+                        </div>
+                        <p id="install-platform-status" class="install-status" aria-live="polite">Showing instructions for Windows.</p>
+                    </div>
+
+                    <div class="install-tabs" role="tablist" aria-label="Operating system">
+                        <button type="button" role="tab" id="install-tab-windows" aria-selected="true" aria-controls="install-panel-windows" tabindex="0" data-install-tab="windows">Windows</button>
+                        <button type="button" role="tab" id="install-tab-macos" aria-selected="false" aria-controls="install-panel-macos" tabindex="-1" data-install-tab="macos">macOS</button>
+                        <button type="button" role="tab" id="install-tab-unix" aria-selected="false" aria-controls="install-panel-unix" tabindex="-1" data-install-tab="unix">Linux &amp; Unix</button>
+                    </div>
+
+                    <div class="install-panels">
+                        <section id="install-panel-windows" class="install-panel" role="tabpanel" aria-labelledby="install-tab-windows" data-install-panel="windows">
+                            <div class="install-panel-intro"><span class="install-platform-mark" aria-hidden="true">⊞</span><div><h3>Windows</h3><p>Odin on Windows uses the Microsoft C++ toolchain and Windows SDK for linking.</p></div></div>
+                            <ol class="install-steps"><li><strong>Install Build Tools for Visual Studio.</strong> In the installer, select <em>Desktop development with C++</em>, including MSVC and the Windows SDK. <a href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022">Get the Build Tools</a>.</li><li><strong>Use a developer command prompt.</strong> Open <code>x64 Native Tools Command Prompt for VS20xx</code> from the Start menu, or run <code>vcvarsall.bat x64</code> from a blank <code>cmd</code> session.</li><li><strong>Unzip Odin and run it.</strong> Optionally add the Odin directory to <code>PATH</code> so <code>odin.exe</code> is available everywhere.</li></ol>
+                            <details class="install-details"><summary>Want the smallest possible Build Tools install?</summary><p>A <a href="https://gist.github.com/mmozeiko/7f3162ec2988e81e56d5c4e22cde9977">third-party script</a> can install only the required components.</p><img src="/images/microsoft-installer.png" alt="Visual Studio Installer with Desktop development with C++, MSVC, and Windows SDK selected" loading="lazy" /></details>
+                        </section>
+
+                        <section id="install-panel-macos" class="install-panel" role="tabpanel" aria-labelledby="install-tab-macos" data-install-panel="macos" hidden>
+                            <div class="install-panel-intro"><span class="install-platform-mark" aria-hidden="true">⌘</span><div><h3>macOS</h3><p>Install Apple’s command-line tools before using a release or building Odin.</p></div></div>
+                            <ol class="install-steps"><li><strong>Install Xcode command-line tools.</strong><div class="install-command"><code>xcode-select --install</code><button type="button" class="copy-command" data-copy-command aria-label="Copy command"><span class="copy-icon" aria-hidden="true">⧉</span><span class="copy-label">Copy</span></button></div><p>If the command is unavailable, install Xcode from the App Store first.</p></li><li><strong>Unzip Odin and run it.</strong> Add the Odin folder to your shell’s path, or symlink <code>odin</code> into a directory already on your path.</li></ol>
+                            <details class="install-details"><summary>macOS release notes</summary><p>The release does not include <code>wasm-ld</code>. Install it separately with <code>brew install lld</code> if you need to compile to WASM.</p><p>For Zsh, add Odin with <code>echo 'export PATH="/path/to/Odin/folder:$PATH"' &gt;&gt; ~/.zshrc</code>. Keep the executable next to its <code>base</code>, <code>core</code>, and <code>vendor</code> folders, or set <code>ODIN_ROOT</code>.</p><p>If macOS quarantines the executable, try <code>xattr -d com.apple.quarantine &lt;path_to_odin_executable&gt;</code>.</p></details>
+                        </section>
+
+                        <section id="install-panel-unix" class="install-panel" role="tabpanel" aria-labelledby="install-tab-unix" data-install-panel="unix" hidden>
+                            <div class="install-panel-intro"><span class="install-platform-mark" aria-hidden="true">›_</span><div><h3>Linux &amp; Unix</h3><p>Odin relies on Clang for linking. Linux x86-64/AMD64 and ARM64 are supported, alongside FreeBSD, NetBSD, and OpenBSD.</p></div></div>
+                            <ol class="install-steps"><li><strong>Install Clang.</strong><div class="install-command"><code>sudo apt install clang</code><button type="button" class="copy-command" data-copy-command aria-label="Copy command"><span class="copy-icon" aria-hidden="true">⧉</span><span class="copy-label">Copy</span></button></div><p>On Fedora, use <code>sudo dnf install clang</code>.</p></li><li><strong>Unzip Odin and run it.</strong> Add the Odin folder to your shell path, or symlink the <code>odin</code> binary into a directory already on it.</li></ol>
+                            <details class="install-details"><summary>Unix release notes</summary><p>For Bash, use <code>echo 'export PATH="/path/to/Odin/folder:$PATH"' &gt;&gt; ~/.bashrc</code>. The compiler needs its <code>base</code>, <code>core</code>, and <code>vendor</code> folders nearby unless <code>ODIN_ROOT</code> is set.</p></details>
+                        </section>
+                    </div>
+                </section>
+
+                <section class="install-source" aria-labelledby="source-title">
+                    <div class="install-section-heading"><div><p class="install-kicker">For contributors and tinkerers</p><h2 id="source-title">Build from source</h2></div><p>All build paths clone the same repository. Your platform tab keeps the prerequisite steps close at hand.</p></div>
+                    <div class="install-source-grid">
+                        <div class="install-source-card"><div class="install-step-heading"><span>1</span><h3>Clone Odin</h3></div><div class="install-command"><code>git clone https://github.com/odin-lang/Odin<br>cd Odin<br>git lfs install</code><button type="button" class="copy-command" data-copy-command aria-label="Copy commands"><span class="copy-icon" aria-hidden="true">⧉</span><span class="copy-label">Copy</span></button></div><p>Optionally use <code>git checkout dev-YYYY-MM</code> to select an official release branch.</p></div>
+                        <div class="install-source-card"><div class="install-step-heading"><span>2</span><h3>Build it</h3></div><div class="install-build-command" data-install-build="windows"><code>build.bat release</code><button type="button" class="copy-command" data-copy-command aria-label="Copy command"><span class="copy-icon" aria-hidden="true">⧉</span><span class="copy-label">Copy</span></button></div><div class="install-build-command" data-install-build="macos" hidden><code>brew install llvm<br>make release-native</code><button type="button" class="copy-command" data-copy-command aria-label="Copy commands"><span class="copy-icon" aria-hidden="true">⧉</span><span class="copy-label">Copy</span></button></div><div class="install-build-command" data-install-build="unix" hidden><code>make release-native</code><button type="button" class="copy-command" data-copy-command aria-label="Copy command"><span class="copy-icon" aria-hidden="true">⧉</span><span class="copy-label">Copy</span></button></div><p>macOS and Unix support LLVM 17 through 22. Ensure <code>llvm-config</code> and <code>clang</code> are on your <code>PATH</code>.</p></div>
+                    </div>
+                    <details class="install-details install-source-notes"><summary>Source build notes and updating</summary><div class="install-notes-grid"><div><h3>macOS + WASM</h3><p>Install the linker with <code>brew install lld</code> to compile for WASM. To choose a specific LLVM installation, use <code>LLVM_CONFIG=/path/to/llvm-config make release-native</code>.</p></div><div><h3>Linux packages</h3><p>Some distributions split LLVM into packages, including an <code>llvm-devel</code> package. On older distributions, see <a href="https://apt.llvm.org">apt.llvm.org</a> or the <a href="https://copr.fedorainfracloud.org/coprs/g/fedora-llvm-team/llvm-snapshots/">Fedora LLVM snapshots</a>.</p></div><div><h3>Updating</h3><p>In your Odin directory, run <code>git pull</code>, then <code>git lfs pull</code> if needed, and run the platform build command again.</p></div><div><h3>atomic.h on Unix</h3><p>If you see an atomic header error, run <code>clang++ -v</code>, note the selected GCC version, then install its C++ development package—often <code>libstdc++-VERSION-dev</code>. See <a href="https://github.com/odin-lang/Odin/issues/3376">issue #3376</a> for help.</p></div></div></details>
+                </section>
+
+                <section class="install-more" aria-labelledby="more-title">
+                    <div class="install-more-card"><p class="install-kicker">Prefer a package manager?</p><h2 id="more-title">Check community packages</h2><p>Third parties maintain many package-manager builds. Their freshness and configuration can vary, so use their issue trackers for package-specific support.</p><a href="https://repology.org/project/odin-lang/versions" class="install-text-link">View Odin on Repology <span class="install-button-icon" aria-hidden="true">→</span></a></div>
+                    <div class="install-help-card"><p class="install-kicker">Need a hand?</p><h2 id="help-title">Got stuck?</h2><p>Ask the community on Discord, or open an issue or discussion on GitHub.</p><div><a href="https://discord.gg/vafXTdubwr">Discord</a><a href="https://github.com/odin-lang/Odin/issues">GitHub issues</a></div></div>
+                </section>
+
+                <section class="install-next" aria-labelledby="next-title"><p class="install-kicker">Installation complete</p><h2 id="next-title">What next?</h2><p>Learn the language’s design and basic workflow in the <a href="/docs/overview/">Odin Overview</a>.</p></section>
+                </div>
+            </article>
+
+            <aside class="article-toc" aria-label="Table of contents"><div class="article-toc-inner"><nav id="TableOfContents"><ul><li><a href="#quickstart-title">Download a release</a></li><li><a href="#platform-title">Choose a platform</a></li><li><a href="#source-title">Build from source</a></li><li><a href="#more-title">Community packages</a></li><li><a href="#help-title">Got stuck?</a></li><li><a href="#next-title">What next?</a></li></ul></nav></div></aside>
+        </div>
+    </div>
+</main>
+{{ end }}

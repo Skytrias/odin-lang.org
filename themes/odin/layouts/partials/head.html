@@ -101,6 +101,9 @@ hljs.registerLanguage("odin", function(e) {
 {{ if or (eq .Section "showcase") (eq .Section "games") }}
 <link href="/css/gallery.css" rel="stylesheet" />
 {{ end }}
+{{ if eq .Layout "install" }}
+<script defer src="/js/install.js"></script>
+{{ end }}
 
 <title>{{ .Title }}{{ if not .IsHome }} | Odin Programming Language {{ end }}</title>
 
