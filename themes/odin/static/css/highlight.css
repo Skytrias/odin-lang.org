@@ -5,16 +5,17 @@
  */
 
 :root {
-    --syntax-background: #111820;
-    --syntax-border: #26313d;
-    --syntax-text: #d8e6eb;
-    --syntax-comment: #93a3af;
-    --syntax-keyword: #ff9188;
-    --syntax-name: #ffd08a;
-    --syntax-literal: #8fd1ff;
-    --syntax-string: #acd7ff;
-    --syntax-type: #d4b4ff;
-    --syntax-emphasis: #f4f8fb;
+    --syntax-background: #fbfcfd;
+    --syntax-border: #cbd8e0;
+    --syntax-text: #273641;
+    --syntax-comment: #637485;
+    --syntax-keyword: #b53a43;
+    --syntax-name: #956000;
+    --syntax-literal: #086fa9;
+    --syntax-string: #087657;
+    --syntax-type: #6c4bb3;
+    --syntax-emphasis: #18252e;
+    --syntax-error: #b42318;
 }
 
 .dark-mode {
@@ -28,6 +29,7 @@
     --syntax-string: #acd7ff;
     --syntax-type: #d6b6ff;
     --syntax-emphasis: #f4f8fb;
+    --syntax-error: #ffaaa2;
 }
 
 /* Build-time Chroma blocks. Their wrapper owns the background and clipping,
@@ -210,7 +212,7 @@
 
 .chroma .err,
 .chroma .gr {
-    color: #ffaaa2;
+    color: var(--syntax-error);
 }
 
 .chroma .ge {
