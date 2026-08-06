@@ -57,6 +57,9 @@
 {{ if or (eq .Section "showcase") (eq .Section "games") }}
 <link href="/css/gallery.css" rel="stylesheet" />
 {{ end }}
+{{ if eq .Section "community" }}
+<link href="/css/community.css" rel="stylesheet" />
+{{ end }}
 <link href="/css/highlight.css" rel="stylesheet" />
 
 {{ if .IsHome }}

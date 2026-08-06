@@ -1,0 +1,88 @@
+{{ define "main" }}
+<main class="community-main">
+    <section class="community-hero" aria-labelledby="community-title">
+        <div class="community-shell">
+            <div class="community-hero-grid">
+                <div class="community-hero-copy">
+                    <p class="community-eyebrow">The Odin community</p>
+                    <h1 id="community-title">Find your people. Build better things.</h1>
+                    <p>Odin is shaped in open conversation: debugging a tricky build, sharing a project, or helping make the language more useful for everyone.</p>
+                    <div class="community-hero-actions">
+                        <a class="action-link" href="https://discord.gg/vafXTdubwr">Join the Discord <span aria-hidden="true">↗</span></a>
+                        <a class="community-text-action" href="#help">Ways to help <span aria-hidden="true">↓</span></a>
+                    </div>
+                </div>
+                <aside class="community-signal" aria-label="Community at a glance">
+                    <p>Where conversations happen</p>
+                    <ul>
+                        <li><span class="community-signal-dot community-signal-dot-live" aria-hidden="true"></span><strong>Discord</strong><span>Live chat</span></li>
+                        <li><span class="community-signal-dot" aria-hidden="true"></span><strong>Forum</strong><span>Long-form discussion</span></li>
+                        <li><span class="community-signal-dot" aria-hidden="true"></span><strong>Open source</strong><span>Built in the open</span></li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="community-places" aria-labelledby="community-places-title">
+        <div class="community-shell">
+            <header class="community-section-heading">
+                <div><p class="community-eyebrow">Find your space</p><h2 id="community-places-title">Choose a way in</h2></div>
+                <p>There is no single right place to participate. Pick the rhythm that works for you.</p>
+            </header>
+            <div class="community-place-grid">
+                <article class="community-place-card" id="discord">
+                    <span class="community-card-mark" aria-hidden="true">✦</span>
+                    <p class="community-card-kicker">Live conversation</p><h3>Discord</h3>
+                    <p>Get live support, compare notes, and meet other people building with Odin.</p>
+                    <a href="https://discord.gg/vafXTdubwr">Join Discord <span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="community-place-card" id="forum">
+                    <span class="community-card-mark" aria-hidden="true">↗</span>
+                    <p class="community-card-kicker">Go deeper</p><h3>Forum</h3>
+                    <p>For categorized, long-form questions and discussion that stays easy to revisit.</p>
+                    <a href="https://forum.odin-lang.org/">Visit the forum <span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="community-place-card" id="reddit">
+                    <span class="community-card-mark" aria-hidden="true">●</span>
+                    <p class="community-card-kicker">Share &amp; discover</p><h3>Reddit</h3>
+                    <p>Post about Odin, share what you have made, and follow community conversation.</p>
+                    <a href="https://reddit.com/r/odinlang/">Visit r/odinlang <span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="community-place-card" id="irc">
+                    <span class="community-card-mark" aria-hidden="true">›_</span>
+                    <p class="community-card-kicker">Old school, still open</p><h3>IRC</h3>
+                    <p>Join the unofficial <code>#odin</code> channel on hackint.org from your preferred IRC client.</p>
+                    <a href="ircs://irc.hackint.org:6697/odin">Open #odin <span aria-hidden="true">↗</span></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="community-help" id="help" aria-labelledby="community-help-title">
+        <div class="community-shell">
+            <header class="community-section-heading community-section-heading-help">
+                <div><p class="community-eyebrow">Keep Odin moving</p><h2 id="community-help-title">How you can help</h2></div>
+                <p>Every contribution matters, whether it is a clear bug report, a thoughtful pull request, or direct support for ongoing development.</p>
+            </header>
+            <div class="community-help-grid">
+                <article class="community-help-card">
+                    <span class="community-help-number" aria-hidden="true">01</span><h3>Report an issue</h3>
+                    <p>Found a bug, mistake, or inconsistency? A clear report helps the project improve.</p>
+                    <a href="https://github.com/odin-lang/odin/issues/new">File an issue <span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="community-help-card">
+                    <span class="community-help-number" aria-hidden="true">02</span><h3>Contribute code</h3>
+                    <p>Explore the source, pick an issue that interests you, or look for work marked <em>help wanted</em>.</p>
+                    <a href="https://github.com/odin-lang/Odin/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22">Explore help wanted <span aria-hidden="true">↗</span></a>
+                </article>
+                <article class="community-support-card">
+                    <div class="community-support-copy"><p class="community-eyebrow">Direct support</p><h3>Support Odin financially</h3><p>Your support helps fund Odin development and the developers behind it.</p></div>
+                    <div class="community-support-actions"><a class="community-sponsor-link" href="https://github.com/sponsors/odin-lang">GitHub Sponsors <span aria-hidden="true">↗</span></a><a class="community-patreon-link" href="https://www.patreon.com/gingerbill">Support on Patreon <span aria-hidden="true">↗</span></a></div>
+                </article>
+            </div>
+            <aside class="community-showcase-note"><div><p class="community-eyebrow">Made something?</p><h2>Let the community see it.</h2></div><a href="/showcase/">Explore the showcase <span aria-hidden="true">→</span></a></aside>
+        </div>
+    </section>
+</main>
+{{ end }}
