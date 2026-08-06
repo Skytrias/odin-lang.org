@@ -598,7 +598,12 @@ body.dark-mode {
 
 .front-section {
     position: relative;
-    padding: clamp(76px, 10vw, 140px) 0;
+    z-index: 1;
+    --front-feather: clamp(38px, 5vw, 80px);
+    margin-block: calc(var(--front-feather) * -1);
+    padding: calc(clamp(76px, 10vw, 140px) + var(--front-feather)) 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--front-feather), #000 calc(100% - var(--front-feather)), transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 var(--front-feather), #000 calc(100% - var(--front-feather)), transparent 100%);
 }
 
 .front-section-warm {
@@ -634,12 +639,17 @@ body.dark-mode {
 .front-community-strip {
     position: relative;
     overflow: hidden;
-    padding: clamp(42px, 5vw, 70px) 0;
+    z-index: 1;
+    --front-feather: clamp(38px, 5vw, 80px);
+    margin-block: calc(var(--front-feather) * -1);
+    padding: calc(clamp(42px, 5vw, 70px) + var(--front-feather)) 0;
     color: #fff;
     background:
         radial-gradient(circle at 18% 24%, rgba(255, 223, 167, 0.32), transparent 34%),
         radial-gradient(circle at 86% 56%, rgba(70, 146, 168, 0.28), transparent 36%),
         linear-gradient(100deg, #d7633e 0%, #e59447 48%, #325f72 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--front-feather), #000 calc(100% - var(--front-feather)), transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 var(--front-feather), #000 calc(100% - var(--front-feather)), transparent 100%);
 }
 
 .front-community-strip::after {
@@ -955,10 +965,16 @@ body.dark-mode {
 .front-production {
     position: relative;
     overflow: hidden;
+    z-index: 1;
+    --front-feather: clamp(38px, 5vw, 80px);
+    margin-top: calc(var(--front-feather) * -1);
+    padding-top: var(--front-feather);
     background:
         radial-gradient(circle at 12% 14%, rgba(255, 213, 153, 0.48), transparent 28%),
         radial-gradient(circle at 88% 82%, rgba(93, 157, 174, 0.18), transparent 30%),
         linear-gradient(180deg, #fbefe2 0%, #f8fbfb 42%, #e5f1f3 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--front-feather), #000 calc(100% - var(--front-feather)), transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 var(--front-feather), #000 calc(100% - var(--front-feather)), transparent 100%);
 }
 
 .front-production-intro {

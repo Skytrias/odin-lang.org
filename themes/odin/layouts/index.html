@@ -100,7 +100,7 @@
             <div class="front-section-titleblock">
                 <p class="front-kicker">Language proof</p>
                 <h2 id="front-language-title">Real features, shown in code.</h2>
-                <p>Important systems concepts stay visible in the source instead of hiding behind ceremony.</p>
+                <p>Important systems concepts stay visible in the source instead of disappearing behind boilerplate.</p>
             </div>
 
             <div class="front-feature-list">
@@ -108,7 +108,7 @@
                     <div class="front-feature-copy">
                         <p class="front-kicker">Graphics</p>
                         <h3>Draw pixels quickly with official bindings.</h3>
-                        <p>Use packages like raylib to get from source code to a running native window with very little ceremony.</p>
+                        <p>Use packages like raylib to get from source code to a running native window with very little boilerplate.</p>
                     </div>
                     <div class="front-code-window front-code-window-small">
                         <pre><code class="language-odin">import rl "vendor:raylib"
@@ -146,17 +146,26 @@ fmt.println(d)</code></pre>
 
                 <article class="front-feature">
                     <div class="front-feature-copy">
-                        <p class="front-kicker">Implicit context</p>
-                        <h3>Control allocators and behavior at the call site.</h3>
-                        <p>The context system gives libraries a shared convention for allocation, logging, and runtime behavior.</p>
+                        <p class="front-kicker">Structured data</p>
+                        <h3>Keep the shape of your data in the type.</h3>
+                        <p>Use compact flags and enumerated arrays to make valid state clear at a glance.</p>
                     </div>
                     <div class="front-code-window front-code-window-small">
-                        <pre><code class="language-odin">context.allocator = arena_allocator()
+                        <pre><code class="language-odin">Player :: struct {
+    position:   [3]f32,
+    flags:      bit_set[Player_Flag],
+    hand_items: [Hand]Item,
+}
 
-data := make([]Vertex, vertex_count)
-defer delete(data)
+Player_Flag :: enum { Grounded, Stunned }
+Hand        :: enum { Left, Right }
+Item        :: enum { None, Pickaxe }
 
-build_mesh(data)</code></pre>
+player := Player{
+    position   = {1, 10, 0},
+    flags      = {.Grounded},
+    hand_items = {.Right = .Pickaxe},
+}</code></pre>
                     </div>
                 </article>
             </div>
