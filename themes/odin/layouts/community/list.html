@@ -13,12 +13,13 @@
                     </div>
                 </div>
                 <aside class="community-signal" aria-label="Community at a glance">
-                    <p>Where conversations happen</p>
-                    <ul>
-                        <li><span class="community-signal-dot community-signal-dot-live" aria-hidden="true"></span><strong>Discord</strong><span>Live chat</span></li>
-                        <li><span class="community-signal-dot" aria-hidden="true"></span><strong>Forum</strong><span>Long-form discussion</span></li>
-                        <li><span class="community-signal-dot" aria-hidden="true"></span><strong>Open source</strong><span>Built in the open</span></li>
-                    </ul>
+                    <p class="community-signal-kicker">New to Odin?</p>
+                    <h2>Start with the conversation that fits.</h2>
+                    <p class="community-signal-lede">Ask a quick question live, or start a discussion people can find again later.</p>
+                    <div class="community-signal-routes">
+                        <a class="community-signal-route community-signal-route-discord" href="https://discord.gg/vafXTdubwr"><span aria-hidden="true">●</span><strong>Ask in Discord</strong><small>Fast, informal help</small></a>
+                        <a class="community-signal-route community-signal-route-forum" href="https://forum.odin-lang.org/"><span aria-hidden="true">↗</span><strong>Visit the forum</strong><small>Thoughtful, searchable threads</small></a>
+                    </div>
                 </aside>
             </div>
         </div>
@@ -31,25 +32,25 @@
                 <p>There is no single right place to participate. Pick the rhythm that works for you.</p>
             </header>
             <div class="community-place-grid">
-                <article class="community-place-card" id="discord">
+                <article class="community-place-card community-place-discord" id="discord">
                     <span class="community-card-mark" aria-hidden="true">✦</span>
                     <p class="community-card-kicker">Live conversation</p><h3>Discord</h3>
                     <p>Get live support, compare notes, and meet other people building with Odin.</p>
                     <a href="https://discord.gg/vafXTdubwr">Join Discord <span aria-hidden="true">↗</span></a>
                 </article>
-                <article class="community-place-card" id="forum">
+                <article class="community-place-card community-place-forum" id="forum">
                     <span class="community-card-mark" aria-hidden="true">↗</span>
                     <p class="community-card-kicker">Go deeper</p><h3>Forum</h3>
                     <p>For categorized, long-form questions and discussion that stays easy to revisit.</p>
                     <a href="https://forum.odin-lang.org/">Visit the forum <span aria-hidden="true">↗</span></a>
                 </article>
-                <article class="community-place-card" id="reddit">
+                <article class="community-place-card community-place-reddit" id="reddit">
                     <span class="community-card-mark" aria-hidden="true">●</span>
                     <p class="community-card-kicker">Share &amp; discover</p><h3>Reddit</h3>
                     <p>Post about Odin, share what you have made, and follow community conversation.</p>
                     <a href="https://reddit.com/r/odinlang/">Visit r/odinlang <span aria-hidden="true">↗</span></a>
                 </article>
-                <article class="community-place-card" id="irc">
+                <article class="community-place-card community-place-irc" id="irc">
                     <span class="community-card-mark" aria-hidden="true">›_</span>
                     <p class="community-card-kicker">Old school, still open</p><h3>IRC</h3>
                     <p>Join the unofficial <code>#odin</code> channel on hackint.org from your preferred IRC client.</p>
@@ -66,15 +67,15 @@
                 <p>Every contribution matters, whether it is a clear bug report, a thoughtful pull request, or direct support for ongoing development.</p>
             </header>
             <div class="community-help-grid">
-                <article class="community-help-card">
-                    <span class="community-help-number" aria-hidden="true">01</span><h3>Report an issue</h3>
+                <article class="community-help-card community-help-report">
+                    <div class="community-help-card-top"><span class="community-help-mark" aria-hidden="true">!</span><p>Spot something?</p></div><h3>Report an issue</h3>
                     <p>Found a bug, mistake, or inconsistency? A clear report helps the project improve.</p>
-                    <a href="https://github.com/odin-lang/odin/issues/new">File an issue <span aria-hidden="true">↗</span></a>
+                    <div class="community-help-footer"><span>Bug · docs · inconsistency</span><a href="https://github.com/odin-lang/odin/issues/new">File an issue <span aria-hidden="true">↗</span></a></div>
                 </article>
-                <article class="community-help-card">
-                    <span class="community-help-number" aria-hidden="true">02</span><h3>Contribute code</h3>
+                <article class="community-help-card community-help-contribute">
+                    <div class="community-help-card-top"><span class="community-help-mark" aria-hidden="true">&lt;&gt;</span><p>Ready to build?</p></div><h3>Contribute code</h3>
                     <p>Explore the source, pick an issue that interests you, or look for work marked <em>help wanted</em>.</p>
-                    <a href="https://github.com/odin-lang/Odin/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22">Explore help wanted <span aria-hidden="true">↗</span></a>
+                    <div class="community-help-footer"><span>Open issues with room to help</span><a href="https://github.com/odin-lang/Odin/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22">Explore help wanted <span aria-hidden="true">↗</span></a></div>
                 </article>
                 <article class="community-support-card">
                     <div class="community-support-copy"><p class="community-eyebrow">Direct support</p><h3>Support Odin financially</h3><p>Your support helps fund Odin development and the developers behind it.</p></div>
