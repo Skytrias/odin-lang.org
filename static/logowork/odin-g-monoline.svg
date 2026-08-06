@@ -1,0 +1,10 @@
+<svg width="100%" height="100%" viewBox="0 0 410 143" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Odin logo concept G</title>
+  <desc id="desc">Plain white rounded monoline ODIN wordmark.</desc>
+  <g stroke="#fff" stroke-width="17" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="79" cy="72" r="42"/>
+    <path d="M157 41h35c27 0 43 12 43 31s-16 31-43 31h-35"/>
+    <path d="M274 41v62"/>
+    <path d="M320 103V41l70 62V41"/>
+  </g>
+</svg>

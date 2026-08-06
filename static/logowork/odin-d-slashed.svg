@@ -1,0 +1,11 @@
+<svg width="100%" height="100%" viewBox="0 0 500 143" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Odin logo concept D</title>
+  <desc id="desc">Plain white ODIN wordmark with a slashed O.</desc>
+  <g fill="#fff" fill-rule="evenodd" clip-rule="evenodd">
+    <path d="M77 19c-31.6 0-55 23-55 53s23.4 53 55 53 55-23 55-53-23.4-53-55-53Zm0 20c19.3 0 34 14.1 34 33s-14.7 33-34 33-34-14.1-34-33 14.7-33 34-33Z"/>
+    <path d="M29.2 110.2 116.2 23.2l11.6 11.6-87 87-11.6-11.6Z"/>
+    <path d="M160 34h51c34 0 56 14.8 56 38s-22 38-56 38h-51V34Zm22 20v36h29c20.5 0 33-6.6 33-18s-12.5-18-33-18h-29Z"/>
+    <path d="M292 34h22v76h-22V34Z"/>
+    <path d="M343 34h21l66 47.2V34h22v76h-21l-66-47.2V110h-22V34Z"/>
+  </g>
+</svg>

@@ -1,57 +1,41 @@
-<footer class="odin-footer">
-    <div class="container pb-5 pt-5">
-        <div class="row g-4">
-            <div class="col">
-                <a class="navbar-brand" href="/">
-                    <img class="mb-3" src="/logo.svg" height="30" alt="Odin"
-                /></a>
-                <p>
-                    {{ .Site.Params.Slogan }}
-                </p>
-            </div>
-            <nav class="col-md-auto">
-                <h4 class="fw-normal">Resources</h4>
-                <ul class="list-unstyled">
-                    <li><a href="/docs" class="link-light">Docs</a></li>
-                    <li><a href="https://pkg.odin-lang.org/" class="link-light">Packages</a></li>
-                    <li><a href="/news" class="link-light">News</a></li>
-                </ul>
-            </nav>
-            <nav class="col-md-auto">
-                <h4 class="fw-normal">Community</h4>
-                <ul class="list-unstyled">
-                    <li><a href="https://github.com/odin-lang/Odin" target="_blank" class="link-light" >GitHub</a></li>
-                    <li><a href="https://discord.gg/vafXTdubwr" target="_blank" class="link-light">Discord</a></li>
-                    <li><a href="https://www.twitch.tv/ginger_bill" target="_blank" class="link-light">Twitch</a></li>
-                    <li><a href="https://www.youtube.com/channel/UCUSck1dOH7VKmG4lRW7tZXg" target="_blank" class="link-light">YouTube</a></li>
-                    <li><a href="/showcase" target="_blank" class="link-light" >Showcase</a></li>
-                </ul>
-            </nav>
-            <nav class="col-md-auto">
-                <h4 class="fw-normal">Contribute</h4>
-                <ul class="list-unstyled">
-                    <li><a
-                        href="https://github.com/odin-lang/Odin/issues"
-                        target="_blank"
-                        class="link-light"
-                        >Issues</a
-                    ></li>
-                    <li><a
-                        href="https://www.patreon.com/gingerbill"
-                        target="_blank"
-                        class="link-light"
-                        >Donate</a
-                    ></li>
-                </ul>
-            </nav>
+<footer class="site-footer">
+    <div class="site-shell footer-grid">
+        <div class="footer-brand">
+            <a href="/" aria-label="Odin home">
+                <img src="/logo.svg" height="34" alt="Odin" />
+            </a>
+            <p>{{ .Site.Params.Slogan }}</p>
         </div>
 
-        <div class="mt-4 text-muted">© 2016–2024 Ginger Bill</div>
+        <nav aria-label="Footer resources">
+            <h2>Resources</h2>
+            <a href="/docs">Docs</a>
+            <a href="/docs/install">Download</a>
+            <a href="https://pkg.odin-lang.org/" target="_blank" rel="noopener noreferrer">Packages</a>
+            <a href="/docs/examples">Examples</a>
+        </nav>
+
+        <nav aria-label="Footer community">
+            <h2>Community</h2>
+            <a href="/community">Community</a>
+            <a href="https://forum.odin-lang.org" target="_blank" rel="noopener noreferrer">Forum</a>
+            <a href="https://discord.gg/vafXTdubwr" target="_blank" rel="noopener noreferrer">Discord</a>
+            <a href="/showcase">Showcase</a>
+        </nav>
+
+        <nav aria-label="Footer project">
+            <h2>Project</h2>
+            <a href="/news">News</a>
+            <a href="https://github.com/odin-lang/Odin" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://github.com/odin-lang/Odin/issues" target="_blank" rel="noopener noreferrer">Issues</a>
+            <a href="https://www.patreon.com/gingerbill" target="_blank" rel="noopener noreferrer">Donate</a>
+        </nav>
+    </div>
+
+    <div class="site-shell footer-bottom">
+        <span>&copy; 2016-{{ now.Format "2006" }} Ginger Bill</span>
+        <span>Built with Hugo.</span>
     </div>
 </footer>
 
-<!-- Bootstrap JS -->
-<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Custom JS -->
 <script src="/js/script.js"></script>

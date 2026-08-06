@@ -8,7 +8,7 @@ categories:
   - showcase
 ---
 
-<div class="d-flex justify-content-center mt-2 p-2">
+<div class="center-pack media-space">
 <img src="https://img.itch.zone/aW1nLzEwNTQ2NDQxLnBuZw==/original/dgSdqI.png" width="100%">
 </div>
 
@@ -25,7 +25,7 @@ Mutli-Selection allows performing all commands on multiple tasks at once.
 
 Mouse usage is optional.
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 ### Task Tagging
 
@@ -37,7 +37,7 @@ Edit the tag content to whatever your file needs.
 
 Each tag also uses a customizable color from the theme.
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 ### Render Modes
 
@@ -47,7 +47,7 @@ Seamlessly switch between ***List*** and ***Kanban*** mode at any point.
 
 Prompts like *Search* and *Goto* remain working in both modes.
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 ### Bookmarks & Jumps
 
@@ -57,7 +57,7 @@ Prompts like *Search* and *Goto* remain working in both modes.
 
 Once you start moving the next jump will be lead to the nearest bookmark.
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 ### Cut, Copy & Paste
 
@@ -69,7 +69,7 @@ When no text is selected and you perform a cut/copy - the next mode will be a ta
 
 Selecting text and performing a cut/copy will result in a paste of the normal text content.
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 ## Sidebar / Options
 
@@ -81,7 +81,7 @@ The **Achive** stores any deleted task in case you lost tasks previously.
 
 Customize amount of time **pomodoro** timers should last for.
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 ## Power Mode!
 
@@ -93,7 +93,7 @@ Enjoy particles flying throughout any action you take.
 
 Options allow you to disable or adjust screenshake or coloring of the particles.
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 ## Theme Editor
 
@@ -105,6 +105,6 @@ Change color RGBA values manually or use the color picker.
 
 Randomize wanted colors between *Low* / *High* ranges in the HSV color space.
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
-<div class="d-flex justify-content-center mt-2 p-2"><a href="https://skytrias.itch.io/todool" class="btn btn-outline-primary">Available on itch.io</a></div>
+<div class="center-pack media-space"><a href="https://skytrias.itch.io/todool" class="action-link secondary-action">Available on itch.io</a></div>

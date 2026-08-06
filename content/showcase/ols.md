@@ -11,14 +11,14 @@ weight: 1
 
 [Ols](https://github.com/DanielGavin/ols) is a language server for Odin, and works on all the popular text editors. 
 
-<div class="d-flex justify-content-center mt-2 p-2">
+<div class="center-pack media-space">
 <img src="https://raw.githubusercontent.com/DanielGavin/ols/master/images/completion.png" width="100%">
 </div>
 
 ## Why would you want to use ols?
 You might be thinking, "Odin is already such a simple language that any tooling is unnecessary", but the ability to lookup procedures in a package or goto procedure definitions will radically speed up your coding and understanding of a codebase.
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 ## Implementation
 I implemented `ols` on the idea that the most important thing is fast completion and gotos - everything else is just extra goodness. This means all the extra features cannot affect the performance of completion and goto negatively, or if they do affect it, you have the ability to turn of those features, such as semantic tokens, which have to resolve all the symbols of the current document.
@@ -49,25 +49,25 @@ Here you can see some of the main features of `ols`:
 
 <img src="https://raw.githubusercontent.com/DanielGavin/ols/master/images/showcase/completion.gif" width="100%">
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 ### Hover
 
 <img src="https://raw.githubusercontent.com/DanielGavin/ols/master/images/showcase/hover.gif" width="100%">
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 
 ### Go to definition
 
 <img src="https://raw.githubusercontent.com/DanielGavin/ols/master/images/showcase/goto.gif" width="100%">
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 ### Fake method completion
 
 <img src="https://raw.githubusercontent.com/DanielGavin/ols/master/images/showcase/fake_methods.png" width="100%">
 
-<div class="clearfix"></div>
+<div class="clear-flow"></div>
 
 

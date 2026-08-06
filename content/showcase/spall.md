@@ -11,7 +11,7 @@ categories:
 
 Spall is a fast, easy-to-use profiler, on the web, and natively on your computer
 
-<div class="d-flex justify-content-center mt-2 p-2">
+<div class="center-pack media-space">
 <img src="https://gravitymoth.com/media/odin-landscape.png" width="100%">
 </div>
 

@@ -30,15 +30,15 @@ Fresh-start cleanup list for the Odin Hugo website.
 - Make the dark-mode toggle a real `<button>` with an accessible label.
 - Review iframe titles and video/image alt text.
 - Check heading order on the homepage and article pages.
-- Verify keyboard navigation through the navbar and mobile menu.
+- Verify keyboard navigation through the main navigation and mobile menu.
 
 ## Priority 4: Frontend Maintainability
 
 - Decide whether homepage sections should remain hardcoded or move into data files/partials.
 - Reduce inline styles in `themes/odin/layouts/index.html`.
-- Consolidate style ownership between `custom.scss` and `style.css` where sensible.
+- Keep style ownership clear between `common.css`, `frontpage.css`, and `docs.css`.
 - Make `script.js` more defensive around missing table-of-contents anchors.
-- Consider replacing old copied Bootstrap/highlight assets with a documented vendoring workflow.
+- Consider replacing highlight assets with a documented vendoring workflow.
 
 ## Priority 5: Build And Repository Hygiene
 
@@ -72,4 +72,4 @@ Then inspect:
 - `/showcase/`
 - one showcase detail page
 
-Check both light and dark mode, plus mobile navbar behavior.
+Check both light and dark mode, plus mobile navigation behavior.

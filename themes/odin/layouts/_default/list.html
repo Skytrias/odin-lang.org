@@ -1,31 +1,25 @@
 {{ define "main" }}
-<main>
-    <div class="container-xxl">
-        <div class="row odin-main">
-            <!-- Left menu -->
+<main class="content-main">
+    <div class="content-shell">
+        <div class="content-layout">
             {{ partial "sidebar" . }}
 
-            <!-- Content -->
-            <article class="col-lg-8 p-4">
-                <article>
-                    <header>
-                        <h1>{{.Title}}</h1>
-                    </header>
+            <article class="content-article entry-article">
+                <header class="article-header">
+                    <h1>{{ .Title }}</h1>
+                </header>
 
-                    {{.Content}}
-                </article>
+                <div class="article-body">
+                    {{ .Content }}
+                </div>
 
-                <div>
+                <div class="entry-list">
                     {{ range .Pages }}
-                    <div class="mt-5">
-                        <a
-                            href="{{.Permalink}}"
-                            class="link-primary text-decoration-none"
-                            ><h3>{{.Title}}</h3></a
-                        >
-                        <p>{{.Summary}}</p>
-                        {{- if not .PublishDate.IsZero }}<div class="publish-date">{{ .PublishDate.Format "2006-01-02" | safeHTMLAttr }}</div>{{- end}}
-                    </div>
+                    <article class="entry-preview">
+                        <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+                        <p>{{ .Summary }}</p>
+                        {{- if not .PublishDate.IsZero }}<p class="publish-date">{{ .PublishDate.Format "2006-01-02" | safeHTMLAttr }}</p>{{- end}}
+                    </article>
                     {{ end }}
                 </div>
             </article>

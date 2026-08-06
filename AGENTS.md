@@ -16,7 +16,7 @@ The homepage is mostly hand-authored HTML in `themes/odin/layouts/index.html`. M
 
 ## Build And Serve
 
-Use Hugo Extended. Sass compilation depends on it.
+Use Hugo Extended.
 
 ```sh
 hugo --minify
@@ -29,14 +29,13 @@ Generated output lives in `public/` and should not be committed unless the proje
 
 ## Styling
 
-There are two style entrypoints:
+There are three style entrypoints:
 
-- `themes/odin/assets/scss/custom.scss`: Bootstrap variable overrides and Sass compiled by Hugo Pipes.
-- `themes/odin/static/css/style.css`: Plain custom CSS served directly.
+- `themes/odin/static/css/common.css`: Shared tokens, base styles, header/footer, media, buttons, code, and tables.
+- `themes/odin/static/css/frontpage.css`: Homepage-only sections.
+- `themes/odin/static/css/docs.css`: Markdown/content page layouts.
 
-Bootstrap is vendored under `themes/odin/assets/node_modules/bootstrap`, with package metadata in `themes/odin/assets/package.json`.
-
-Prefer using existing Bootstrap utilities and the existing site classes before adding new CSS. Keep custom CSS small and easy to trace.
+Prefer existing site classes and shared tokens before adding new CSS. Keep custom CSS small and easy to trace.
 
 ## Templates
 
@@ -77,7 +76,6 @@ Project-level shortcodes live in `layouts/shortcodes/` and are used mainly by ne
 Global custom JavaScript:
 
 - `themes/odin/static/js/script.js`: Table-of-contents active state and table styling.
-- `themes/odin/static/js/fade-in-logo-after-header.js`: Homepage navbar logo fade-in behavior.
 
 Keep scripts defensive. Some templates do not include every element a script may look for.
 
@@ -98,7 +96,7 @@ Run:
 hugo --minify
 ```
 
-For visual/template work, also run `hugo serve` and inspect the changed pages in a browser. Pay special attention to desktop and mobile widths, dark mode, the navbar, sidebars, and table of contents.
+For visual/template work, also run `hugo serve` and inspect the changed pages in a browser. Pay special attention to desktop and mobile widths, dark mode, the main navigation, sidebars, and table of contents.
 
 ## Known Cleanup Areas
 

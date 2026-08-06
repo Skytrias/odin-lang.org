@@ -4,7 +4,7 @@
 
 Create a new Odin frontpage that is clear, minimal, modern, and easier to evolve than the current hand-built homepage.
 
-The first major piece of work is the custom homepage template at `themes/odin/layouts/index.html`. The rest of the site can remain on the current Bootstrap-based theme for now. The new frontpage should get its own stylesheet first, then later we can decide what becomes part of a broader site-wide design system.
+The first major piece of work is the custom homepage template at `themes/odin/layouts/index.html`. The rest of the site can remain on the current previous theme for now. The new frontpage should get its own stylesheet first, then later we can decide what becomes part of a broader site-wide design system.
 
 ## Product Direction
 
@@ -253,7 +253,7 @@ Use `static/noise.png` for subtle grain on backgrounds. The goal is smooth surfa
 Avoid:
 
 - loud gradients as the main identity
-- heavy Bootstrap-card feeling
+- heavy framework-card feeling
 - large logo walls above the fold
 - dense walls of copy
 - oversized hero claims that feel generic
@@ -287,9 +287,9 @@ Possible file:
 
 - `themes/odin/static/css/frontpage.css`
 
-Only load it on the homepage. The current site-wide CSS and Bootstrap can remain in place while the frontpage is rebuilt.
+Only load it on the homepage. The current site-wide CSS and the old framework can remain in place while the frontpage is rebuilt.
 
-Over time, useful pieces from the new frontpage CSS may become the basis for a broader non-Bootstrap design system. That is future work.
+Over time, useful pieces from the new frontpage CSS may become the basis for a broader custom design system. That is future work.
 
 Prefer extracting homepage sections into partials or data-driven structures if it makes the page easier to reason about. The current single large `index.html` is hard to maintain.
 
@@ -323,14 +323,14 @@ The frontpage rebuild is ready when:
 - Animations are subtle and support `prefers-reduced-motion`.
 - Existing core navigation remains usable.
 - The page builds with `hugo --minify`.
-- The implementation does not force a full-site Bootstrap replacement yet.
+- The implementation does not force a full-site the old framework replacement yet.
 
 ## Later Work
 
 After the frontpage is settled:
 
 - Extract shared design tokens from the frontpage CSS.
-- Decide how much of the new style should replace Bootstrap site-wide.
+- Decide how much of the new style should replace the old framework site-wide.
 - Redesign docs/news/showcase pages using the new design language.
 - Revisit logo, color, and brand assets if the Odin project wants that.
 - Add stronger validation and visual regression checks for generated pages.

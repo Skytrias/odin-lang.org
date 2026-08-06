@@ -69,7 +69,7 @@ package src
 main :: proc() {}
 ```
 
-<img src="/images/news/orca_plain_window.png" class="figure-img img-fluid rounded">
+<img src="/images/news/orca_plain_window.png" class="fit-media soft-corners">
 
 That looks easy! Even simpler than [raylib](https://www.raylib.com) and reminds me of game libraries like [love2d](https://love2d.org) where things just work.
 
@@ -108,7 +108,7 @@ oc_on_frame_refresh :: proc "c" () {
   oc.canvas_present(renderer, surface)    
 }
 ```
-<img src="/images/news/orca_rectangle_fill_fixed.png" class="figure-img img-fluid rounded">
+<img src="/images/news/orca_rectangle_fill_fixed.png" class="fit-media soft-corners">
 
 ### Rectangle Fill (Window Sized)
 
@@ -156,8 +156,8 @@ oc_on_frame_refresh :: proc "c" () {
 }
 ```
 
-<div class="text-center">
-  <img src="/images/news/orca_rectangle_fill_window.png" class="img-fluid rounded">
+<div class="centered">
+  <img src="/images/news/orca_rectangle_fill_window.png" class="fit-media soft-corners">
 </div>
 
 ### Text Rendering
@@ -217,7 +217,7 @@ oc_on_frame_refresh :: proc "c" () {
 }
 ```
 
-<img src="/images/news/orca_text_rendering.png" class="figure-img img-fluid rounded">
+<img src="/images/news/orca_text_rendering.png" class="fit-media soft-corners">
 
 ### Rectangle Fill following Mouse
 

@@ -1,54 +1,47 @@
-// scrollspy find any new heading intersection and set the active property
-window.addEventListener('DOMContentLoaded', () => {
-	const headers = [...document.querySelectorAll('h1[id],h2[id],h3[id],h4[id]')];
-	const sectionVisibility = new Map();
+window.addEventListener("DOMContentLoaded", () => {
+    const headers = [...document.querySelectorAll(".article-body h1[id], .article-body h2[id], .article-body h3[id], .article-body h4[id]")];
+    const toc = document.querySelector("#TableOfContents");
+    const header = document.querySelector(".site-header");
 
-	const navbarHeight = document.querySelector('.odin-menu').offsetHeight;
-	const observerForTableOfContentActiveState = new IntersectionObserver(entries => {
-		for (let i = 0; i < entries.length; i += 1) {
-			const entry = entries[i];
-			const id = entry.target.getAttribute('id');
+    if (headers.length > 0 && toc && header) {
+        const sectionVisibility = new Map();
+        const headerHeight = header.offsetHeight || 0;
+        const observerForTableOfContentActiveState = new IntersectionObserver(entries => {
+            for (const entry of entries) {
+                sectionVisibility.set(entry.target.getAttribute("id"), entry.isIntersecting);
+            }
 
-			sectionVisibility.set(id, entry.isIntersecting);
-		}
+            for (const [sectionId, isVisible] of sectionVisibility) {
+                if (!isVisible) {
+                    continue;
+                }
 
-		/**
-		 * Find the first visible section and set the corresponding anchor state to active.
-		 * Otherwise, do nothing. This is the case when scrolling through long sections,
-		 * where the section header is out of the viewport, but the next section header is not yet visible.
-		 */
-		for (const [sectionId, isVisible] of sectionVisibility) {
-			if (isVisible) {
-				clearActiveStatesInTableOfContents();
-				const anchor = document.querySelector(`nav li a[href="#${sectionId}"]`);
-				anchor.parentElement.classList.add('active');
-				anchor.scrollIntoView({ block: "nearest" });
+                clearActiveStatesInTableOfContents(toc);
+                const escapedSectionId = window.CSS && CSS.escape ? CSS.escape(sectionId) : sectionId.replace(/"/g, '\\"');
+                const anchor = toc.querySelector(`li a[href="#${escapedSectionId}"]`);
+                if (anchor && anchor.parentElement) {
+                    anchor.parentElement.classList.add("active");
+                    anchor.scrollIntoView({ block: "nearest" });
+                }
+                break;
+            }
+        }, { rootMargin: `${headerHeight}px 0px 0px 0px`, threshold: 1.0 });
 
-				break;
-			}
-		}
-	}, { rootMargin: `${navbarHeight}px 0px 0px 0px`, threshold: 1.0 });
+        headers.forEach(headerElement => {
+            sectionVisibility.set(headerElement.getAttribute("id"), false);
+            observerForTableOfContentActiveState.observe(headerElement);
+        });
+    }
 
-	headers.forEach(header => {
-		sectionVisibility.set(header.getAttribute('id'), false);
-		observerForTableOfContentActiveState.observe(header);
-	});
-})
+    document.querySelectorAll("table").forEach(table => {
+        if (table.className === "") {
+            table.classList.add("content-table");
+        }
+    });
+});
 
-// removes all active states
-function clearActiveStatesInTableOfContents() {
-	document.querySelectorAll('nav li').forEach((section) => {
-		section.classList.remove('active');
-	});
+function clearActiveStatesInTableOfContents(toc) {
+    toc.querySelectorAll("li").forEach(section => {
+        section.classList.remove("active");
+    });
 }
-
-// add the bootstrap table class property for styling - could maybe just style tables custom
-window.addEventListener('DOMContentLoaded', () => {
-	document.querySelectorAll('table').forEach((table) => {
-		// only non styled tables
-		if (table.className === "") {
-			table.classList.add("table", "table-striped");
-		}
-	})
-})
-

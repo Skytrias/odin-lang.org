@@ -1,42 +1,41 @@
 {{ define "main" }}
-<main>
-    <div class="container-xxl">
-        <div class="row odin-main">
+<main class="content-main">
+    <div class="content-shell">
+        <div class="content-layout">
             {{ partial "sidebar" . }}
 
-            <!-- Content -->
-            <article class="col-lg-8 p-4" {{- if .Param "autonumbering" }} autonumbering {{- end }}>
-                <header>
-                    <nav aria-label="breadcrumb">
+            <article class="content-article" {{- if .Param "autonumbering" }} autonumbering{{- end }}>
+                <header class="article-header">
+                    <nav class="crumbs" aria-label="Breadcrumb">
                         {{ $rellink := "" }}
-                        <ol class="breadcrumb">
+                        <ol>
                             {{ range (split .RelPermalink "/") }}
                                 {{ if gt (len . ) 0 -}}
                                     {{ $rellink = printf "%s/%s" $rellink . }}
-                                    <li class="breadcrumb-item"><a href="{{ $rellink }}">{{ humanize . }}</a></li>
+                                    <li><a href="{{ $rellink }}">{{ humanize . }}</a></li>
                                 {{ end }}
                             {{ end }}
                         </ol>
+                    </nav>
                     <h1>{{ .Title }}</h1>
 
                     {{- if .IsPage }}
                     {{- if not .PublishDate.IsZero }}<p class="publish-date">{{ .PublishDate.Format "2006-01-02" | safeHTMLAttr }}</p>
                     {{ end }}
-                    {{- end }}{{/* .IsPage */}}
+                    {{- end }}
                 </header>
-                <div class="odin-article">
-                    <!-- Add anchors to links -->
-                    {{ .Content | replaceRE "(<h[2-9] id=\"([^\"]+)\".+)(</h[2-9]+>)" "${1} <a class=\"text-decoration-none\" href=\"#${2}\">#</a>${3}" | safeHTML }}
+
+                <div class="article-body">
+                    {{ .Content | replaceRE "(<h[2-9] id=\"([^\"]+)\".+)(</h[2-9]+>)" "${1} <a class=\"anchor-link\" href=\"#${2}\">#</a>${3}" | safeHTML }}
                 </div>
             </article>
 
-            <!-- Right menu -->
             {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
-            <div id="TOC" class="col-lg-2 odin-toc-border">
-                <div class="sticky-top odin-below-navbar py-3">
+            <aside class="article-toc" aria-label="Table of contents">
+                <div class="article-toc-inner">
                     {{ .TableOfContents }}
                 </div>
-            </div>
+            </aside>
             {{ end }}
         </div>
     </div>

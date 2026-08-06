@@ -40,20 +40,20 @@ weight: 8
 			t.appendChild(body);
 
 			for (const build of file_data) {
-				var row = document.createElement('tr');
-				body.appendChild(row);
+				var buildEntry = document.createElement('tr');
+				body.appendChild(buildEntry);
 
 				var filename = document.createElement('td');
 				filename.innerHTML = '<a href="'+build.url+'">' + build.name + '</a>';
-				row.appendChild(filename);
+				buildEntry.appendChild(filename);
 
 				var size = document.createElement('td');
 				size.innerHTML = (build.sizeInBytes/1024/1024).toFixed(1) + "MB";
-				row.appendChild(size);
+				buildEntry.appendChild(size);
 
 				var hash = document.createElement('td');
 				hash.innerHTML = build.sha1;
-				row.appendChild(hash);
+				buildEntry.appendChild(hash);
 			}
 		}
 	});

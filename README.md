@@ -8,6 +8,6 @@ The website is built on [hugo](https://gohugo.io/). Follow the instructions for 
 
 Once installed, simply run `hugo serve`, which will launch the site at localhost and watch for any file changes.
 
-## Miscellaneous
+## Styling
 
-We also use Bootstrap for styling, and the rest is done from scratch.
+The site uses custom CSS under `themes/odin/static/css/`.

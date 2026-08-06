@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 150" role="img" aria-labelledby="title desc">
+  <title id="title">Odin raven G logo concept</title>
+  <desc id="desc">A one-color swept raven mark based on the G concept from the mascot raven badge sheet.</desc>
+  <g fill="#fff">
+    <path fill-rule="evenodd" d="
+      M 11 134
+      C 45 119 76 104 106 89
+      L 45 102
+      C 67 91 91 80 118 68
+      C 87 67 56 61 24 52
+      C 63 55 99 56 133 59
+      C 111 45 89 31 68 16
+      C 112 25 153 41 184 65
+      L 207 69
+      C 221 71 231 80 237 91
+      L 268 94
+      L 236 102
+      C 224 110 206 114 185 113
+      C 165 112 147 105 130 95
+      L 91 114
+      C 61 128 34 137 11 134
+      Z
+
+      M 190 78
+      C 203 77 215 84 220 94
+      C 211 102 198 105 184 101
+      C 185 91 187 83 190 78
+      Z" />
+    <path fill-rule="evenodd" d="
+      M 210 87
+      A 11 11 0 1 1 188 87
+      A 11 11 0 1 1 210 87
+      M 204 87
+      A 5 5 0 1 0 194 87
+      A 5 5 0 1 0 204 87" />
+  </g>
+</svg>

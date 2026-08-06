@@ -27,8 +27,8 @@ and supports compiling **to** many more targets.
 
 Download the latest monthly or nightly release and look over the release requirements below.
 
-<a href="https://github.com/odin-lang/Odin/releases" class="btn btn-outline-primary">Latest Release</a>
-<a href="/docs/nightly" class="btn btn-outline-primary">Latest Nightly Builds</a>
+<a href="https://github.com/odin-lang/Odin/releases" class="action-link secondary-action">Latest Release</a>
+<a href="/docs/nightly" class="action-link secondary-action">Latest Nightly Builds</a>
 
 ### Release requirements / notes
 
