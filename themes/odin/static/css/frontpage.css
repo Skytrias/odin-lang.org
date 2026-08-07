@@ -2085,3 +2085,140 @@ body:not(.dark-mode) .front-section-final {
         radial-gradient(circle at 10% 82%, rgba(50, 145, 224, 0.22), transparent 30%),
         linear-gradient(150deg, #f8fcff 0%, #dfefff 100%);
 }
+
+/* Chroma pass two: richer light fields and a deliberately inky dark counterpart. */
+body:not(.dark-mode) .front-hero {
+    background:
+        radial-gradient(circle at 84% 18%, rgba(54, 157, 236, 0.48), transparent 30%),
+        radial-gradient(circle at 10% 88%, rgba(238, 125, 25, 0.26), transparent 27%),
+        linear-gradient(116deg, rgba(252, 254, 255, 0.92) 0%, rgba(204, 235, 255, 0.74) 56%, rgba(151, 207, 244, 0.68) 100%);
+}
+
+body:not(.dark-mode) .front-section-warm,
+body:not(.dark-mode) .front-section-light {
+    background:
+        radial-gradient(circle at 88% 8%, rgba(246, 146, 39, 0.44), transparent 30%),
+        radial-gradient(circle at 8% 92%, rgba(50, 145, 224, 0.28), transparent 33%),
+        linear-gradient(142deg, #fbfdff 0%, #d2ecff 60%, #e9f7ff 100%);
+}
+
+body:not(.dark-mode) .front-section-cool,
+body:not(.dark-mode) .front-production {
+    background:
+        radial-gradient(circle at 12% 20%, rgba(50, 145, 224, 0.42), transparent 32%),
+        radial-gradient(circle at 90% 86%, rgba(246, 146, 39, 0.22), transparent 29%),
+        linear-gradient(155deg, #cce9ff 0%, #e8f5ff 58%, #b9e0fa 100%);
+}
+
+.dark-mode .front-cinematic-video {
+    filter: saturate(0.62) contrast(1.2) brightness(0.46) hue-rotate(14deg);
+}
+
+.dark-mode .front-cinematic-grade {
+    background:
+        radial-gradient(circle at 78% 20%, rgba(58, 158, 238, 0.4), transparent 32%),
+        radial-gradient(circle at 12% 88%, rgba(240, 154, 76, 0.13), transparent 28%),
+        linear-gradient(116deg, rgba(2, 10, 19, 0.6), rgba(10, 54, 94, 0.26) 48%, rgba(3, 18, 35, 0.66));
+    opacity: 0.5;
+}
+
+.dark-mode .front-hero {
+    background:
+        radial-gradient(circle at 82% 18%, rgba(51, 153, 236, 0.42), transparent 30%),
+        radial-gradient(circle at 10% 88%, rgba(240, 154, 76, 0.11), transparent 26%),
+        linear-gradient(112deg, rgba(4, 12, 22, 0.84) 0%, rgba(8, 37, 65, 0.74) 56%, rgba(13, 58, 98, 0.68) 100%);
+}
+
+.dark-mode .front-section::after,
+.dark-mode .front-community-strip::after {
+    opacity: 0.12;
+    mix-blend-mode: soft-light;
+}
+
+.dark-mode .front-section-warm,
+.dark-mode .front-section-light {
+    background:
+        radial-gradient(circle at 88% 10%, rgba(51, 153, 236, 0.2), transparent 30%),
+        radial-gradient(circle at 8% 92%, rgba(240, 154, 76, 0.1), transparent 27%),
+        linear-gradient(142deg, #071522 0%, #102b48 62%, #0d2036 100%);
+}
+
+.dark-mode .front-section-cool,
+.dark-mode .front-production {
+    background:
+        radial-gradient(circle at 12% 20%, rgba(51, 153, 236, 0.3), transparent 31%),
+        radial-gradient(circle at 90% 86%, rgba(240, 154, 76, 0.12), transparent 28%),
+        linear-gradient(155deg, #0c2540 0%, #133859 58%, #0a1b2c 100%);
+}
+
+.dark-mode .front-community-strip {
+    background:
+        radial-gradient(circle at 12% 18%, rgba(116, 193, 255, 0.25), transparent 30%),
+        radial-gradient(circle at 90% 84%, rgba(240, 154, 76, 0.28), transparent 29%),
+        linear-gradient(110deg, #153b65 0%, #1e5085 58%, #12385f 100%);
+}
+
+.dark-mode .front-section-dark,
+.dark-mode .front-site-footer {
+    background:
+        radial-gradient(circle at 84% 16%, rgba(51, 153, 236, 0.28), transparent 31%),
+        radial-gradient(circle at 10% 88%, rgba(240, 154, 76, 0.09), transparent 26%),
+        linear-gradient(145deg, #030c16 0%, #0c2744 54%, #102f50 100%);
+}
+
+.dark-mode .front-section-final {
+    background:
+        radial-gradient(circle at 84% 18%, rgba(51, 153, 236, 0.2), transparent 30%),
+        linear-gradient(150deg, #07131f 0%, #112c48 100%);
+}
+
+/* Logo-first masthead: let the mark own the opening frame. */
+.front-hero-logo {
+    display: block;
+    width: min(620px, 64vw);
+    height: auto;
+    margin: 0 auto;
+    /* The artwork sits slightly left within logo.svg's viewBox. */
+    transform: translateX(2%);
+    filter: brightness(0) saturate(100%) invert(27%) sepia(24%) saturate(2500%) hue-rotate(172deg) brightness(89%) contrast(91%);
+}
+
+.front-hero h1.front-hero-line {
+    margin: clamp(24px, 3vw, 34px) auto 0;
+    color: #1e5085;
+    font-size: clamp(0.9rem, 1.35vw, 1.18rem);
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.front-hero-description {
+    max-width: 540px;
+    margin: 12px auto 0;
+    color: rgba(16, 45, 77, 0.78);
+    font-size: clamp(0.96rem, 1.25vw, 1.12rem);
+    font-weight: 650;
+    line-height: 1.4;
+}
+
+.front-hero-copy .front-actions {
+    margin-top: clamp(30px, 4vw, 48px);
+}
+
+.front-hero-copy .front-hero-text {
+    margin-top: 18px;
+    font-size: clamp(0.84rem, 1vw, 0.98rem);
+}
+
+.dark-mode .front-hero-logo {
+    filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.28));
+}
+
+.dark-mode .front-hero h1.front-hero-line {
+    color: #92c8f7;
+}
+
+.dark-mode .front-hero-description {
+    color: rgba(224, 241, 255, 0.8);
+}
