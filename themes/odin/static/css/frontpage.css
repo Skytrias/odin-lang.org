@@ -2222,3 +2222,57 @@ body:not(.dark-mode) .front-production {
 .dark-mode .front-hero-description {
     color: rgba(224, 241, 255, 0.8);
 }
+
+/* Only the language introduction breaks the shell; the feature examples stay
+   compact so each source sample can be read as a single unit. */
+.front-language-proof > .front-section-titleblock {
+    width: 100%;
+    max-width: none;
+    padding-inline: max(20px, calc((100vw - 1180px) / 2));
+}
+
+.front-language-proof > .front-section-titleblock h2,
+.front-language-proof > .front-section-titleblock p:not(.front-kicker) {
+    max-width: none;
+}
+
+/* Keep the library story and its package inventory legible as two clear,
+   top-aligned columns rather than letting the grid float midway down the copy. */
+.front-libraries-layout {
+    align-items: start;
+}
+
+.front-libraries-layout #front-libraries-title {
+    max-width: 680px;
+    font-size: clamp(2.1rem, 3.8vw, 3.55rem);
+}
+
+.front-library-column {
+    align-self: start;
+}
+
+.front-library-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.front-library-actions .front-button {
+    width: 100%;
+    min-height: 74px;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 20px;
+    padding: 14px 16px;
+    color: #f8fbff;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: none;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.front-library-actions .front-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: none;
+}

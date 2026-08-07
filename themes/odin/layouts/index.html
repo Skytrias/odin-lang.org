@@ -96,14 +96,14 @@
         </div>
     </section>
 
-    <section class="front-section front-section-cool" aria-labelledby="front-language-title">
-        <div class="front-shell">
-            <div class="front-section-titleblock">
-                <p class="front-kicker">Language proof</p>
-                <h2 id="front-language-title">Real features, shown in code.</h2>
-                <p>Important systems concepts stay visible in the source instead of disappearing behind boilerplate.</p>
-            </div>
+    <section class="front-section front-section-cool front-language-proof" aria-labelledby="front-language-title">
+        <div class="front-section-titleblock">
+            <p class="front-kicker">Language proof</p>
+            <h2 id="front-language-title">Real features, shown in code.</h2>
+            <p>Important systems concepts stay visible in the source instead of disappearing behind boilerplate.</p>
+        </div>
 
+        <div class="front-shell">
             <div class="front-feature-list">
                 <article class="front-feature">
                     <div class="front-feature-copy">
@@ -135,13 +135,36 @@ main :: proc() {
                         <p>Common numeric and SIMD-shaped code stays concise without giving up explicit types.</p>
                     </div>
                     <div class="front-code-window front-code-window-small">
-                        <pre><code class="language-odin">a := [3]f32{1, 2, 3}
-b := [3]f32{5, 6, 7}
+                        <pre><code class="language-odin">import "core:fmt"
+import "core:math/linalg"
 
-c := a * b
-d := 1 + (c - a) / 2
+main :: proc() {
+    // Vectors in Odin are just fixed arrays.
+    a := [3]f32{0, 1, 2}
+    b := [3]f32{0, 0, 1}
 
-fmt.println(d)</code></pre>
+    // Scale 'b' by 2 and do element-wise addition.
+    c := a + b * 2
+    fmt.println(c) // [0, 1, 4]
+
+    // Vectors can be swizzled (fields reordered)
+    // just like in shader languages.
+    fmt.println(c.zyx) // [4, 1, 0]
+
+    // Many operators are built-in, and the linalg
+    // package contains everything else you need.
+    fmt.println(linalg.length(c)) // 4.123...
+
+    // Matrix math is also built-in!
+    scale_z := matrix[3, 3]f32{
+        1, 0, 0,
+        0, 1, 0,
+        0, 0, 10,
+    }
+
+    d := scale_z * c
+    fmt.println(d) // [0, 1, 40]
+}</code></pre>
                     </div>
                 </article>
 
@@ -174,28 +197,30 @@ player := Player{
     </section>
 
     <section class="front-section front-section-dark" aria-labelledby="front-libraries-title">
-        <div class="front-shell front-split">
+        <div class="front-shell front-split front-libraries-layout">
             <div>
                 <p class="front-kicker">Batteries included</p>
                 <h2 id="front-libraries-title">A standard library and vendor bindings ready for real work.</h2>
                 <p>
                     Ships with a practical `core` library and official `vendor` bindings for graphics APIs, windowing, audio, UI, and more.
                 </p>
-                <div class="front-actions">
+            </div>
+
+            <div class="front-library-column">
+                <div class="front-library-grid" aria-label="Selected official vendor bindings">
+                    <a href="https://pkg.odin-lang.org/vendor/OpenGL" target="_blank" rel="noopener noreferrer">OpenGL</a>
+                    <a href="https://pkg.odin-lang.org/vendor/vulkan" target="_blank" rel="noopener noreferrer">Vulkan</a>
+                    <a href="https://pkg.odin-lang.org/vendor/directx/d3d12" target="_blank" rel="noopener noreferrer">Direct3D</a>
+                    <a href="https://pkg.odin-lang.org/vendor/darwin/Metal" target="_blank" rel="noopener noreferrer">Metal</a>
+                    <a href="https://pkg.odin-lang.org/vendor/sdl2" target="_blank" rel="noopener noreferrer">SDL2</a>
+                    <a href="https://pkg.odin-lang.org/vendor/raylib" target="_blank" rel="noopener noreferrer">raylib</a>
+                    <a href="https://pkg.odin-lang.org/vendor/miniaudio" target="_blank" rel="noopener noreferrer">miniaudio</a>
+                    <a href="https://pkg.odin-lang.org/vendor/wgpu" target="_blank" rel="noopener noreferrer">wgpu</a>
+                </div>
+                <div class="front-library-actions" aria-label="Library exploration">
                     <a class="front-button front-button-primary" href="https://pkg.odin-lang.org/core" target="_blank" rel="noopener noreferrer">Explore core</a>
                     <a class="front-button front-button-ghost" href="https://pkg.odin-lang.org/vendor" target="_blank" rel="noopener noreferrer">Explore vendor</a>
                 </div>
-            </div>
-
-            <div class="front-library-grid" aria-label="Selected official vendor bindings">
-                <a href="https://pkg.odin-lang.org/vendor/OpenGL" target="_blank" rel="noopener noreferrer">OpenGL</a>
-                <a href="https://pkg.odin-lang.org/vendor/vulkan" target="_blank" rel="noopener noreferrer">Vulkan</a>
-                <a href="https://pkg.odin-lang.org/vendor/directx/d3d12" target="_blank" rel="noopener noreferrer">Direct3D</a>
-                <a href="https://pkg.odin-lang.org/vendor/darwin/Metal" target="_blank" rel="noopener noreferrer">Metal</a>
-                <a href="https://pkg.odin-lang.org/vendor/sdl2" target="_blank" rel="noopener noreferrer">SDL2</a>
-                <a href="https://pkg.odin-lang.org/vendor/raylib" target="_blank" rel="noopener noreferrer">raylib</a>
-                <a href="https://pkg.odin-lang.org/vendor/miniaudio" target="_blank" rel="noopener noreferrer">miniaudio</a>
-                <a href="https://pkg.odin-lang.org/vendor/wgpu" target="_blank" rel="noopener noreferrer">wgpu</a>
             </div>
         </div>
     </section>
@@ -215,7 +240,7 @@ player := Player{
             </div>
         </div>
 
-        <div class="front-production-reel" aria-label="Selected JangaFX production tools">
+        <div class="front-production-reel" aria-label="Selected software made with Odin">
             <a class="front-production-strip" href="/showcase">
                 <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
                     <source src="/images/showcase/embergen-preview.mp4" type="video/mp4">
@@ -226,7 +251,7 @@ player := Player{
                     <em>Volumetric fire and smoke</em>
                 </span>
             </a>
-            <a class="front-production-strip front-production-strip-reverse" href="/showcase">
+            <a class="front-production-strip" href="/showcase">
                 <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
                     <source src="/images/showcase/geogen-preview.mp4" type="video/mp4">
                 </video>
@@ -236,7 +261,7 @@ player := Player{
                     <em>Procedural worlds and terrain</em>
                 </span>
             </a>
-            <a class="front-production-strip front-production-strip-light" href="/showcase">
+            <a class="front-production-strip" href="/showcase">
                 <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
                     <source src="/images/showcase/liquigen-preview.mp4" type="video/mp4">
                 </video>
@@ -246,7 +271,7 @@ player := Player{
                     <em>Liquid simulation and surfaces</em>
                 </span>
             </a>
-            <a class="front-production-strip front-production-strip-reverse" href="/showcase">
+            <a class="front-production-strip" href="/showcase">
                 <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
                     <source src="/images/showcase/illugen-preview.mp4" type="video/mp4">
                 </video>
@@ -254,6 +279,36 @@ player := Player{
                     <span>JangaFX</span>
                     <strong>IlluGen</strong>
                     <em>Node-based image creation</em>
+                </span>
+            </a>
+            <a class="front-production-strip" href="/showcase">
+                <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                    <source src="/images/showcase/chiaha-preview.mp4" type="video/mp4">
+                </video>
+                <span class="front-production-strip-copy">
+                    <span>Chiaha</span>
+                    <strong>Factory Optimization Graph</strong>
+                    <em>A real-time factory graph and optimization tool</em>
+                </span>
+            </a>
+            <a class="front-production-strip" href="/showcase">
+                <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                    <source src="/images/showcase/blick-preview.mp4" type="video/mp4">
+                </video>
+                <span class="front-production-strip-copy">
+                    <span>Dihedron Software</span>
+                    <strong>Blick</strong>
+                    <em>A fully native nonlinear video editor</em>
+                </span>
+            </a>
+            <a class="front-production-strip" href="/showcase">
+                <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                    <source src="/images/showcase/mmt-preview.mp4" type="video/mp4">
+                </video>
+                <span class="front-production-strip-copy">
+                    <span>MMT</span>
+                    <strong>MMT</strong>
+                    <em>Advanced crypto liquidity and order-flow analysis</em>
                 </span>
             </a>
         </div>
