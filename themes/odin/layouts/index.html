@@ -70,7 +70,7 @@
                         </svg>
                     </span>
                     <span>
-                        <h3>Graphics and simulation</h3>
+                        <h3>Application Development</h3>
                         <p>Use official bindings for graphics, audio, windows, input, and real-time software.</p>
                     </span>
                 </a>
@@ -193,11 +193,15 @@ player := Player{
 
     <section class="front-section front-section-dark" aria-labelledby="front-libraries-title">
         <div class="front-shell front-split front-libraries-layout">
-            <div>
-                <h2 id="front-libraries-title">A standard library and vendor bindings ready for real work.</h2>
+            <div class="front-library-copy">
+                <h2 id="front-libraries-title">Batteries Included</h2>
                 <p>
-                    Ships with a practical `core` library and official `vendor` bindings for graphics APIs, windowing, audio, UI, and more.
+                    Ships with a practical <code>core</code> library and official <code>vendor</code> bindings for graphics APIs, windowing, audio, UI, and more.
                 </p>
+                <nav class="front-library-explore" aria-label="Library exploration">
+                    <a href="https://pkg.odin-lang.org/core" target="_blank" rel="noopener noreferrer"><span>Explore <code>core</code></span><span aria-hidden="true">↗</span></a>
+                    <a href="https://pkg.odin-lang.org/vendor" target="_blank" rel="noopener noreferrer"><span>Explore <code>vendor</code></span><span aria-hidden="true">↗</span></a>
+                </nav>
             </div>
 
             <div class="front-library-column">
@@ -210,10 +214,6 @@ player := Player{
                     <a href="https://pkg.odin-lang.org/vendor/raylib" target="_blank" rel="noopener noreferrer">raylib</a>
                     <a href="https://pkg.odin-lang.org/vendor/miniaudio" target="_blank" rel="noopener noreferrer">miniaudio</a>
                     <a href="https://pkg.odin-lang.org/vendor/wgpu" target="_blank" rel="noopener noreferrer">wgpu</a>
-                </div>
-                <div class="front-library-actions" aria-label="Library exploration">
-                    <a class="front-button front-button-primary" href="https://pkg.odin-lang.org/core" target="_blank" rel="noopener noreferrer">Explore core</a>
-                    <a class="front-button front-button-ghost" href="https://pkg.odin-lang.org/vendor" target="_blank" rel="noopener noreferrer">Explore vendor</a>
                 </div>
             </div>
         </div>
@@ -244,7 +244,7 @@ player := Player{
                     <em>Volumetric fire and smoke</em>
                 </span>
             </a>
-            <a class="front-production-strip" href="/showcase">
+            <a class="front-production-strip front-production-strip-reverse" href="/showcase">
                 <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
                     <source src="/images/showcase/geogen-preview.mp4" type="video/mp4">
                 </video>
@@ -254,7 +254,7 @@ player := Player{
                     <em>Procedural worlds and terrain</em>
                 </span>
             </a>
-            <a class="front-production-strip" href="/showcase">
+            <a class="front-production-strip front-production-strip-light" href="/showcase">
                 <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
                     <source src="/images/showcase/liquigen-preview.mp4" type="video/mp4">
                 </video>
@@ -264,7 +264,7 @@ player := Player{
                     <em>Liquid simulation and surfaces</em>
                 </span>
             </a>
-            <a class="front-production-strip" href="/showcase">
+            <a class="front-production-strip front-production-strip-reverse" href="/showcase">
                 <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
                     <source src="/images/showcase/illugen-preview.mp4" type="video/mp4">
                 </video>
@@ -284,7 +284,7 @@ player := Player{
                     <em>A real-time factory graph and optimization tool</em>
                 </span>
             </a>
-            <a class="front-production-strip" href="/showcase">
+            <a class="front-production-strip front-production-strip-reverse" href="/showcase">
                 <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
                     <source src="/images/showcase/blick-preview.mp4" type="video/mp4">
                 </video>
@@ -309,7 +309,7 @@ player := Player{
 
     <section class="front-section front-section-final" aria-labelledby="front-next-title">
         <div class="front-shell front-final-panel">
-            <h2 id="front-next-title">Try it, read the docs, or meet the community.</h2>
+            <h2 id="front-next-title"><span>Try it.</span><span>Read the docs.</span><span>Meet the community.</span></h2>
             <div class="front-next-grid">
                 <a href="/docs/install">
                     <strong>Download</strong>
